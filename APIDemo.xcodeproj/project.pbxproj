@@ -7,6 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CACD36C2EAD120D5228026D /* Pods_APIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57D2936041215A73C3AD926 /* Pods_APIDemo.framework */; };
+		8F469D3520D9FFB9007F1166 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F469D3420D9FFB9007F1166 /* MobileCoreServices.framework */; };
+		8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469D9820DA36CD007F1166 /* ScanVideoVC.m */; };
+		8F469D9C20DA370E007F1166 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469D9B20DA370E007F1166 /* VideoCell.m */; };
+		8F469D9F20DA3E62007F1166 /* ScanPhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469D9E20DA3E62007F1166 /* ScanPhotoVC.m */; };
+		8F469DA220DA5192007F1166 /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DA120DA5192007F1166 /* WebVC.m */; };
+		8F469DE320DB3F4D007F1166 /* KSMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DA820DB3F4D007F1166 /* KSMotionManager.m */; };
+		8F469DE420DB3F4D007F1166 /* KSAVFoundationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DA920DB3F4D007F1166 /* KSAVFoundationManager.m */; };
+		8F469DE520DB3F4D007F1166 /* KSCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DAE20DB3F4D007F1166 /* KSCaptureView.m */; };
+		8F469DE620DB3F4D007F1166 /* KSRecorderFocusTargetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DB120DB3F4D007F1166 /* KSRecorderFocusTargetView.m */; };
+		8F469DE720DB3F4D007F1166 /* KSCaptureFlash_On@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DB320DB3F4D007F1166 /* KSCaptureFlash_On@3x.png */; };
+		8F469DE820DB3F4D007F1166 /* KSCapture_OCR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DB420DB3F4D007F1166 /* KSCapture_OCR@2x.png */; };
+		8F469DE920DB3F4D007F1166 /* KSCapture_OCR@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DB520DB3F4D007F1166 /* KSCapture_OCR@3x.png */; };
+		8F469DEA20DB3F4D007F1166 /* KSCaptureFlash_On@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DB620DB3F4D007F1166 /* KSCaptureFlash_On@2x.png */; };
+		8F469DEB20DB3F4D007F1166 /* KSSwitchCamera_Nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DB720DB3F4D007F1166 /* KSSwitchCamera_Nor@2x.png */; };
+		8F469DEC20DB3F4D007F1166 /* KSTakePhoto_Nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DB820DB3F4D007F1166 /* KSTakePhoto_Nor@2x.png */; };
+		8F469DED20DB3F4D007F1166 /* KSTakePhoto_Nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DB920DB3F4D007F1166 /* KSTakePhoto_Nor@3x.png */; };
+		8F469DEE20DB3F4D007F1166 /* KSSwitchCamera_Nor@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DBA20DB3F4D007F1166 /* KSSwitchCamera_Nor@3x.png */; };
+		8F469DEF20DB3F4D007F1166 /* KSCapture_scan_focus.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DBB20DB3F4D007F1166 /* KSCapture_scan_focus.png */; };
+		8F469DF020DB3F4D007F1166 /* KSCapture_scan_focus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DBC20DB3F4D007F1166 /* KSCapture_scan_focus@3x.png */; };
+		8F469DF120DB3F4D007F1166 /* KSCaptureGuideLine_Nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DBD20DB3F4D007F1166 /* KSCaptureGuideLine_Nor@2x.png */; };
+		8F469DF220DB3F4D007F1166 /* KSCapture_scan_focus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DBE20DB3F4D007F1166 /* KSCapture_scan_focus@2x.png */; };
+		8F469DF320DB3F4D007F1166 /* KSCaptureFlash_Off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DBF20DB3F4D007F1166 /* KSCaptureFlash_Off@3x.png */; };
+		8F469DF420DB3F4D007F1166 /* KSTakePhoto_Sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DC020DB3F4D007F1166 /* KSTakePhoto_Sel@2x.png */; };
+		8F469DF520DB3F4D007F1166 /* KSSwitchCamera_Sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DC120DB3F4D007F1166 /* KSSwitchCamera_Sel@2x.png */; };
+		8F469DF620DB3F4D007F1166 /* KSSwitchCamera_Sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DC220DB3F4D007F1166 /* KSSwitchCamera_Sel@3x.png */; };
+		8F469DF720DB3F4D007F1166 /* KSTakePhoto_Sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DC320DB3F4D007F1166 /* KSTakePhoto_Sel@3x.png */; };
+		8F469DF820DB3F4D007F1166 /* KSCaptureFlash_Off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F469DC420DB3F4D007F1166 /* KSCaptureFlash_Off@2x.png */; };
+		8F469DF920DB3F4D007F1166 /* KSCaptureTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DC620DB3F4D007F1166 /* KSCaptureTool.m */; };
+		8F469DFA20DB3F4D007F1166 /* KSTakeVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DCA20DB3F4D007F1166 /* KSTakeVideoViewController.m */; };
+		8F469DFB20DB3F4D007F1166 /* KSRecordProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DCD20DB3F4D007F1166 /* KSRecordProgressView.m */; };
+		8F469DFC20DB3F4D007F1166 /* KSTakeVideoOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DCE20DB3F4D007F1166 /* KSTakeVideoOperateView.m */; };
+		8F469DFD20DB3F4D007F1166 /* KSVideoWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DD220DB3F4D007F1166 /* KSVideoWriter.m */; };
+		8F469DFE20DB3F4D007F1166 /* KSTakeVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DD320DB3F4D007F1166 /* KSTakeVideoManager.m */; };
+		8F469DFF20DB3F4D007F1166 /* KSVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DD820DB3F4D007F1166 /* KSVideoPlayer.m */; };
+		8F469E0020DB3F4D007F1166 /* KSTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DDC20DB3F4D007F1166 /* KSTakePhotoViewController.m */; };
+		8F469E0120DB3F4D007F1166 /* KSTakePhotoOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DDE20DB3F4D007F1166 /* KSTakePhotoOperateView.m */; };
+		8F469E0220DB3F4D007F1166 /* KSTakePhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469DE220DB3F4D007F1166 /* KSTakePhotoManager.m */; };
+		8F469E0520DB8A6A007F1166 /* NetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E0420DB8A6A007F1166 /* NetTool.m */; };
+		8F469E0820DB8B1C007F1166 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E0720DB8B1C007F1166 /* HttpClient.m */; };
+		8F469E0E20DB9B1F007F1166 /* ScanAudioVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E0D20DB9B1F007F1166 /* ScanAudioVC.m */; };
 		8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FE220D10943005DAF9E /* AppDelegate.m */; };
 		8F9B0FE620D10943005DAF9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FE520D10943005DAF9E /* ViewController.m */; };
 		8F9B0FE920D10943005DAF9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9B0FE720D10943005DAF9E /* Main.storyboard */; };
@@ -35,6 +76,71 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182A6A71309150DD36EE3CF1 /* Pods-APIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo.release.xcconfig"; sourceTree = "<group>"; };
+		34C5123FB8A83D0E766DA960 /* Pods-APIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		8F469D3420D9FFB9007F1166 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8F469D9620DA261C007F1166 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		8F469D9720DA36CD007F1166 /* ScanVideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanVideoVC.h; sourceTree = "<group>"; };
+		8F469D9820DA36CD007F1166 /* ScanVideoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanVideoVC.m; sourceTree = "<group>"; };
+		8F469D9A20DA370E007F1166 /* VideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
+		8F469D9B20DA370E007F1166 /* VideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
+		8F469D9D20DA3E62007F1166 /* ScanPhotoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanPhotoVC.h; sourceTree = "<group>"; };
+		8F469D9E20DA3E62007F1166 /* ScanPhotoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanPhotoVC.m; sourceTree = "<group>"; };
+		8F469DA020DA5192007F1166 /* WebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		8F469DA120DA5192007F1166 /* WebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
+		8F469DA820DB3F4D007F1166 /* KSMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSMotionManager.m; sourceTree = "<group>"; };
+		8F469DA920DB3F4D007F1166 /* KSAVFoundationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSAVFoundationManager.m; sourceTree = "<group>"; };
+		8F469DAA20DB3F4D007F1166 /* KSCaptureTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCaptureTool.h; sourceTree = "<group>"; };
+		8F469DAB20DB3F4D007F1166 /* KSCaptureConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCaptureConfig.h; sourceTree = "<group>"; };
+		8F469DAC20DB3F4D007F1166 /* KSMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSMotionManager.h; sourceTree = "<group>"; };
+		8F469DAE20DB3F4D007F1166 /* KSCaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCaptureView.m; sourceTree = "<group>"; };
+		8F469DAF20DB3F4D007F1166 /* KSRecorderFocusTargetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSRecorderFocusTargetView.h; sourceTree = "<group>"; };
+		8F469DB020DB3F4D007F1166 /* KSCaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCaptureView.h; sourceTree = "<group>"; };
+		8F469DB120DB3F4D007F1166 /* KSRecorderFocusTargetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSRecorderFocusTargetView.m; sourceTree = "<group>"; };
+		8F469DB320DB3F4D007F1166 /* KSCaptureFlash_On@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSCaptureFlash_On@3x.png"; sourceTree = "<group>"; };
+		8F469DB420DB3F4D007F1166 /* KSCapture_OCR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSCapture_OCR@2x.png"; sourceTree = "<group>"; };
+		8F469DB520DB3F4D007F1166 /* KSCapture_OCR@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSCapture_OCR@3x.png"; sourceTree = "<group>"; };
+		8F469DB620DB3F4D007F1166 /* KSCaptureFlash_On@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSCaptureFlash_On@2x.png"; sourceTree = "<group>"; };
+		8F469DB720DB3F4D007F1166 /* KSSwitchCamera_Nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSSwitchCamera_Nor@2x.png"; sourceTree = "<group>"; };
+		8F469DB820DB3F4D007F1166 /* KSTakePhoto_Nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSTakePhoto_Nor@2x.png"; sourceTree = "<group>"; };
+		8F469DB920DB3F4D007F1166 /* KSTakePhoto_Nor@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSTakePhoto_Nor@3x.png"; sourceTree = "<group>"; };
+		8F469DBA20DB3F4D007F1166 /* KSSwitchCamera_Nor@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSSwitchCamera_Nor@3x.png"; sourceTree = "<group>"; };
+		8F469DBB20DB3F4D007F1166 /* KSCapture_scan_focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KSCapture_scan_focus.png; sourceTree = "<group>"; };
+		8F469DBC20DB3F4D007F1166 /* KSCapture_scan_focus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSCapture_scan_focus@3x.png"; sourceTree = "<group>"; };
+		8F469DBD20DB3F4D007F1166 /* KSCaptureGuideLine_Nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSCaptureGuideLine_Nor@2x.png"; sourceTree = "<group>"; };
+		8F469DBE20DB3F4D007F1166 /* KSCapture_scan_focus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSCapture_scan_focus@2x.png"; sourceTree = "<group>"; };
+		8F469DBF20DB3F4D007F1166 /* KSCaptureFlash_Off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSCaptureFlash_Off@3x.png"; sourceTree = "<group>"; };
+		8F469DC020DB3F4D007F1166 /* KSTakePhoto_Sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSTakePhoto_Sel@2x.png"; sourceTree = "<group>"; };
+		8F469DC120DB3F4D007F1166 /* KSSwitchCamera_Sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSSwitchCamera_Sel@2x.png"; sourceTree = "<group>"; };
+		8F469DC220DB3F4D007F1166 /* KSSwitchCamera_Sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSSwitchCamera_Sel@3x.png"; sourceTree = "<group>"; };
+		8F469DC320DB3F4D007F1166 /* KSTakePhoto_Sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSTakePhoto_Sel@3x.png"; sourceTree = "<group>"; };
+		8F469DC420DB3F4D007F1166 /* KSCaptureFlash_Off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KSCaptureFlash_Off@2x.png"; sourceTree = "<group>"; };
+		8F469DC520DB3F4D007F1166 /* KSAVFoundationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSAVFoundationManager.h; sourceTree = "<group>"; };
+		8F469DC620DB3F4D007F1166 /* KSCaptureTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCaptureTool.m; sourceTree = "<group>"; };
+		8F469DC920DB3F4D007F1166 /* KSTakeVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSTakeVideoViewController.h; sourceTree = "<group>"; };
+		8F469DCA20DB3F4D007F1166 /* KSTakeVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSTakeVideoViewController.m; sourceTree = "<group>"; };
+		8F469DCC20DB3F4D007F1166 /* KSTakeVideoOperateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSTakeVideoOperateView.h; sourceTree = "<group>"; };
+		8F469DCD20DB3F4D007F1166 /* KSRecordProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSRecordProgressView.m; sourceTree = "<group>"; };
+		8F469DCE20DB3F4D007F1166 /* KSTakeVideoOperateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSTakeVideoOperateView.m; sourceTree = "<group>"; };
+		8F469DCF20DB3F4D007F1166 /* KSRecordProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSRecordProgressView.h; sourceTree = "<group>"; };
+		8F469DD220DB3F4D007F1166 /* KSVideoWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSVideoWriter.m; sourceTree = "<group>"; };
+		8F469DD320DB3F4D007F1166 /* KSTakeVideoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSTakeVideoManager.m; sourceTree = "<group>"; };
+		8F469DD420DB3F4D007F1166 /* KSVideoWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSVideoWriter.h; sourceTree = "<group>"; };
+		8F469DD520DB3F4D007F1166 /* KSTakeVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSTakeVideoManager.h; sourceTree = "<group>"; };
+		8F469DD720DB3F4D007F1166 /* KSVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSVideoPlayer.h; sourceTree = "<group>"; };
+		8F469DD820DB3F4D007F1166 /* KSVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSVideoPlayer.m; sourceTree = "<group>"; };
+		8F469DDB20DB3F4D007F1166 /* KSTakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSTakePhotoViewController.h; sourceTree = "<group>"; };
+		8F469DDC20DB3F4D007F1166 /* KSTakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSTakePhotoViewController.m; sourceTree = "<group>"; };
+		8F469DDE20DB3F4D007F1166 /* KSTakePhotoOperateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSTakePhotoOperateView.m; sourceTree = "<group>"; };
+		8F469DDF20DB3F4D007F1166 /* KSTakePhotoOperateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSTakePhotoOperateView.h; sourceTree = "<group>"; };
+		8F469DE120DB3F4D007F1166 /* KSTakePhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSTakePhotoManager.h; sourceTree = "<group>"; };
+		8F469DE220DB3F4D007F1166 /* KSTakePhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSTakePhotoManager.m; sourceTree = "<group>"; };
+		8F469E0320DB8A6A007F1166 /* NetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetTool.h; sourceTree = "<group>"; };
+		8F469E0420DB8A6A007F1166 /* NetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetTool.m; sourceTree = "<group>"; };
+		8F469E0620DB8B1C007F1166 /* HttpClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClient.h; sourceTree = "<group>"; };
+		8F469E0720DB8B1C007F1166 /* HttpClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpClient.m; sourceTree = "<group>"; };
+		8F469E0C20DB9B1F007F1166 /* ScanAudioVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanAudioVC.h; sourceTree = "<group>"; };
+		8F469E0D20DB9B1F007F1166 /* ScanAudioVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanAudioVC.m; sourceTree = "<group>"; };
 		8F9B0FDE20D10943005DAF9E /* APIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9B0FE120D10943005DAF9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8F9B0FE220D10943005DAF9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +157,7 @@
 		8F9B100120D10946005DAF9E /* APIDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9B100520D10946005DAF9E /* APIDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIDemoUITests.m; sourceTree = "<group>"; };
 		8F9B100720D10946005DAF9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B57D2936041215A73C3AD926 /* Pods_APIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +165,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F469D3520D9FFB9007F1166 /* MobileCoreServices.framework in Frameworks */,
+				6CACD36C2EAD120D5228026D /* Pods_APIDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +187,173 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F469D3320D9FFB9007F1166 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F469D3420D9FFB9007F1166 /* MobileCoreServices.framework */,
+				B57D2936041215A73C3AD926 /* Pods_APIDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F469DA620DB3F4D007F1166 /* KSCapture */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DA720DB3F4D007F1166 /* KSCommon */,
+				8F469DC720DB3F4D007F1166 /* KSTakeVideo */,
+				8F469DD920DB3F4D007F1166 /* KSTakePhoto */,
+			);
+			path = KSCapture;
+			sourceTree = "<group>";
+		};
+		8F469DA720DB3F4D007F1166 /* KSCommon */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DA820DB3F4D007F1166 /* KSMotionManager.m */,
+				8F469DA920DB3F4D007F1166 /* KSAVFoundationManager.m */,
+				8F469DAA20DB3F4D007F1166 /* KSCaptureTool.h */,
+				8F469DAB20DB3F4D007F1166 /* KSCaptureConfig.h */,
+				8F469DAC20DB3F4D007F1166 /* KSMotionManager.h */,
+				8F469DAD20DB3F4D007F1166 /* View */,
+				8F469DB220DB3F4D007F1166 /* Resource */,
+				8F469DC520DB3F4D007F1166 /* KSAVFoundationManager.h */,
+				8F469DC620DB3F4D007F1166 /* KSCaptureTool.m */,
+			);
+			path = KSCommon;
+			sourceTree = "<group>";
+		};
+		8F469DAD20DB3F4D007F1166 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DAE20DB3F4D007F1166 /* KSCaptureView.m */,
+				8F469DAF20DB3F4D007F1166 /* KSRecorderFocusTargetView.h */,
+				8F469DB020DB3F4D007F1166 /* KSCaptureView.h */,
+				8F469DB120DB3F4D007F1166 /* KSRecorderFocusTargetView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8F469DB220DB3F4D007F1166 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DB320DB3F4D007F1166 /* KSCaptureFlash_On@3x.png */,
+				8F469DB420DB3F4D007F1166 /* KSCapture_OCR@2x.png */,
+				8F469DB520DB3F4D007F1166 /* KSCapture_OCR@3x.png */,
+				8F469DB620DB3F4D007F1166 /* KSCaptureFlash_On@2x.png */,
+				8F469DB720DB3F4D007F1166 /* KSSwitchCamera_Nor@2x.png */,
+				8F469DB820DB3F4D007F1166 /* KSTakePhoto_Nor@2x.png */,
+				8F469DB920DB3F4D007F1166 /* KSTakePhoto_Nor@3x.png */,
+				8F469DBA20DB3F4D007F1166 /* KSSwitchCamera_Nor@3x.png */,
+				8F469DBB20DB3F4D007F1166 /* KSCapture_scan_focus.png */,
+				8F469DBC20DB3F4D007F1166 /* KSCapture_scan_focus@3x.png */,
+				8F469DBD20DB3F4D007F1166 /* KSCaptureGuideLine_Nor@2x.png */,
+				8F469DBE20DB3F4D007F1166 /* KSCapture_scan_focus@2x.png */,
+				8F469DBF20DB3F4D007F1166 /* KSCaptureFlash_Off@3x.png */,
+				8F469DC020DB3F4D007F1166 /* KSTakePhoto_Sel@2x.png */,
+				8F469DC120DB3F4D007F1166 /* KSSwitchCamera_Sel@2x.png */,
+				8F469DC220DB3F4D007F1166 /* KSSwitchCamera_Sel@3x.png */,
+				8F469DC320DB3F4D007F1166 /* KSTakePhoto_Sel@3x.png */,
+				8F469DC420DB3F4D007F1166 /* KSCaptureFlash_Off@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		8F469DC720DB3F4D007F1166 /* KSTakeVideo */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DC820DB3F4D007F1166 /* ViewControllers */,
+				8F469DCB20DB3F4D007F1166 /* View */,
+				8F469DD020DB3F4D007F1166 /* Class */,
+			);
+			path = KSTakeVideo;
+			sourceTree = "<group>";
+		};
+		8F469DC820DB3F4D007F1166 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DC920DB3F4D007F1166 /* KSTakeVideoViewController.h */,
+				8F469DCA20DB3F4D007F1166 /* KSTakeVideoViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8F469DCB20DB3F4D007F1166 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DCC20DB3F4D007F1166 /* KSTakeVideoOperateView.h */,
+				8F469DCD20DB3F4D007F1166 /* KSRecordProgressView.m */,
+				8F469DCE20DB3F4D007F1166 /* KSTakeVideoOperateView.m */,
+				8F469DCF20DB3F4D007F1166 /* KSRecordProgressView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8F469DD020DB3F4D007F1166 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DD120DB3F4D007F1166 /* KSCaptureRecord */,
+				8F469DD620DB3F4D007F1166 /* KSVideoPreview */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		8F469DD120DB3F4D007F1166 /* KSCaptureRecord */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DD220DB3F4D007F1166 /* KSVideoWriter.m */,
+				8F469DD320DB3F4D007F1166 /* KSTakeVideoManager.m */,
+				8F469DD420DB3F4D007F1166 /* KSVideoWriter.h */,
+				8F469DD520DB3F4D007F1166 /* KSTakeVideoManager.h */,
+			);
+			path = KSCaptureRecord;
+			sourceTree = "<group>";
+		};
+		8F469DD620DB3F4D007F1166 /* KSVideoPreview */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DD720DB3F4D007F1166 /* KSVideoPlayer.h */,
+				8F469DD820DB3F4D007F1166 /* KSVideoPlayer.m */,
+			);
+			path = KSVideoPreview;
+			sourceTree = "<group>";
+		};
+		8F469DD920DB3F4D007F1166 /* KSTakePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DDA20DB3F4D007F1166 /* ViewControllers */,
+				8F469DDD20DB3F4D007F1166 /* View */,
+				8F469DE020DB3F4D007F1166 /* Class */,
+			);
+			path = KSTakePhoto;
+			sourceTree = "<group>";
+		};
+		8F469DDA20DB3F4D007F1166 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DDB20DB3F4D007F1166 /* KSTakePhotoViewController.h */,
+				8F469DDC20DB3F4D007F1166 /* KSTakePhotoViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8F469DDD20DB3F4D007F1166 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DDE20DB3F4D007F1166 /* KSTakePhotoOperateView.m */,
+				8F469DDF20DB3F4D007F1166 /* KSTakePhotoOperateView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8F469DE020DB3F4D007F1166 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				8F469DE120DB3F4D007F1166 /* KSTakePhotoManager.h */,
+				8F469DE220DB3F4D007F1166 /* KSTakePhotoManager.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		8F9B0FD520D10943005DAF9E = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +361,8 @@
 				8F9B0FF920D10946005DAF9E /* APIDemoTests */,
 				8F9B100420D10946005DAF9E /* APIDemoUITests */,
 				8F9B0FDF20D10943005DAF9E /* Products */,
+				8F469D3320D9FFB9007F1166 /* Frameworks */,
+				D22DEF589A72D060B95F9D66 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +379,27 @@
 		8F9B0FE020D10943005DAF9E /* APIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8F9B0FE120D10943005DAF9E /* AppDelegate.h */,
 				8F9B0FE220D10943005DAF9E /* AppDelegate.m */,
 				8F9B0FE420D10943005DAF9E /* ViewController.h */,
 				8F9B0FE520D10943005DAF9E /* ViewController.m */,
+				8F469D9720DA36CD007F1166 /* ScanVideoVC.h */,
+				8F469D9820DA36CD007F1166 /* ScanVideoVC.m */,
+				8F469E0C20DB9B1F007F1166 /* ScanAudioVC.h */,
+				8F469E0D20DB9B1F007F1166 /* ScanAudioVC.m */,
+				8F469D9A20DA370E007F1166 /* VideoCell.h */,
+				8F469D9B20DA370E007F1166 /* VideoCell.m */,
+				8F469D9D20DA3E62007F1166 /* ScanPhotoVC.h */,
+				8F469D9E20DA3E62007F1166 /* ScanPhotoVC.m */,
+				8F469E0320DB8A6A007F1166 /* NetTool.h */,
+				8F469E0420DB8A6A007F1166 /* NetTool.m */,
+				8F469E0620DB8B1C007F1166 /* HttpClient.h */,
+				8F469E0720DB8B1C007F1166 /* HttpClient.m */,
+				8F469DA020DA5192007F1166 /* WebVC.h */,
+				8F469DA120DA5192007F1166 /* WebVC.m */,
 				8F9B0FE720D10943005DAF9E /* Main.storyboard */,
+				8F469DA620DB3F4D007F1166 /* KSCapture */,
 				8F9B0FEA20D10946005DAF9E /* Assets.xcassets */,
 				8F9B0FEC20D10946005DAF9E /* LaunchScreen.storyboard */,
 				8F9B0FEF20D10946005DAF9E /* Info.plist */,
@@ -132,6 +426,15 @@
 			path = APIDemoUITests;
 			sourceTree = "<group>";
 		};
+		D22DEF589A72D060B95F9D66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34C5123FB8A83D0E766DA960 /* Pods-APIDemo.debug.xcconfig */,
+				182A6A71309150DD36EE3CF1 /* Pods-APIDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +442,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F9B100A20D10946005DAF9E /* Build configuration list for PBXNativeTarget "APIDemo" */;
 			buildPhases = (
+				EC9779EBDFA5C69198FB3EC3 /* [CP] Check Pods Manifest.lock */,
 				8F9B0FDA20D10943005DAF9E /* Sources */,
 				8F9B0FDB20D10943005DAF9E /* Frameworks */,
 				8F9B0FDC20D10943005DAF9E /* Resources */,
+				27898C9DD647390EB8425430 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,8 +540,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F469DF520DB3F4D007F1166 /* KSSwitchCamera_Sel@2x.png in Resources */,
+				8F469DF020DB3F4D007F1166 /* KSCapture_scan_focus@3x.png in Resources */,
+				8F469DF320DB3F4D007F1166 /* KSCaptureFlash_Off@3x.png in Resources */,
+				8F469DEF20DB3F4D007F1166 /* KSCapture_scan_focus.png in Resources */,
+				8F469DF720DB3F4D007F1166 /* KSTakePhoto_Sel@3x.png in Resources */,
+				8F469DEC20DB3F4D007F1166 /* KSTakePhoto_Nor@2x.png in Resources */,
+				8F469DEE20DB3F4D007F1166 /* KSSwitchCamera_Nor@3x.png in Resources */,
 				8F9B0FEE20D10946005DAF9E /* LaunchScreen.storyboard in Resources */,
+				8F469DF420DB3F4D007F1166 /* KSTakePhoto_Sel@2x.png in Resources */,
+				8F469DEA20DB3F4D007F1166 /* KSCaptureFlash_On@2x.png in Resources */,
 				8F9B0FEB20D10946005DAF9E /* Assets.xcassets in Resources */,
+				8F469DF220DB3F4D007F1166 /* KSCapture_scan_focus@2x.png in Resources */,
+				8F469DE720DB3F4D007F1166 /* KSCaptureFlash_On@3x.png in Resources */,
+				8F469DE920DB3F4D007F1166 /* KSCapture_OCR@3x.png in Resources */,
+				8F469DF620DB3F4D007F1166 /* KSSwitchCamera_Sel@3x.png in Resources */,
+				8F469DEB20DB3F4D007F1166 /* KSSwitchCamera_Nor@2x.png in Resources */,
+				8F469DED20DB3F4D007F1166 /* KSTakePhoto_Nor@3x.png in Resources */,
+				8F469DE820DB3F4D007F1166 /* KSCapture_OCR@2x.png in Resources */,
+				8F469DF120DB3F4D007F1166 /* KSCaptureGuideLine_Nor@2x.png in Resources */,
+				8F469DF820DB3F4D007F1166 /* KSCaptureFlash_Off@2x.png in Resources */,
 				8F9B0FE920D10943005DAF9E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,14 +580,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27898C9DD647390EB8425430 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/IQAudioRecorderController/IQAudioRecorderController.framework",
+				"${BUILT_PRODUCTS_DIR}/LKDBHelper/LKDBHelper.framework",
+				"${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQAudioRecorderController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LKDBHelper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSiriWaveformView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC9779EBDFA5C69198FB3EC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-APIDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8F9B0FDA20D10943005DAF9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F469DE620DB3F4D007F1166 /* KSRecorderFocusTargetView.m in Sources */,
+				8F469DFB20DB3F4D007F1166 /* KSRecordProgressView.m in Sources */,
 				8F9B0FE620D10943005DAF9E /* ViewController.m in Sources */,
+				8F469DE520DB3F4D007F1166 /* KSCaptureView.m in Sources */,
+				8F469DE320DB3F4D007F1166 /* KSMotionManager.m in Sources */,
+				8F469DFD20DB3F4D007F1166 /* KSVideoWriter.m in Sources */,
+				8F469D9C20DA370E007F1166 /* VideoCell.m in Sources */,
+				8F469E0220DB3F4D007F1166 /* KSTakePhotoManager.m in Sources */,
+				8F469DF920DB3F4D007F1166 /* KSCaptureTool.m in Sources */,
+				8F469E0820DB8B1C007F1166 /* HttpClient.m in Sources */,
+				8F469DFE20DB3F4D007F1166 /* KSTakeVideoManager.m in Sources */,
+				8F469DA220DA5192007F1166 /* WebVC.m in Sources */,
+				8F469E0020DB3F4D007F1166 /* KSTakePhotoViewController.m in Sources */,
+				8F469DFF20DB3F4D007F1166 /* KSVideoPlayer.m in Sources */,
+				8F469DFC20DB3F4D007F1166 /* KSTakeVideoOperateView.m in Sources */,
+				8F469D9F20DA3E62007F1166 /* ScanPhotoVC.m in Sources */,
+				8F469E0520DB8A6A007F1166 /* NetTool.m in Sources */,
 				8F9B0FF120D10946005DAF9E /* main.m in Sources */,
+				8F469E0E20DB9B1F007F1166 /* ScanAudioVC.m in Sources */,
+				8F469DE420DB3F4D007F1166 /* KSAVFoundationManager.m in Sources */,
+				8F469E0120DB3F4D007F1166 /* KSTakePhotoOperateView.m in Sources */,
+				8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */,
 				8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */,
+				8F469DFA20DB3F4D007F1166 /* KSTakeVideoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,11 +822,15 @@
 		};
 		8F9B100B20D10946005DAF9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34C5123FB8A83D0E766DA960 /* Pods-APIDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,11 +843,15 @@
 		};
 		8F9B100C20D10946005DAF9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 182A6A71309150DD36EE3CF1 /* Pods-APIDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

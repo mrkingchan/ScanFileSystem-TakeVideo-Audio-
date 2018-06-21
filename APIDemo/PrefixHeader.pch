@@ -1,0 +1,39 @@
+//
+//  PrefixHeader.pch
+//  APIDemo
+//
+//  Created by Macx on 2018/6/20.
+//  Copyright © 2018年 Chan. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <Foundation/Foundation.h>
+#import "KSCaptureConfig.h"
+#import "KSAVFoundationManager.h"
+#import "KSMotionManager.h"
+#import "KSCaptureTool.h"
+#import <LKDBHelper/LKDBHelper.h>
+#import <AFNetworking/AFNetworking.h>
+
+#define dispatch_main_sync_safe(block)\
+if ([NSThread isMainThread]) {\
+block();\
+} else {\
+dispatch_sync(dispatch_get_main_queue(), block);\
+}
+
+#define dispatch_main_async_safe(block)\
+if ([NSThread isMainThread]) {\
+block();\
+} else {\
+dispatch_async(dispatch_get_main_queue(), block);\
+}
+
+
+#endif /* PrefixHeader_pch */

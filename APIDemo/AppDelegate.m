@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
-
-@interface AppDelegate ()
-
+#import "ViewController.h"
+@interface AppDelegate () {
+    
+}
 @end
 
 @implementation AppDelegate
@@ -17,6 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    _window = [UIWindow new];
+    _window.frame = [UIScreen mainScreen].bounds;
+    _window.backgroundColor = [UIColor whiteColor];
+    _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    
+    //创建audios videos文件夹
+    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSLog(@"documentsPath = %@",documentPath);
+    NSString *audios = [documentPath stringByAppendingPathComponent:@"audios"];
+    NSString *videos = [documentPath stringByAppendingPathComponent:@"videos"];
+
+    [[NSFileManager defaultManager] createDirectoryAtPath:audios withIntermediateDirectories:YES attributes:nil error:nil];
+   [[NSFileManager defaultManager] createDirectoryAtPath:videos withIntermediateDirectories:YES attributes:nil error:nil];
+    [_window makeKeyAndVisible];
     return YES;
 }
 
