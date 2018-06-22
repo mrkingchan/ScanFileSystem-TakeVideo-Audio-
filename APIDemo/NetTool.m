@@ -36,6 +36,7 @@
 #ifndef __OPTIMIZE__
                              NSLog(@"上传进度-----:%@ %.2lld",sub,uploadProgress.completedUnitCount / uploadProgress.totalUnitCount * 100);
 #endif
+                             
                          } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                              //转json
                              id json = @{};
@@ -51,4 +52,5 @@
                          }];
     return task;
 }
+
 @end

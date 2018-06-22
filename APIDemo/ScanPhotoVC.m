@@ -7,6 +7,7 @@
 //
 
 #import "ScanPhotoVC.h"
+#import <Photos/Photos.h>
 
 @interface ScanPhotoVC () {
     UICollectionView *_collectionView;
@@ -22,6 +23,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+- (void)dealloc {
     
 }
 @end

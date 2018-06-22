@@ -25,5 +25,4 @@ typedef void(^complete)(id responseObject);
                                   imageArray:(NSArray *)imageArray
                                     fileName:(NSString *)fileName
                                       sucess:(complete)sucess;
-
 @end

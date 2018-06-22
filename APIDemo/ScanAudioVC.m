@@ -12,7 +12,6 @@
     UITableView *_tableView;
     NSMutableArray *_dataArray;
     AVAudioPlayer *_player;
-    
 }
 
 @end
@@ -21,6 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UInt32 audioRouteOverride = 1;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
+                             sizeof (audioRouteOverride),
+                             &audioRouteOverride);
+#pragma clang diagnostic pop
+    
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth, kAppHeight) style:0];
     _tableView.dataSource = self;
     _tableView.delegate = self;
@@ -28,6 +35,7 @@
     _tableView.tableFooterView = [UIView new];
     NSArray *audios = [[NSFileManager defaultManager] subpathsAtPath:[docPath() stringByAppendingString:@"/audios"]];
     _dataArray = [NSMutableArray arrayWithArray:audios];
+    //开扬声器
 }
 
 // MARK: - UITableViewDataSource&Delegate
@@ -53,13 +61,14 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //每次点击播放的时候 先停止
     [_player stop];
  NSString *audioPath = [[ docPath() stringByAppendingString:@"/audios"] stringByAppendingString:[NSString stringWithFormat:@"/%@",_dataArray[indexPath.row]]];
+    
     _player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audioPath] error:nil];
     _player.numberOfLoops = 0;
     [_player prepareToPlay];
     [_player play];
-    
 }
 
 @end

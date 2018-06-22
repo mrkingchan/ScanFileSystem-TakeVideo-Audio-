@@ -9,7 +9,7 @@
 #import "WebVC.h"
 #import <WebKit/WebKit.h>
 
-@interface WebVC () {
+@interface WebVC () <WKScriptMessageHandler> {
     WKWebView*_webView;
 }
 
@@ -39,6 +39,14 @@
     _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth, kAppHeight) configuration:configuration];
     [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]];
     [self.view addSubview:_webView];
+    
+    [configuration.userContentController addScriptMessageHandler:self name:@"methodName"];
+}
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    if ([message.name isEqualToString:@"methodName"]) {
+        //执行methodName的方法 
+    }
 }
 
 // MARK: - memory management
@@ -48,4 +56,6 @@
         _webView = nil;
     }
 }
+
+
 @end

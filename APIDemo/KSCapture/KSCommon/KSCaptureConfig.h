@@ -21,9 +21,7 @@
 #define kCanPause              1//是否具有暂停功能 0-否；1-是
 #define kCameraMirrored        1//是否前摄像头镜像 0-否；1-是
 
-
-typedef NS_ENUM(NSInteger ,KSRecordState)
-{
+typedef NS_ENUM(NSInteger ,KSRecordState) {
     KSRecordStatePrepare = 0,
     KSRecordStateRecording,
     KSRecordStatePause,
@@ -33,23 +31,23 @@ typedef NS_ENUM(NSInteger ,KSRecordState)
 };
 
 //MARK: - FILEPATH
-CG_INLINE NSString *docPath()
-{
+CG_INLINE NSString *docPath() {
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex: 0];
 }
 
 //MARK: - COLOR
-CG_INLINE UIColor *RGBVCOLOR (long rgbValue)
-{
+CG_INLINE UIColor *RGBVCOLOR (long rgbValue) {
     return [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0
                            green:((float)((rgbValue & 0xFF00) >> 8))/255.0
                             blue:((float)(rgbValue & 0xFF))/255.0
                            alpha:1.0];
 }
 
+CG_INLINE UIColor *kColorRGB(float R,float G,float B) {
+    return [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1.0];
+}
 
-CG_INLINE UIColor *RGBVACOLOR (long rgbValue,CGFloat alpha)
-{
+CG_INLINE UIColor *RGBVACOLOR (long rgbValue,CGFloat alpha) {
     return [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0
                            green:((float)((rgbValue & 0xFF00) >> 8))/255.0
                             blue:((float)(rgbValue & 0xFF))/255.0
@@ -62,13 +60,11 @@ CG_INLINE UIColor *RGBVACOLOR (long rgbValue,CGFloat alpha)
 #define kTextFont            @"Helvetica"
 #define kTextBoldFont        @"Helvetica-Bold"
 
-CG_INLINE UIFont *KSFont (CGFloat fontSize)
-{
+CG_INLINE UIFont *KSFont (CGFloat fontSize) {
     return [UIFont fontWithName: kTextFont size: fontSize];
 }
 
-CG_INLINE UIFont *KSBoldFont (CGFloat fontSize)
-{
+CG_INLINE UIFont *KSBoldFont (CGFloat fontSize) {
     return [UIFont fontWithName: kTextBoldFont size: fontSize];
 }
 

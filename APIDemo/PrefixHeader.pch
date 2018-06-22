@@ -20,7 +20,40 @@
 #import "KSCaptureTool.h"
 #import <LKDBHelper/LKDBHelper.h>
 #import <AFNetworking/AFNetworking.h>
+#import "HttpClient.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#define kDocumentPath NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject
+#define kUserDefaults [NSUserDefaults standardUserDefaults]
 
+// MARK: - CG_INLINE method
+CG_INLINE UIColor *UIColorRGB(float R,float G,float B) {
+    return [UIColor colorWithRed:R/255.0
+                           green:G/255.0
+                            blue:B/255.0
+                           alpha:1.0];
+}
+
+CG_INLINE void kUserDefaultSet(id value,NSString *key) {
+    [kUserDefaults setObject:value forKey:key];
+    [kUserDefaults synchronize];
+}
+
+CG_INLINE id  kUserDefaultsForKey(NSString * key) {
+    return [kUserDefaults objectForKey:key];
+}
+
+CG_INLINE NSString *kAppVersion() {
+    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+}
+
+CG_INLINE NSURL *kURL(NSString *urlStr) {
+    return [NSURL URLWithString:urlStr];
+}
+
+#define kBaseURL @""
+#define kAppID @""
+
+// MARK: - Thread method
 #define dispatch_main_sync_safe(block)\
 if ([NSThread isMainThread]) {\
 block();\

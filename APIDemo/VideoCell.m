@@ -23,6 +23,7 @@
     return self;
 }
 
+// MARK: - setCell
 - (void)setCellWithData:(NSString *)path {
     _imageView.image = [[self class] thumbnailImageForVideo:[NSURL fileURLWithPath:path] atTime:1.0];
 }
@@ -39,12 +40,18 @@
     CFTimeInterval thumbnailImageTime = time;
     NSError *thumbnailImageGenerationError = nil;
     thumbnailImageRef = [assetImageGenerator copyCGImageAtTime:CMTimeMake(thumbnailImageTime, 60) actualTime:NULL error:&thumbnailImageGenerationError];
-    
     if (!thumbnailImageRef)
         NSLog(@"thumbnailImageGenerationError %@", thumbnailImageGenerationError);
     
     UIImage *thumbnailImage = thumbnailImageRef ? [[UIImage alloc] initWithCGImage:thumbnailImageRef] : nil;
     
     return thumbnailImage;
+}
+
+// MARK: - memory management
+- (void)dealloc {
+    if (_imageView) {
+        _imageView = nil;
+    }
 }
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "HttpClient.h"
-#define kBaseURL @""
 @implementation HttpClient
 
 + (instancetype)shareClient {

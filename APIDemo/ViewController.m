@@ -138,9 +138,11 @@
 }
 
 // MARK: - IQAudioEcorderViewContorllerDelegate
-
 - (void)presentAudioRecorderViewControllerAnimated:(IQAudioRecorderViewController *)audioRecorderViewController {
-    
+}
+
+- (void)audioRecorderControllerDidCancel:(IQAudioRecorderViewController *)controller  {
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)audioRecorderController:(IQAudioRecorderViewController *)controller didFinishWithAudioAtPath:(NSString *)filePath {
@@ -148,4 +150,13 @@
     NSLog(@"filePath = %@",filePath);
 }
 
+// MARK: - memory management
+
+- (void)dealloc {
+    if (_tableView) {
+        _tableView.delegate = nil;
+        _tableView.dataSource = nil;
+        _tableView = nil;
+    }
+}
 @end
