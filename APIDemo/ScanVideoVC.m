@@ -64,4 +64,5 @@
     MPMoviePlayerViewController *playViewController = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL fileURLWithPath:_dataArray[indexPath.item]]];
     [self presentMoviePlayerViewControllerAnimated:playViewController];
 }
+
 @end

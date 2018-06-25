@@ -45,7 +45,7 @@
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     if ([message.name isEqualToString:@"methodName"]) {
-        //执行methodName的方法 
+        //执行methodName的方法
     }
 }
 

@@ -49,6 +49,8 @@
 		8F469E0820DB8B1C007F1166 /* HttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E0720DB8B1C007F1166 /* HttpClient.m */; };
 		8F469E0E20DB9B1F007F1166 /* ScanAudioVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E0D20DB9B1F007F1166 /* ScanAudioVC.m */; };
 		8F469E1120DC86A8007F1166 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1020DC86A8007F1166 /* GuideVC.m */; };
+		8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */; };
+		8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1D20E07FE9007F1166 /* AVTool.m */; };
 		8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FE220D10943005DAF9E /* AppDelegate.m */; };
 		8F9B0FE620D10943005DAF9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FE520D10943005DAF9E /* ViewController.m */; };
 		8F9B0FE920D10943005DAF9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9B0FE720D10943005DAF9E /* Main.storyboard */; };
@@ -144,6 +146,10 @@
 		8F469E0D20DB9B1F007F1166 /* ScanAudioVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanAudioVC.m; sourceTree = "<group>"; };
 		8F469E0F20DC86A8007F1166 /* GuideVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuideVC.h; sourceTree = "<group>"; };
 		8F469E1020DC86A8007F1166 /* GuideVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuideVC.m; sourceTree = "<group>"; };
+		8F469E1920E07BDD007F1166 /* AppDelegate+Configure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Configure.h"; sourceTree = "<group>"; };
+		8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Configure.m"; sourceTree = "<group>"; };
+		8F469E1C20E07FE9007F1166 /* AVTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTool.h; sourceTree = "<group>"; };
+		8F469E1D20E07FE9007F1166 /* AVTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVTool.m; sourceTree = "<group>"; };
 		8F9B0FDE20D10943005DAF9E /* APIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9B0FE120D10943005DAF9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8F9B0FE220D10943005DAF9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -385,8 +391,12 @@
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8F9B0FE120D10943005DAF9E /* AppDelegate.h */,
 				8F9B0FE220D10943005DAF9E /* AppDelegate.m */,
+				8F469E1920E07BDD007F1166 /* AppDelegate+Configure.h */,
+				8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */,
 				8F469E0F20DC86A8007F1166 /* GuideVC.h */,
 				8F469E1020DC86A8007F1166 /* GuideVC.m */,
+				8F469E1C20E07FE9007F1166 /* AVTool.h */,
+				8F469E1D20E07FE9007F1166 /* AVTool.m */,
 				8F9B0FE420D10943005DAF9E /* ViewController.h */,
 				8F9B0FE520D10943005DAF9E /* ViewController.m */,
 				8F469D9720DA36CD007F1166 /* ScanVideoVC.h */,
@@ -599,6 +609,7 @@
 				"${BUILT_PRODUCTS_DIR}/LKDBHelper/LKDBHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -608,6 +619,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LKDBHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSiriWaveformView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -650,6 +662,7 @@
 				8F469E0220DB3F4D007F1166 /* KSTakePhotoManager.m in Sources */,
 				8F469DF920DB3F4D007F1166 /* KSCaptureTool.m in Sources */,
 				8F469E0820DB8B1C007F1166 /* HttpClient.m in Sources */,
+				8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */,
 				8F469DFE20DB3F4D007F1166 /* KSTakeVideoManager.m in Sources */,
 				8F469DA220DA5192007F1166 /* WebVC.m in Sources */,
 				8F469E0020DB3F4D007F1166 /* KSTakePhotoViewController.m in Sources */,
@@ -664,6 +677,7 @@
 				8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */,
 				8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */,
 				8F469DFA20DB3F4D007F1166 /* KSTakeVideoViewController.m in Sources */,
+				8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,7 +853,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -857,7 +874,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -871,7 +891,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -886,7 +910,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -900,7 +928,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -914,7 +946,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -11,18 +11,20 @@
 @interface GuideVC () <UIScrollViewDelegate> {
     UIScrollView *_contentView;
     NSMutableArray *_images;
-    
 }
 
 @end
 
 @implementation GuideVC
 
+// MARK: - viewController's view lifeCircle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self loadData];
 }
 
+// MARK: - setUI
 - (void)setUI {
     _images = [NSMutableArray new];
     _contentView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth, kAppHeight)];
@@ -35,8 +37,23 @@
         [imageView sd_setImageWithURL:kURL(_images[i])];
         [_contentView addSubview:imageView];
     }
+    [_contentView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
 }
 
+// MARK: - KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"contentOffset"]) {
+        NSLog(@"value = %@",[change objectForKey:NSKeyValueChangeNewKey]);
+        CGFloat X = _contentView.contentOffset.x;
+        if (X> 3 * kAppWidth) {
+            if (_completeBlock) {
+                _completeBlock();
+            }
+        }
+    }
+}
+
+// MARK: - 拉取引导图图片
 -(void)loadData {
     //拉取引导图
     __weak typeof(self)weakSelf = self;
@@ -68,7 +85,7 @@
         if (_completeBlock) {
             _completeBlock();
         }
-    }   
+    }
 }
 
 // MARK: - memoryManagent
@@ -80,5 +97,7 @@
     if (_images) {
         _images = nil;
     }
+    [_contentView removeObserver:self forKeyPath:@"contentOffset"];
 }
+
 @end

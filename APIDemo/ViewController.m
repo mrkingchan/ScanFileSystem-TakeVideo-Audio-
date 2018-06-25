@@ -12,7 +12,8 @@
 #import "ScanVideoVC.h"
 #import "IQAudioRecorderViewController.h"
 #import "ScanAudioVC.h"
-@interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate> {
+
+@interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate> {
 
     UITableView *_tableView;
     NSMutableArray *_dataArray;
@@ -22,6 +23,7 @@
 
 @implementation ViewController
 
+// MARK: - viewController'view's lifeCircle
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"数据管理";
@@ -32,7 +34,21 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
-    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件"]];
+    
+    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"三方分享",@"三方登录"]];
+}
+
+// MARK: - loadData (GET)
+- (void)loadData {
+    [kHttpClient GET:kBaseURL
+          parameters:@{}
+            progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                
+            }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -60,6 +76,38 @@
     [self.navigationController presentViewController:VC animated:YES completion:nil];
 }
 
+// MARK: - TZImagePickerControllerDelegate
+
+//视频
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(id)asset {
+    
+}
+
+//GIF
+-(void)imagePickerController:(TZImagePickerController *)picker didFinishPickingGifImage:(UIImage *)animatedImage sourceAssets:(id)asset {
+    
+}
+
+//图片
+-(void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto {
+    
+    //上传
+    [NetTool postImagesWithPath:kBaseURL
+                         params:@{}
+                     imageArray:photos
+                       fileName:@"file[]"
+                         sucess:^(id responseObject) {
+                             
+                         }];
+}
+
+-(void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
+    
+}
+
+-(void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
 // MARK: - KSTakeVideoDelegate
 
 - (void)takeVideoFinish:(NSString *)videoPath {
@@ -67,7 +115,8 @@
     NSLog(@"videoPath = %@",videoPath);
 }
 
-#pragma mark  -- UITableViewDataSource&Delegate
+// MARK: - UITableViewDatasource &Delegate
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView  {
     return 1;
 }
@@ -108,11 +157,16 @@
         case 3:
         {
             //扫描系统照片
+            TZImagePickerController *VC = [[TZImagePickerController alloc] initWithMaxImagesCount:10000 columnNumber:4 delegate:self pushPhotoPickerVc:YES];
+            VC.alwaysEnableDoneBtn = YES;
+            [self.navigationController presentViewController:VC animated:YES completion:nil];
+            
         }
             break;
             case 4:
         {
             //扫描文件系统照片
+         
         }
             break;
             case 5:
@@ -125,10 +179,17 @@
         }
             break;
         case 6: {
-            
             //扫描沙盒后缀.m4a文件
             [self.navigationController pushViewController:[ScanAudioVC new] animated:YES];
+        }
+            break;
+        case 7:{
             
+            //三方分享
+        }
+            break;
+        case 8: {
+            //三方登录
         }
             break;
         default:
@@ -139,6 +200,7 @@
 
 // MARK: - IQAudioEcorderViewContorllerDelegate
 - (void)presentAudioRecorderViewControllerAnimated:(IQAudioRecorderViewController *)audioRecorderViewController {
+    
 }
 
 - (void)audioRecorderControllerDidCancel:(IQAudioRecorderViewController *)controller  {
@@ -150,6 +212,22 @@
     NSLog(@"filePath = %@",filePath);
 }
 
+// MARK: - UIScrollViewDelegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    long long fileSize = 0.0f;
+    for (NSString *fileName in [[NSFileManager defaultManager] subpathsAtPath:kVideosFilePath]) {
+        fileSize = fileSize + [[[NSFileManager defaultManager] attributesOfItemAtPath:[NSString stringWithFormat:@"%@/%@",kVideosFilePath,fileName] error:nil] fileSize];
+    }
+    for (NSString *fileName in [[NSFileManager defaultManager] subpathsAtPath:kAudiosFilePath]) {
+        fileSize = fileSize + [[[NSFileManager defaultManager] attributesOfItemAtPath:[NSString stringWithFormat:@"%@/%@",kAudiosFilePath,fileName] error:nil] fileSize];
+    }
+    self.navigationItem.title = [NSString stringWithFormat:@"缓存大小:%.2fMB",fileSize/1024.0/1024.0];
+}
+
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    self.navigationItem.title = @"数据管理";
+}
+
 // MARK: - memory management
 
 - (void)dealloc {
@@ -159,4 +237,5 @@
         _tableView = nil;
     }
 }
+
 @end
