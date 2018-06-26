@@ -12,7 +12,8 @@
 #import "ScanVideoVC.h"
 #import "IQAudioRecorderViewController.h"
 #import "ScanAudioVC.h"
-
+#import "ScanVC.h"
+#import "ClientVC.h"
 @interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate> {
 
     UITableView *_tableView;
@@ -35,12 +36,13 @@
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     
-    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"三方分享",@"三方登录"]];
+    //都要做文件缓存处理 
+    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信"]];
 }
 
 // MARK: - loadData (GET)
 - (void)loadData {
-    [kHttpClient GET:kBaseURL
+  NSURLSessionDataTask *task =  [kHttpClient GET:kBaseURL
           parameters:@{}
             progress:^(NSProgress * _Nonnull downloadProgress) {
                 
@@ -184,12 +186,53 @@
         }
             break;
         case 7:{
+            //扫描二维码
+            [self.navigationController pushViewController:[ScanVC new] animated:YES];
             
-            //三方分享
         }
             break;
         case 8: {
-            //三方登录
+            
+            //分享
+            NSMutableArray *items = [NSMutableArray new];
+            if ([WXApi isWXAppInstalled] && [WXApi  isWXAppSupportApi]) {
+                [items addObject:@(UMSocialPlatformType_WechatFavorite)];
+                [items addObject:@(UMSocialPlatformType_WechatSession)];
+                [items addObject:@(UMSocialPlatformType_WechatTimeLine)];
+            }
+            [UMSocialUIManager setPreDefinePlatforms:items];
+            [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+                UMSocialMessageObject *messageObject = [UMSocialMessageObject new];
+                messageObject.text = @"xxx";
+                messageObject.shareObject = [UMShareObject shareObjectWithTitle:@"xxx" descr:@"xxx" thumImage:nil];
+                [[UMSocialManager defaultManager] shareToPlatform:platformType
+                                                    messageObject:messageObject currentViewController:self
+                                                       completion:^(id result, NSError *error) {
+                                                           if (error) {
+                                                               
+                                                           } else {
+                                                               if ([result isKindOfClass:[UMSocialShareResponse class]]) {
+                                                                   //分享结果
+                                                                   NSLog(@"shareResult = %@",((UMSocialShareResponse *) result).message);
+                                                               }
+                                                           }
+                                                       }];
+            }];
+        }
+            break;
+        case 9: {
+            
+            [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:self completion:^(id result, NSError *error) {
+                if ([result isKindOfClass:[UMSocialUserInfoResponse class]]) {
+                    UMSocialUserInfoResponse *response = (UMSocialUserInfoResponse *)result;
+                    NSLog(@"userInfo = %@%@%@%@",response.name,response.iconurl,response.unionGender,response.gender);
+                }
+            }];
+        }
+            break;
+            case 10:
+        {
+            [self.navigationController pushViewController:[ClientVC new] animated:YES];
         }
             break;
         default:
@@ -197,6 +240,7 @@
             break;
     }
 }
+
 
 // MARK: - IQAudioEcorderViewContorllerDelegate
 - (void)presentAudioRecorderViewControllerAnimated:(IQAudioRecorderViewController *)audioRecorderViewController {
@@ -215,6 +259,7 @@
 // MARK: - UIScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     long long fileSize = 0.0f;
+     //计算缓存大小
     for (NSString *fileName in [[NSFileManager defaultManager] subpathsAtPath:kVideosFilePath]) {
         fileSize = fileSize + [[[NSFileManager defaultManager] attributesOfItemAtPath:[NSString stringWithFormat:@"%@/%@",kVideosFilePath,fileName] error:nil] fileSize];
     }
@@ -237,5 +282,4 @@
         _tableView = nil;
     }
 }
-
 @end

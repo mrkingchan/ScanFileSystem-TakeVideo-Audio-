@@ -59,6 +59,10 @@
 		8F9B0FF120D10946005DAF9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FF020D10946005DAF9E /* main.m */; };
 		8F9B0FFB20D10946005DAF9E /* APIDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FFA20D10946005DAF9E /* APIDemoTests.m */; };
 		8F9B100620D10946005DAF9E /* APIDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B100520D10946005DAF9E /* APIDemoUITests.m */; };
+		8FCAAF9820E1CDC700EF9CAA /* ScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAAF9720E1CDC600EF9CAA /* ScanVC.m */; };
+		8FCAAF9B20E21DF600EF9CAA /* ClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAAF9A20E21DF600EF9CAA /* ClientVC.m */; };
+		8FCAAF9E20E2425700EF9CAA /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAAF9D20E2425700EF9CAA /* Server.m */; };
+		8FCAAFA320E2486900EF9CAA /* LocalPushCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAAF9F20E2486800EF9CAA /* LocalPushCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,6 +170,14 @@
 		8F9B100120D10946005DAF9E /* APIDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9B100520D10946005DAF9E /* APIDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIDemoUITests.m; sourceTree = "<group>"; };
 		8F9B100720D10946005DAF9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FCAAF9620E1CDC600EF9CAA /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanVC.h; sourceTree = "<group>"; };
+		8FCAAF9720E1CDC600EF9CAA /* ScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanVC.m; sourceTree = "<group>"; };
+		8FCAAF9920E21DF600EF9CAA /* ClientVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientVC.h; sourceTree = "<group>"; };
+		8FCAAF9A20E21DF600EF9CAA /* ClientVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientVC.m; sourceTree = "<group>"; };
+		8FCAAF9C20E2425700EF9CAA /* Server.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Server.h; sourceTree = "<group>"; };
+		8FCAAF9D20E2425700EF9CAA /* Server.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Server.m; sourceTree = "<group>"; };
+		8FCAAF9F20E2486800EF9CAA /* LocalPushCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalPushCenter.m; sourceTree = "<group>"; };
+		8FCAAFA020E2486900EF9CAA /* LocalPushCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalPushCenter.h; sourceTree = "<group>"; };
 		B57D2936041215A73C3AD926 /* Pods_APIDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APIDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -399,6 +411,8 @@
 				8F469E1D20E07FE9007F1166 /* AVTool.m */,
 				8F9B0FE420D10943005DAF9E /* ViewController.h */,
 				8F9B0FE520D10943005DAF9E /* ViewController.m */,
+				8FCAAF9620E1CDC600EF9CAA /* ScanVC.h */,
+				8FCAAF9720E1CDC600EF9CAA /* ScanVC.m */,
 				8F469D9720DA36CD007F1166 /* ScanVideoVC.h */,
 				8F469D9820DA36CD007F1166 /* ScanVideoVC.m */,
 				8F469E0C20DB9B1F007F1166 /* ScanAudioVC.h */,
@@ -407,6 +421,12 @@
 				8F469D9B20DA370E007F1166 /* VideoCell.m */,
 				8F469D9D20DA3E62007F1166 /* ScanPhotoVC.h */,
 				8F469D9E20DA3E62007F1166 /* ScanPhotoVC.m */,
+				8FCAAF9920E21DF600EF9CAA /* ClientVC.h */,
+				8FCAAF9A20E21DF600EF9CAA /* ClientVC.m */,
+				8FCAAFA020E2486900EF9CAA /* LocalPushCenter.h */,
+				8FCAAF9F20E2486800EF9CAA /* LocalPushCenter.m */,
+				8FCAAF9C20E2425700EF9CAA /* Server.h */,
+				8FCAAF9D20E2425700EF9CAA /* Server.m */,
 				8F469E0320DB8A6A007F1166 /* NetTool.h */,
 				8F469E0420DB8A6A007F1166 /* NetTool.m */,
 				8F469E0620DB8B1C007F1166 /* HttpClient.h */,
@@ -462,6 +482,7 @@
 				8F9B0FDB20D10943005DAF9E /* Frameworks */,
 				8F9B0FDC20D10943005DAF9E /* Resources */,
 				27898C9DD647390EB8425430 /* [CP] Embed Pods Frameworks */,
+				04883EE956577784FB184141 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -537,6 +558,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 8F9B0FD520D10943005DAF9E;
 			productRefGroup = 8F9B0FDF20D10943005DAF9E /* Products */;
@@ -596,6 +619,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04883EE956577784FB184141 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo-resources.sh",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		27898C9DD647390EB8425430 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -604,21 +645,27 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQAudioRecorderController/IQAudioRecorderController.framework",
 				"${BUILT_PRODUCTS_DIR}/LKDBHelper/LKDBHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SGQRCode/SGQRCode.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQAudioRecorderController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LKDBHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSiriWaveformView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGQRCode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,11 +702,14 @@
 				8F469E1120DC86A8007F1166 /* GuideVC.m in Sources */,
 				8F469DFB20DB3F4D007F1166 /* KSRecordProgressView.m in Sources */,
 				8F9B0FE620D10943005DAF9E /* ViewController.m in Sources */,
+				8FCAAF9E20E2425700EF9CAA /* Server.m in Sources */,
 				8F469DE520DB3F4D007F1166 /* KSCaptureView.m in Sources */,
 				8F469DE320DB3F4D007F1166 /* KSMotionManager.m in Sources */,
 				8F469DFD20DB3F4D007F1166 /* KSVideoWriter.m in Sources */,
 				8F469D9C20DA370E007F1166 /* VideoCell.m in Sources */,
 				8F469E0220DB3F4D007F1166 /* KSTakePhotoManager.m in Sources */,
+				8FCAAFA320E2486900EF9CAA /* LocalPushCenter.m in Sources */,
+				8FCAAF9B20E21DF600EF9CAA /* ClientVC.m in Sources */,
 				8F469DF920DB3F4D007F1166 /* KSCaptureTool.m in Sources */,
 				8F469E0820DB8B1C007F1166 /* HttpClient.m in Sources */,
 				8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */,
@@ -676,6 +726,7 @@
 				8F469E0120DB3F4D007F1166 /* KSTakePhotoOperateView.m in Sources */,
 				8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */,
 				8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */,
+				8FCAAF9820E1CDC700EF9CAA /* ScanVC.m in Sources */,
 				8F469DFA20DB3F4D007F1166 /* KSTakeVideoViewController.m in Sources */,
 				8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */,
 			);
@@ -849,6 +900,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/APIDemo/JETIN",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
@@ -856,6 +911,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/APIDemo/JETIN",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -870,6 +929,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/APIDemo/JETIN",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
@@ -877,6 +940,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/APIDemo/JETIN",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

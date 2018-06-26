@@ -7,7 +7,25 @@
 		<key>APIDemo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8F9B0FDD20D10943005DAF9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8F9B0FF520D10946005DAF9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8F9B100020D10946005DAF9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

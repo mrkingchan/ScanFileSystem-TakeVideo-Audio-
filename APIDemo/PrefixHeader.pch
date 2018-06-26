@@ -26,15 +26,21 @@
 #import <UMShare/UMShare.h>
 #import <TZImagePickerController/TZImagePickerController.h>
 #import "NetTool.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <UMShare/UMShare.h>
+#import <UShareUI/UShareUI.h>
+#import <WXApi.h>
+#import <CocoaAsyncSocket/GCDAsyncSocket.h>
 
 #define kVideosFilePath     [kDocumentPath stringByAppendingString:@"/videos"]
 #define kAudiosFilePath     [kDocumentPath stringByAppendingString:@"/audios"]
 
-#define kAppKey @""
+#define kAppKey @"5b0660aeb27b0a0f95000033"
+#define kAppSecrectKey @"70e930b4ef1a7a2e2bdead85aafda8c2"
 
 
-#define kWeChatKey @""
-#define kWeChatSecrectKey @""
+#define kWeChatKey @"wxb5ce10e9f77b3f69"
+#define kWeChatSecrectKey @"e93e830ef213f1ed025643fd531f1ef8"
 
 
 #define kDocumentPath NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject

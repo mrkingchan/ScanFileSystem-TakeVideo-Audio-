@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "GuideVC.h"
+#import "AppDelegate+Configure.h"
 
 @interface AppDelegate () {
     BOOL _versionUpdate;
@@ -28,6 +29,9 @@
     _window.backgroundColor = [UIColor whiteColor];
     //检查版本更新状态
     [self checkUpdateInfo];
+    [self configureApplicationWithComplete:^{
+        
+    }];
     //有版本更新就去服务器拉启动图
     /*if ([kUserDefaultsForKey(@"lanunched") integerValue] == 0 ) {
         //去拉服务器的启动图
@@ -52,7 +56,21 @@
     [[NSFileManager defaultManager] createDirectoryAtPath:audios withIntermediateDirectories:YES attributes:nil error:nil];
    [[NSFileManager defaultManager] createDirectoryAtPath:videos withIntermediateDirectories:YES attributes:nil error:nil];
     [_window makeKeyAndVisible];
+    [self configurePush];
     return YES;
+}
+
+- (void)configurePush {
+    //8.0以上的需要注册用户通知
+    if ([UIDevice currentDevice].systemVersion.floatValue >=8.0) {
+        //注册用户通知·
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        //注册远程通知
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    } else {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge |  UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
+    }
 }
 
 #pragma mark  -- checkUpdateInfo

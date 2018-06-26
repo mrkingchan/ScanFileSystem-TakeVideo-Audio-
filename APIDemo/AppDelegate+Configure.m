@@ -14,7 +14,20 @@
     [UMConfigure  initWithAppkey:kAppKey channel:nil];
     [UMConfigure setLogEnabled:YES];
     
+    [[UMSocialManager defaultManager] setUmSocialAppkey:kAppKey];
+    [[UMSocialManager defaultManager] setUmSocialAppSecret:kAppSecrectKey];
+    
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession
+                                          appKey:kWeChatKey
+                                       appSecret:kWeChatSecrectKey
+                                     redirectURL:kBaseURL];
+    
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatFavorite
+                                          appKey:kWeChatKey
+                                       appSecret:kWeChatSecrectKey
+                                     redirectURL:kBaseURL];
+    
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatTimeLine
                                           appKey:kWeChatKey
                                        appSecret:kWeChatSecrectKey
                                      redirectURL:kBaseURL];

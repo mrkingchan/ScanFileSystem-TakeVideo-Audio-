@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //开扬声器
     UInt32 audioRouteOverride = 1;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -35,7 +36,6 @@
     _tableView.tableFooterView = [UIView new];
     NSArray *audios = [[NSFileManager defaultManager] subpathsAtPath:[docPath() stringByAppendingString:@"/audios"]];
     _dataArray = [NSMutableArray arrayWithArray:audios];
-    //开扬声器
 }
 
 // MARK: - UITableViewDataSource&Delegate
@@ -63,12 +63,13 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //每次点击播放的时候 先停止
     [_player stop];
- NSString *audioPath = [[ docPath() stringByAppendingString:@"/audios"] stringByAppendingString:[NSString stringWithFormat:@"/%@",_dataArray[indexPath.row]]];
     
+    //音频路径
+    NSString *audioPath = [kAudiosFilePath stringByAppendingString:[NSString stringWithFormat:@"/%@",_dataArray[indexPath.row]]];
     _player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:audioPath] error:nil];
     _player.numberOfLoops = 0;
+    _player.volume = 1.0;
     [_player prepareToPlay];
     [_player play];
 }
-
 @end
