@@ -14,6 +14,8 @@
 #import "ScanAudioVC.h"
 #import "ScanVC.h"
 #import "ClientVC.h"
+#import "WebVC.h"
+
 @interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate> {
 
     UITableView *_tableView;
@@ -37,7 +39,7 @@
     [self.view addSubview:_tableView];
     
     //都要做文件缓存处理 
-    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信"]];
+    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"webView测试"]];
 }
 
 // MARK: - loadData (GET)
@@ -235,6 +237,9 @@
             [self.navigationController pushViewController:[ClientVC new] animated:YES];
         }
             break;
+        case 11: {
+            [self.navigationController pushViewController:[WebVC new] animated:YES];
+        }
         default:
             
             break;

@@ -31,6 +31,7 @@
 #import <UShareUI/UShareUI.h>
 #import <WXApi.h>
 #import <CocoaAsyncSocket/GCDAsyncSocket.h>
+#import <LCProgressHUD/LCProgressHUD.h>
 
 #define kVideosFilePath     [kDocumentPath stringByAppendingString:@"/videos"]
 #define kAudiosFilePath     [kDocumentPath stringByAppendingString:@"/audios"]
@@ -71,7 +72,10 @@ CG_INLINE NSURL *kURL(NSString *urlStr) {
     return [NSURL URLWithString:urlStr];
 }
 
-#define kBaseURL @""
+#define iToastText(xxx)     [LCProgressHUD showMessage:xxx]
+#define iToastLoding     [LCProgressHUD showLoading:@""]
+#define iToastHide [LCProgressHUD hide]
+#define kBaseURL @"http://www.baidu.com"
 #define kAppID @""
 
 // MARK: - Thread method
