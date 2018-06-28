@@ -19,7 +19,7 @@
 
 @implementation ScanVC
 
-// MARK: - lifeCircle
+// MARK: - viewController's view's lifeCircle
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.scanningView addTimer];
@@ -77,6 +77,7 @@
 
 - (void)QRCodeAlbumManager:(SGQRCodeAlbumManager *)albumManager didFinishPickingMediaWithResult:(NSString *)result {
     if ([result hasPrefix:@"http"]) {
+        iToastText(result);
         [self.navigationController popViewControllerAnimated:YES];
         [[UIApplication sharedApplication] openURL:kURL(result)];
     }
@@ -99,6 +100,7 @@
                                                     error:nil];*/
         if (result.stringValue.length) {
             //扫描到url 做内部跳转
+            iToastText(result.stringValue);
             [self.navigationController popViewControllerAnimated:YES];
             [[UIApplication sharedApplication] openURL:kURL(result.stringValue)];
 

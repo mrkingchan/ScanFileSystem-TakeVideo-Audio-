@@ -2,7 +2,7 @@
 //  ScanAudioVC.m
 //  APIDemo
 //
-//  Created by Macx on 2018/6/21.
+//  Created by Chan on 2018/6/21.
 //  Copyright © 2018年 Chan. All rights reserved.
 //
 
@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     //开扬声器
     UInt32 audioRouteOverride = 1;
 #pragma clang diagnostic push
@@ -72,4 +73,20 @@
     [_player prepareToPlay];
     [_player play];
 }
+
+// MARK: - memory management
+-(void)dealloc {
+    if (_tableView) {
+        _tableView.delegate = nil;
+        _tableView.dataSource = nil;
+        _tableView = nil;
+    }
+    if (_dataArray) {
+        _dataArray = nil;
+    }
+    if (_player) {
+        _player = nil;
+    }
+}
+
 @end

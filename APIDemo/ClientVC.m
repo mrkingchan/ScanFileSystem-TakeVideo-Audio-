@@ -2,7 +2,7 @@
 //  ClientVC.m
 //  APIDemo
 //
-//  Created by Macx on 2018/6/26.
+//  Created by Chan on 2018/6/26.
 //  Copyright © 2018年 Chan. All rights reserved.
 //
 
@@ -66,6 +66,7 @@
 -(void)sendDataToServer {
     [_client writeData:[@"HelloWord!" dataUsingEncoding:NSUTF8StringEncoding] withTimeout:1.0 tag:123];
 }
+
 // MARK: -GCDAsyncSocketDelegate
 
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {

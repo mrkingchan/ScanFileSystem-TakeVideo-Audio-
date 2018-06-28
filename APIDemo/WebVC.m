@@ -2,7 +2,7 @@
 //  WebVC.m
 //  APIDemo
 //
-//  Created by Macx on 2018/6/20.
+//  Created by Chan on 2018/6/20.
 //  Copyright © 2018年 Chan. All rights reserved.
 //
 
@@ -16,7 +16,15 @@
 
 @implementation WebVC
 
-// MARK: - lifeCirle
+// MARK: -viewController's view's lifeCirle
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -78,6 +86,5 @@
         _webView = nil;
     }
 }
-
 
 @end

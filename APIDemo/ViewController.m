@@ -2,7 +2,7 @@
 //  ViewController.m
 //  APIDemo
 //
-//  Created by Macx on 2018/6/13.
+//  Created by Chan on 2018/6/13.
 //  Copyright © 2018年 Chan. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 #import "ScanVC.h"
 #import "ClientVC.h"
 #import "WebVC.h"
+#import "ScanPhotoVC.h"
 
 @interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate> {
 
@@ -53,6 +54,9 @@
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 
             }];
+    if ([task respondsToSelector:@selector(resume)]) {
+        [task resume];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -170,6 +174,7 @@
             case 4:
         {
             //扫描文件系统照片
+            [self.navigationController pushViewController:[ScanPhotoVC new] animated:YES];
          
         }
             break;
@@ -202,6 +207,10 @@
                 [items addObject:@(UMSocialPlatformType_WechatSession)];
                 [items addObject:@(UMSocialPlatformType_WechatTimeLine)];
             }
+            if (!items.count) {
+                iToastText(@"无可用分享平台!");
+                return;
+            }
             [UMSocialUIManager setPreDefinePlatforms:items];
             [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
                 UMSocialMessageObject *messageObject = [UMSocialMessageObject new];
@@ -223,6 +232,11 @@
         }
             break;
         case 9: {
+            
+            if (![WXApi isWXAppInstalled]) {
+                iToastText(@"无登录相关平台!");
+                return;
+            }
             
             [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_WechatSession currentViewController:self completion:^(id result, NSError *error) {
                 if ([result isKindOfClass:[UMSocialUserInfoResponse class]]) {

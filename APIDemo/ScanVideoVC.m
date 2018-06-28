@@ -2,7 +2,7 @@
 //  ScanVideoVC.m
 //  APIDemo
 //
-//  Created by Macx on 2018/6/20.
+//  Created by Chan on 2018/6/20.
 //  Copyright © 2018年 Chan. All rights reserved.
 //
 
@@ -28,8 +28,8 @@
     layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5 );
     layout.minimumLineSpacing = 5.0;
     layout.minimumInteritemSpacing = 5.0;
-    
     layout.itemSize = CGSizeMake((kAppWidth - 15)/2, (kAppWidth - 15)/2);
+    
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth,kAppHeight - 64) collectionViewLayout:layout];
     _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.dataSource = self;
@@ -42,6 +42,14 @@
         [temArray addObject:[[docPath() stringByAppendingString:@"/videos"]stringByAppendingString:[NSString stringWithFormat:@"/%@",subStr]]];
     }];
     _dataArray = [NSMutableArray arrayWithArray:temArray];
+    @weakify(self);
+    [_collectionView addLegendHeaderWithRefreshingBlock:^{
+        @strongify(self);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self->_collectionView.header endRefreshing];
+            [self->_collectionView reloadData];
+        });
+    }];
 }
 
 // MARK: - UITableViewDataSource&Delegate

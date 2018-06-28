@@ -2,14 +2,13 @@
 //  AVTool.m
 //  APIDemo
 //
-//  Created by Macx on 2018/6/25.
+//  Created by Chan on 2018/6/25.
 //  Copyright © 2018年 Chan. All rights reserved.
 //
 
 #import "AVTool.h"
 
 @implementation AVTool
-
 
 + (void)deleteFileWithFileName:(NSString *)fileName isVideo:(BOOL)isVideo deleteResult:(void (^)(BOOL))resultComplete  {
     

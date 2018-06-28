@@ -2,7 +2,7 @@
 //  GuideVC.h
 //  APIDemo
 //
-//  Created by Macx on 2018/6/22.
+//  Created by Chan on 2018/6/22.
 //  Copyright © 2018年 Chan. All rights reserved.
 //
 

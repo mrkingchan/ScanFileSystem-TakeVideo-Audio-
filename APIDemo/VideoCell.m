@@ -2,7 +2,7 @@
 //  VideoCell.m
 //  APIDemo
 //
-//  Created by Macx on 2018/6/20.
+//  Created by Chan on 2018/6/20.
 //  Copyright © 2018年 Chan. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 
 @implementation VideoCell
 
+// MARK: - initialize Method
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _imageView = [[UIImageView alloc] initWithFrame:self.bounds];

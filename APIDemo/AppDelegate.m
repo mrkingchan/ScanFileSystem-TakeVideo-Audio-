@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  APIDemo
 //
-//  Created by Macx on 2018/6/13.
+//  Created by Chan on 2018/6/13.
 //  Copyright © 2018年 Chan. All rights reserved.
 //
 
@@ -27,11 +27,6 @@
     _window = [UIWindow new];
     _window.frame = [UIScreen mainScreen].bounds;
     _window.backgroundColor = [UIColor whiteColor];
-    //检查版本更新状态
-    [self checkUpdateInfo];
-    [self configureApplicationWithComplete:^{
-        
-    }];
     //有版本更新就去服务器拉启动图
     /*if ([kUserDefaultsForKey(@"lanunched") integerValue] == 0 ) {
         //去拉服务器的启动图
@@ -47,6 +42,19 @@
         //主页
         _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
 //    }
+    [self checkUpdateInfo];
+    [self configureApplicationWithComplete:^{
+        
+    }];
+    [self configureAVFile];
+    [_window makeKeyAndVisible];
+    [self configurePush];
+    return YES;
+}
+
+// MARK: - videos audios文件夹
+
+-(void)configureAVFile {
     //创建audios videos文件夹 用以存储 视频和音频文件
     NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     
@@ -54,12 +62,10 @@
     NSString *audios = [documentPath stringByAppendingPathComponent:@"audios"];
     NSString *videos = [documentPath stringByAppendingPathComponent:@"videos"];
     [[NSFileManager defaultManager] createDirectoryAtPath:audios withIntermediateDirectories:YES attributes:nil error:nil];
-   [[NSFileManager defaultManager] createDirectoryAtPath:videos withIntermediateDirectories:YES attributes:nil error:nil];
-    [_window makeKeyAndVisible];
-    [self configurePush];
-    return YES;
+    [[NSFileManager defaultManager] createDirectoryAtPath:videos withIntermediateDirectories:YES attributes:nil error:nil];
 }
 
+// MARK: - 配置推送
 - (void)configurePush {
     //8.0以上的需要注册用户通知
     if ([UIDevice currentDevice].systemVersion.floatValue >=8.0) {
@@ -73,7 +79,7 @@
     }
 }
 
-#pragma mark  -- checkUpdateInfo
+// MARK: - 检查更新
 - (void)checkUpdateInfo {
     __weak typeof(self)weakSelf = self;
     [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@",kAppID]] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {

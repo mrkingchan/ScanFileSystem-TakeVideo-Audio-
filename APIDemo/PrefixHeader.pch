@@ -2,7 +2,7 @@
 //  PrefixHeader.pch
 //  APIDemo
 //
-//  Created by Macx on 2018/6/20.
+//  Created by Chan on 2018/6/20.
 //  Copyright © 2018年 Chan. All rights reserved.
 //
 
@@ -32,6 +32,8 @@
 #import <WXApi.h>
 #import <CocoaAsyncSocket/GCDAsyncSocket.h>
 #import <LCProgressHUD/LCProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 #define kVideosFilePath     [kDocumentPath stringByAppendingString:@"/videos"]
 #define kAudiosFilePath     [kDocumentPath stringByAppendingString:@"/audios"]
