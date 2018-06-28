@@ -37,13 +37,14 @@
                              NSLog(@"上传进度-----:%@ %.2lld",sub,uploadProgress.completedUnitCount / uploadProgress.totalUnitCount * 100);
 #endif
                          } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                             //转json
+                             //转json数据格式
                              id json = @{};
                              if ([responseObject isKindOfClass:[NSData class]]) {
                                  json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
                              } else if ([responseObject isKindOfClass:[NSDictionary class]]) {
                                  json = responseObject;
                              }
+                             
                              if (sucess) {
                                  sucess(json);
                              }
@@ -51,5 +52,4 @@
                          }];
     return task;
 }
-
 @end

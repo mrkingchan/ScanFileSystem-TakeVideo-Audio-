@@ -33,6 +33,4 @@
 - (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket {
  
 }
-
-
 @end

@@ -211,6 +211,7 @@
                 iToastText(@"无可用分享平台!");
                 return;
             }
+// MARK: - Appstore的审核必须加上预定义平台 在审核期间的未安装App是不能出现点击微信的按钮
             [UMSocialUIManager setPreDefinePlatforms:items];
             [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
                 UMSocialMessageObject *messageObject = [UMSocialMessageObject new];
@@ -293,7 +294,6 @@
 }
 
 // MARK: - memory management
-
 - (void)dealloc {
     if (_tableView) {
         _tableView.delegate = nil;

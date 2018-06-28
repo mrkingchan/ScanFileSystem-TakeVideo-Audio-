@@ -11,9 +11,10 @@
 @implementation AppDelegate (Configure)
 
 -(void)configureApplicationWithComplete:(void (^)(void))complete {
+    
+    //友盟三方分享和登录配置 
     [UMConfigure  initWithAppkey:kAppKey channel:nil];
     [UMConfigure setLogEnabled:YES];
-    
     [[UMSocialManager defaultManager] setUmSocialAppkey:kAppKey];
     [[UMSocialManager defaultManager] setUmSocialAppSecret:kAppSecrectKey];
     

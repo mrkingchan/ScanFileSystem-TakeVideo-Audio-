@@ -74,11 +74,38 @@ CG_INLINE NSURL *kURL(NSString *urlStr) {
     return [NSURL URLWithString:urlStr];
 }
 
+// MARK: - 判断是否空
+CG_INLINE BOOL kEmpty(id value) {
+    if ([value isKindOfClass:[NSNull class]] || value == nil) {
+        return YES;
+    } else if ([value isKindOfClass:[NSString class]]) {
+        return [value isEqualToString:@""] || [[value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0;
+    }else if ([value isKindOfClass:[NSArray class]]) {
+        return [(NSArray *)value count] == 0;
+    }else if ([value isKindOfClass:[NSDictionary class]]) {
+        return [(NSDictionary *)value count] == 0;
+    } else {
+        return YES;
+    }
+}
+
+// MARK: - 转json 
+CG_INLINE id kJson(id value) {
+    id resultValue = nil;
+    if ([value isKindOfClass:[NSString class]]) {
+        resultValue = [NSJSONSerialization JSONObjectWithData:[((NSString *)value) dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        
+    } else if ([value isKindOfClass:[NSData class]]) {
+        resultValue = [NSJSONSerialization JSONObjectWithData:((NSData *)value) options:NSJSONReadingMutableLeaves error:nil];
+    }
+    return resultValue == nil?  @{}:resultValue;
+}
+
 #define iToastText(xxx)     [LCProgressHUD showMessage:xxx]
 #define iToastLoding     [LCProgressHUD showLoading:@""]
 #define iToastHide [LCProgressHUD hide]
 #define kBaseURL @"http://www.baidu.com"
-#define kAppID @""
+#define kAppID @"AppID"
 
 // MARK: - Thread method
 #define dispatch_main_sync_safe(block)\
@@ -94,6 +121,5 @@ block();\
 } else {\
 dispatch_async(dispatch_get_main_queue(), block);\
 }
-
 
 #endif /* PrefixHeader_pch */
