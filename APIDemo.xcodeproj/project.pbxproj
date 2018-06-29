@@ -111,6 +111,7 @@
 		8F23C8EF20E4AD8F0026A392 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8F23C8F120E4AD970026A392 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8F23C8F320E4AD9C0026A392 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		8F23C8F820E4B8170026A392 /* kInitUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kInitUI.h; sourceTree = "<group>"; };
 		8F469D3420D9FFB9007F1166 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8F469D9620DA261C007F1166 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8F469D9720DA36CD007F1166 /* ScanVideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanVideoVC.h; sourceTree = "<group>"; };
@@ -460,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
+				8F23C8F820E4B8170026A392 /* kInitUI.h */,
 				8F9B0FE120D10943005DAF9E /* AppDelegate.h */,
 				8F9B0FE220D10943005DAF9E /* AppDelegate.m */,
 				8F469E1920E07BDD007F1166 /* AppDelegate+Configure.h */,
@@ -985,11 +987,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/APIDemo/JETIN",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemo;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qianft.12345678;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1015,11 +1014,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/APIDemo/JETIN",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemo;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qianft.12345678;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "GuideVC.h"
 #import "AppDelegate+Configure.h"
+#import "WebVC.h"
 
 @interface AppDelegate () {
     BOOL _versionUpdate;
@@ -21,9 +22,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     _window = [UIWindow new];
     _window.frame = [UIScreen mainScreen].bounds;
     _window.backgroundColor = [UIColor whiteColor];
@@ -40,7 +41,8 @@
         };
     } else {*/
         //主页
-        _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+//        _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    _window.rootViewController = [WebVC new];
 //    }
     [self checkUpdateInfo];
     [self configureApplicationWithComplete:^{

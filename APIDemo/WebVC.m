@@ -29,7 +29,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"loading...";
-    
+    if (@available(iOS 11.0, *)) {
+        self.additionalSafeAreaInsets = UIEdgeInsetsMake(0, 0, iPhoneX_BOTTOM_HEIGHT, 0);
+    }
     NSString *css = @"body{-webkit-user-select:none;-webkit-user-drag:none;}";
     // CSS选中样式取消
     NSMutableString *javascript = [NSMutableString string];
@@ -48,11 +50,20 @@
     configuration.userContentController = userContentController;
     _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth, kAppHeight) configuration:configuration];
     _webView.navigationDelegate = self;
-    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:kBaseURL]]];
+    if (@available(iOS 11.0, *)) {
+        _webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        // Fallback on earlier versions
+    }
+    [_webView loadRequest:[NSURLRequest requestWithURL:kURL(@"http://192.168.1.61:8020/2018/6month/operateC/indexWap.html?__hbt=1530168884655")]];
     [self.view addSubview:_webView];
     
     //注册监听
     [configuration.userContentController addScriptMessageHandler:self name:@"methodName"];
+    for (id subview in _webView.subviews)
+        if ([[subview class] isSubclassOfClass: [UIScrollView class]]) {
+            ((UIScrollView *)subview).bounces = NO;
+        }
 }
 
 // MARK: - WKNavigationActionDelegate
