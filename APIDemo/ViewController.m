@@ -16,8 +16,9 @@
 #import "ClientVC.h"
 #import "WebVC.h"
 #import "ScanPhotoVC.h"
+#import "SGScanningQRCodeVC.h"
 
-@interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate> {
+@interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate,SGScanningQRCodeVCDelegate> {
 
     UITableView *_tableView;
     NSMutableArray *_dataArray;
@@ -41,6 +42,7 @@
     
     //都要做文件缓存处理 
     _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"webView测试"]];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除缓存" style:UIBarButtonItemStylePlain target:self action:@selector(clearCache)];
 }
 
 // MARK: - loadData (GET)
@@ -194,8 +196,10 @@
             break;
         case 7:{
             //扫描二维码
-            [self.navigationController pushViewController:[ScanVC new] animated:YES];
-            
+//            [self.navigationController pushViewController:[ScanVC new] animated:YES];
+            SGScanningQRCodeVC *VC = [SGScanningQRCodeVC new];
+            VC.delegate = self;
+            [self.navigationController pushViewController:VC animated:YES];
         }
             break;
         case 8: {
@@ -261,7 +265,15 @@
     }
 }
 
-
+// MARK: - SGQRCodeScanControllerDelegate
+- (void)scanSuccessBarcodeJump:(NSString *)str {
+    NSURL *url = [NSURL URLWithString:str];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    } else {
+        iToastText(str);
+    }
+}
 // MARK: - IQAudioEcorderViewContorllerDelegate
 - (void)presentAudioRecorderViewControllerAnimated:(IQAudioRecorderViewController *)audioRecorderViewController {
     
@@ -289,8 +301,19 @@
     self.navigationItem.title = [NSString stringWithFormat:@"缓存大小:%.2fMB",fileSize/1024.0/1024.0];
 }
 
--(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    self.navigationItem.title = @"数据管理";
+// MARK: - clearCache
+-(void)clearCache {
+    iToastLoding;
+    //视频
+    for (NSString *file in [[NSFileManager defaultManager] subpathsAtPath:kVideosFilePath]) {
+        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/%@",kVideosFilePath,file] error:nil];
+    }
+    
+    //音频
+    for (NSString *file in [[NSFileManager defaultManager] subpathsAtPath:kAudiosFilePath]) {
+        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/%@",kAudiosFilePath,file] error:nil];
+    }
+    iToastText(@"清除成功!");
 }
 
 // MARK: - memory management

@@ -911,4 +911,6 @@ CG_INLINE void KillTimer(NSTimer *timer)
         timer = nil;
     }
 }
+
+
 #endif /* kInitUI_h */

@@ -24,6 +24,7 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        
         [self addSubview:_imageView];
     }
     return self;

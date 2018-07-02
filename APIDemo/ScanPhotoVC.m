@@ -8,6 +8,7 @@
 
 #import "ScanPhotoVC.h"
 #import "PhotoCell.h"
+#import "PreviewPhotoVC.h"
 
 #import <AssetsLibrary/AssetsLibrary.h>
 @interface ScanPhotoVC () <UICollectionViewDelegate,UICollectionViewDataSource> {
@@ -113,7 +114,10 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-
+    PreviewPhotoVC *VC = [PreviewPhotoVC new];
+    VC.dataArray = _dataArray;
+    VC.currentIndex = indexPath.row;
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 // MARK: - memory management

@@ -71,6 +71,17 @@
 		8F9B0FF120D10946005DAF9E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FF020D10946005DAF9E /* main.m */; };
 		8F9B0FFB20D10946005DAF9E /* APIDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FFA20D10946005DAF9E /* APIDemoTests.m */; };
 		8F9B100620D10946005DAF9E /* APIDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B100520D10946005DAF9E /* APIDemoUITests.m */; };
+		8FC717E520E9C36000B02F96 /* SGGenerateQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717D520E9C35B00B02F96 /* SGGenerateQRCodeVC.m */; };
+		8FC717E620E9C36000B02F96 /* SGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717D720E9C35C00B02F96 /* SGAlertView.m */; };
+		8FC717E720E9C36000B02F96 /* SGScanningQRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717DA20E9C35D00B02F96 /* SGScanningQRCodeVC.m */; };
+		8FC717E820E9C36000B02F96 /* SGScanningQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717DB20E9C35E00B02F96 /* SGScanningQRCodeView.m */; };
+		8FC717E920E9C36000B02F96 /* CIImage+SGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717DC20E9C35E00B02F96 /* CIImage+SGExtension.m */; };
+		8FC717EA20E9C36000B02F96 /* SGBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717E220E9C36000B02F96 /* SGBottomView.m */; };
+		8FC717EB20E9C36000B02F96 /* ScanSuccessJumpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717E320E9C36000B02F96 /* ScanSuccessJumpVC.m */; };
+		8FC717EE20E9D59F00B02F96 /* PreviewPhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717ED20E9D59F00B02F96 /* PreviewPhotoVC.m */; };
+		8FC717F120E9F8F300B02F96 /* PreViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717F020E9F8F300B02F96 /* PreViewCell.m */; };
+		8FC717F420EA029500B02F96 /* PageEnableLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717F320EA029500B02F96 /* PageEnableLayout.m */; };
+		8FC717F720EA051300B02F96 /* NotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FC717F620EA051300B02F96 /* NotificationView.m */; };
 		8FCAAF9820E1CDC700EF9CAA /* ScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAAF9720E1CDC600EF9CAA /* ScanVC.m */; };
 		8FCAAF9B20E21DF600EF9CAA /* ClientVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAAF9A20E21DF600EF9CAA /* ClientVC.m */; };
 		8FCAAF9E20E2425700EF9CAA /* Server.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAAF9D20E2425700EF9CAA /* Server.m */; };
@@ -197,6 +208,30 @@
 		8F9B100120D10946005DAF9E /* APIDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9B100520D10946005DAF9E /* APIDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIDemoUITests.m; sourceTree = "<group>"; };
 		8F9B100720D10946005DAF9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FC717D520E9C35B00B02F96 /* SGGenerateQRCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGGenerateQRCodeVC.m; sourceTree = "<group>"; };
+		8FC717D620E9C35C00B02F96 /* SGBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGBottomView.h; sourceTree = "<group>"; };
+		8FC717D720E9C35C00B02F96 /* SGAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGAlertView.m; sourceTree = "<group>"; };
+		8FC717D820E9C35C00B02F96 /* ScanSuccessJumpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanSuccessJumpVC.h; sourceTree = "<group>"; };
+		8FC717D920E9C35D00B02F96 /* SGBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SGBottomView.xib; sourceTree = "<group>"; };
+		8FC717DA20E9C35D00B02F96 /* SGScanningQRCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGScanningQRCodeVC.m; sourceTree = "<group>"; };
+		8FC717DB20E9C35E00B02F96 /* SGScanningQRCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGScanningQRCodeView.m; sourceTree = "<group>"; };
+		8FC717DC20E9C35E00B02F96 /* CIImage+SGExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CIImage+SGExtension.m"; sourceTree = "<group>"; };
+		8FC717DD20E9C35E00B02F96 /* CIImage+SGExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIImage+SGExtension.h"; sourceTree = "<group>"; };
+		8FC717DE20E9C35E00B02F96 /* SGAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGAlertView.h; sourceTree = "<group>"; };
+		8FC717DF20E9C35F00B02F96 /* sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound.caf; sourceTree = "<group>"; };
+		8FC717E020E9C35F00B02F96 /* SGGenerateQRCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGGenerateQRCodeVC.h; sourceTree = "<group>"; };
+		8FC717E120E9C35F00B02F96 /* SGScanningQRCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGScanningQRCodeVC.h; sourceTree = "<group>"; };
+		8FC717E220E9C36000B02F96 /* SGBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGBottomView.m; sourceTree = "<group>"; };
+		8FC717E320E9C36000B02F96 /* ScanSuccessJumpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanSuccessJumpVC.m; sourceTree = "<group>"; };
+		8FC717E420E9C36000B02F96 /* SGScanningQRCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGScanningQRCodeView.h; sourceTree = "<group>"; };
+		8FC717EC20E9D59F00B02F96 /* PreviewPhotoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewPhotoVC.h; sourceTree = "<group>"; };
+		8FC717ED20E9D59F00B02F96 /* PreviewPhotoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewPhotoVC.m; sourceTree = "<group>"; };
+		8FC717EF20E9F8F300B02F96 /* PreViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreViewCell.h; sourceTree = "<group>"; };
+		8FC717F020E9F8F300B02F96 /* PreViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreViewCell.m; sourceTree = "<group>"; };
+		8FC717F220EA029500B02F96 /* PageEnableLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageEnableLayout.h; sourceTree = "<group>"; };
+		8FC717F320EA029500B02F96 /* PageEnableLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageEnableLayout.m; sourceTree = "<group>"; };
+		8FC717F520EA051200B02F96 /* NotificationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationView.h; sourceTree = "<group>"; };
+		8FC717F620EA051300B02F96 /* NotificationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationView.m; sourceTree = "<group>"; };
 		8FCAAF9620E1CDC600EF9CAA /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanVC.h; sourceTree = "<group>"; };
 		8FCAAF9720E1CDC600EF9CAA /* ScanVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanVC.m; sourceTree = "<group>"; };
 		8FCAAF9920E21DF600EF9CAA /* ClientVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientVC.h; sourceTree = "<group>"; };
@@ -460,10 +495,13 @@
 		8F9B0FE020D10943005DAF9E /* APIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8FC717D220E9C31000B02F96 /* ScanQRCode */,
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8F23C8F820E4B8170026A392 /* kInitUI.h */,
 				8F9B0FE120D10943005DAF9E /* AppDelegate.h */,
 				8F9B0FE220D10943005DAF9E /* AppDelegate.m */,
+				8FC717F520EA051200B02F96 /* NotificationView.h */,
+				8FC717F620EA051300B02F96 /* NotificationView.m */,
 				8F469E1920E07BDD007F1166 /* AppDelegate+Configure.h */,
 				8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */,
 				8F469E0F20DC86A8007F1166 /* GuideVC.h */,
@@ -476,6 +514,12 @@
 				8FCAAF9720E1CDC600EF9CAA /* ScanVC.m */,
 				8FCABD4320E3640700EF9CAA /* PhotoCell.h */,
 				8FCABD4420E3640700EF9CAA /* PhotoCell.m */,
+				8FC717EC20E9D59F00B02F96 /* PreviewPhotoVC.h */,
+				8FC717ED20E9D59F00B02F96 /* PreviewPhotoVC.m */,
+				8FC717F220EA029500B02F96 /* PageEnableLayout.h */,
+				8FC717F320EA029500B02F96 /* PageEnableLayout.m */,
+				8FC717EF20E9F8F300B02F96 /* PreViewCell.h */,
+				8FC717F020E9F8F300B02F96 /* PreViewCell.m */,
 				8F469D9720DA36CD007F1166 /* ScanVideoVC.h */,
 				8F469D9820DA36CD007F1166 /* ScanVideoVC.m */,
 				8F469E0C20DB9B1F007F1166 /* ScanAudioVC.h */,
@@ -523,6 +567,29 @@
 				8F9B100720D10946005DAF9E /* Info.plist */,
 			);
 			path = APIDemoUITests;
+			sourceTree = "<group>";
+		};
+		8FC717D220E9C31000B02F96 /* ScanQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				8FC717DD20E9C35E00B02F96 /* CIImage+SGExtension.h */,
+				8FC717DC20E9C35E00B02F96 /* CIImage+SGExtension.m */,
+				8FC717D820E9C35C00B02F96 /* ScanSuccessJumpVC.h */,
+				8FC717E320E9C36000B02F96 /* ScanSuccessJumpVC.m */,
+				8FC717E020E9C35F00B02F96 /* SGGenerateQRCodeVC.h */,
+				8FC717D520E9C35B00B02F96 /* SGGenerateQRCodeVC.m */,
+				8FC717E120E9C35F00B02F96 /* SGScanningQRCodeVC.h */,
+				8FC717DA20E9C35D00B02F96 /* SGScanningQRCodeVC.m */,
+				8FC717DE20E9C35E00B02F96 /* SGAlertView.h */,
+				8FC717D720E9C35C00B02F96 /* SGAlertView.m */,
+				8FC717D620E9C35C00B02F96 /* SGBottomView.h */,
+				8FC717E220E9C36000B02F96 /* SGBottomView.m */,
+				8FC717D920E9C35D00B02F96 /* SGBottomView.xib */,
+				8FC717DF20E9C35F00B02F96 /* sound.caf */,
+				8FC717E420E9C36000B02F96 /* SGScanningQRCodeView.h */,
+				8FC717DB20E9C35E00B02F96 /* SGScanningQRCodeView.m */,
+			);
+			path = ScanQRCode;
 			sourceTree = "<group>";
 		};
 		D22DEF589A72D060B95F9D66 /* Pods */ = {
@@ -711,6 +778,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/EBBannerView/EBBannerView.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/IQAudioRecorderController/IQAudioRecorderController.framework",
 				"${BUILT_PRODUCTS_DIR}/LCProgressHUD/LCProgressHUD.framework",
@@ -728,6 +796,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EBBannerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQAudioRecorderController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LCProgressHUD.framework",
@@ -772,18 +841,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F469DE620DB3F4D007F1166 /* KSRecorderFocusTargetView.m in Sources */,
+				8FC717F420EA029500B02F96 /* PageEnableLayout.m in Sources */,
 				8F469E1120DC86A8007F1166 /* GuideVC.m in Sources */,
 				8F469DFB20DB3F4D007F1166 /* KSRecordProgressView.m in Sources */,
 				8F9B0FE620D10943005DAF9E /* ViewController.m in Sources */,
 				8FCAAF9E20E2425700EF9CAA /* Server.m in Sources */,
 				8F469DE520DB3F4D007F1166 /* KSCaptureView.m in Sources */,
+				8FC717F720EA051300B02F96 /* NotificationView.m in Sources */,
 				8F469DE320DB3F4D007F1166 /* KSMotionManager.m in Sources */,
 				8F469DFD20DB3F4D007F1166 /* KSVideoWriter.m in Sources */,
 				8F469D9C20DA370E007F1166 /* VideoCell.m in Sources */,
 				8F469E0220DB3F4D007F1166 /* KSTakePhotoManager.m in Sources */,
 				8FCAAFA320E2486900EF9CAA /* LocalPushCenter.m in Sources */,
+				8FC717EB20E9C36000B02F96 /* ScanSuccessJumpVC.m in Sources */,
+				8FC717EA20E9C36000B02F96 /* SGBottomView.m in Sources */,
+				8FC717E920E9C36000B02F96 /* CIImage+SGExtension.m in Sources */,
 				8FCAAF9B20E21DF600EF9CAA /* ClientVC.m in Sources */,
 				8F469DF920DB3F4D007F1166 /* KSCaptureTool.m in Sources */,
+				8FC717EE20E9D59F00B02F96 /* PreviewPhotoVC.m in Sources */,
 				8F469E0820DB8B1C007F1166 /* HttpClient.m in Sources */,
 				8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */,
 				8F469DFE20DB3F4D007F1166 /* KSTakeVideoManager.m in Sources */,
@@ -792,6 +867,9 @@
 				8F469E0020DB3F4D007F1166 /* KSTakePhotoViewController.m in Sources */,
 				8F469DFF20DB3F4D007F1166 /* KSVideoPlayer.m in Sources */,
 				8F469DFC20DB3F4D007F1166 /* KSTakeVideoOperateView.m in Sources */,
+				8FC717E820E9C36000B02F96 /* SGScanningQRCodeView.m in Sources */,
+				8FC717E720E9C36000B02F96 /* SGScanningQRCodeVC.m in Sources */,
+				8FC717E620E9C36000B02F96 /* SGAlertView.m in Sources */,
 				8F469D9F20DA3E62007F1166 /* ScanPhotoVC.m in Sources */,
 				8F469E0520DB8A6A007F1166 /* NetTool.m in Sources */,
 				8F9B0FF120D10946005DAF9E /* main.m in Sources */,
@@ -799,10 +877,12 @@
 				8F469DE420DB3F4D007F1166 /* KSAVFoundationManager.m in Sources */,
 				8F469E0120DB3F4D007F1166 /* KSTakePhotoOperateView.m in Sources */,
 				8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */,
+				8FC717F120E9F8F300B02F96 /* PreViewCell.m in Sources */,
 				8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */,
 				8FCAAF9820E1CDC700EF9CAA /* ScanVC.m in Sources */,
 				8F469DFA20DB3F4D007F1166 /* KSTakeVideoViewController.m in Sources */,
 				8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */,
+				8FC717E520E9C36000B02F96 /* SGGenerateQRCodeVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -983,10 +1063,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianft.12345678;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1010,10 +1087,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianft.12345678;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1028,11 +1102,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1047,11 +1117,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1065,11 +1131,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1083,11 +1145,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

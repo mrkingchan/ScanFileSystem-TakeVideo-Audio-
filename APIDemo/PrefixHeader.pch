@@ -34,7 +34,12 @@
 #import <LCProgressHUD/LCProgressHUD.h>
 #import <MJRefresh/MJRefresh.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <EBBannerView/EBBannerView.h>
+
 #import "kInitUI.h"
+
+#import "NotificationView.h"
+
 #define kIsiPhoneX [UIScreen mainScreen].bounds.size.height==812
 #define iPhoneX_BOTTOM_HEIGHT  ([UIScreen mainScreen].bounds.size.height==812?34:0)
 #define kVideosFilePath     [kDocumentPath stringByAppendingString:@"/videos"]
