@@ -21,6 +21,7 @@
 
 @implementation ScanPhotoVC
 
+// MARK: - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -28,6 +29,7 @@
     _dataArray = [NSMutableArray new];
     [self setUI];
     [self loadData];
+    //下拉刷新
     @weakify(self);
     [_collectionView addLegendFooterWithRefreshingBlock:^{
         @strongify(self);
@@ -59,29 +61,6 @@
                             }];
 }
 
-- (void)loadDataMethod {
-    [[[NSURLSession sharedSession] dataTaskWithURL:kURL(kBaseURL)
-                                 completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-                                     if (error) {
-                                         NSString *errorStr = error.localizedDescription;
-                                        
-                                     } else {
-                                         //item
-                                         id json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                         if ([json isKindOfClass:[NSDictionary class]]) {
-                                             NSDictionary *jsonDic = (NSDictionary *)json;
-                                             [jsonDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-                                                 if (obj) {
-                                                     id value = obj;
-                                                     Class className = [value  class];
-                                                     id classValue = [className new];
-                                                     
-                                                 }
-                                             }];
-                                         }
-                                     }
-                                 }]resume];
-}
 // MARK: - setUI
 - (void)setUI {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];

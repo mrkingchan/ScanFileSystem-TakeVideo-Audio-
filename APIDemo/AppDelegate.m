@@ -27,6 +27,7 @@
     _window = [UIWindow new];
     _window.frame = [UIScreen mainScreen].bounds;
     _window.backgroundColor = [UIColor whiteColor];
+
     //有版本更新就去服务器拉启动图
     /*if ([kUserDefaultsForKey(@"lanunched") integerValue] == 0 ) {
         //去拉服务器的启动图
@@ -42,16 +43,27 @@
         //主页
         _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
 //    }
+    //检查更新
     [self checkUpdateInfo];
+    
+    //配置三方
     [self configureApplicationWithComplete:^{
         
     }];
     [self configureAVFile];
     [_window makeKeyAndVisible];
+    //推送
     [self configurePush];
+    
+    //监听被杀死的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(crashAction) name:UIApplicationWillTerminateNotification object:nil];
+    
     return YES;
 }
 
+- (void)crashAction {
+    puts(__func__);
+}
 // MARK: - videos audios文件夹
 
 -(void)configureAVFile {
@@ -75,6 +87,8 @@
         //注册远程通知
         [[UIApplication sharedApplication] registerForRemoteNotifications];
     } else {
+        
+        //iOS8以下的通知
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge |  UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
     }
 }
@@ -136,7 +150,7 @@
                                              
                                          }];*/
     if ([ UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
-        //前台状态下
+        //前台状态下模拟远程推送下的下拉通知
 //        [EBBannerView showWithContent:items];
         [[EBBannerView  bannerWithBlock:^(EBBannerViewMaker *make) {
             make.style = EBBannerViewStyleiOS10;

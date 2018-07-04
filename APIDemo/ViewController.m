@@ -308,7 +308,6 @@
     for (NSString *file in [[NSFileManager defaultManager] subpathsAtPath:kVideosFilePath]) {
         [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/%@",kVideosFilePath,file] error:nil];
     }
-    
     //音频
     for (NSString *file in [[NSFileManager defaultManager] subpathsAtPath:kAudiosFilePath]) {
         [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@/%@",kAudiosFilePath,file] error:nil];
