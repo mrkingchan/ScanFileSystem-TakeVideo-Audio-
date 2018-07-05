@@ -38,7 +38,6 @@
     _contentView.layer.cornerRadius = 6.0;
     _contentView.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:_contentView];
-    
     for (int i = 0 ; i < _contents.count; i ++) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(25, i == 0 ? _contentView.frame.size.height / 2 - 15 :20 * (i + 1) +  (i * 30), kAppWidth - 50 - 50, 30)];
         label.backgroundColor = _contentView.backgroundColor;
@@ -58,6 +57,7 @@
     });
 }
 
+// MARK: - hide
 - (void)hide {
     CABasicAnimation *animataion = [CABasicAnimation animationWithKeyPath:@"position"];
     animataion.duration = 1.0;
@@ -72,8 +72,8 @@
     [self removeFromSuperview];
 }
 
+// MARK: - touchBegan
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self hide];
 }
-
 @end

@@ -20,6 +20,7 @@
 		8F23C8F020E4AD8F0026A392 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8EF20E4AD8F0026A392 /* Foundation.framework */; };
 		8F23C8F220E4AD970026A392 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8F120E4AD970026A392 /* CFNetwork.framework */; };
 		8F23C8F420E4AD9C0026A392 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8F320E4AD9C0026A392 /* CoreMotion.framework */; };
+		8F45AD7C20EDB3DC005F811F /* ScaleHeaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F45AD7B20EDB3DC005F811F /* ScaleHeaderVC.m */; };
 		8F469D3520D9FFB9007F1166 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F469D3420D9FFB9007F1166 /* MobileCoreServices.framework */; };
 		8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469D9820DA36CD007F1166 /* ScanVideoVC.m */; };
 		8F469D9C20DA370E007F1166 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469D9B20DA370E007F1166 /* VideoCell.m */; };
@@ -123,6 +124,8 @@
 		8F23C8F120E4AD970026A392 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8F23C8F320E4AD9C0026A392 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		8F23C8F820E4B8170026A392 /* kInitUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kInitUI.h; sourceTree = "<group>"; };
+		8F45AD7A20EDB3DC005F811F /* ScaleHeaderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScaleHeaderVC.h; sourceTree = "<group>"; };
+		8F45AD7B20EDB3DC005F811F /* ScaleHeaderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaleHeaderVC.m; sourceTree = "<group>"; };
 		8F469D3420D9FFB9007F1166 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8F469D9620DA261C007F1166 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8F469D9720DA36CD007F1166 /* ScanVideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanVideoVC.h; sourceTree = "<group>"; };
@@ -502,6 +505,8 @@
 				8F9B0FE220D10943005DAF9E /* AppDelegate.m */,
 				8FC717F520EA051200B02F96 /* NotificationView.h */,
 				8FC717F620EA051300B02F96 /* NotificationView.m */,
+				8F45AD7A20EDB3DC005F811F /* ScaleHeaderVC.h */,
+				8F45AD7B20EDB3DC005F811F /* ScaleHeaderVC.m */,
 				8F469E1920E07BDD007F1166 /* AppDelegate+Configure.h */,
 				8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */,
 				8F469E0F20DC86A8007F1166 /* GuideVC.h */,
@@ -510,6 +515,8 @@
 				8F469E1D20E07FE9007F1166 /* AVTool.m */,
 				8F9B0FE420D10943005DAF9E /* ViewController.h */,
 				8F9B0FE520D10943005DAF9E /* ViewController.m */,
+				8F469DA020DA5192007F1166 /* WebVC.h */,
+				8F469DA120DA5192007F1166 /* WebVC.m */,
 				8FCAAF9620E1CDC600EF9CAA /* ScanVC.h */,
 				8FCAAF9720E1CDC600EF9CAA /* ScanVC.m */,
 				8FCABD4320E3640700EF9CAA /* PhotoCell.h */,
@@ -539,8 +546,6 @@
 				8F469E0620DB8B1C007F1166 /* HttpClient.h */,
 				8F469E0720DB8B1C007F1166 /* HttpClient.m */,
 				8F23C8DA20E48D6F0026A392 /* AliPay */,
-				8F469DA020DA5192007F1166 /* WebVC.h */,
-				8F469DA120DA5192007F1166 /* WebVC.m */,
 				8F9B0FE720D10943005DAF9E /* Main.storyboard */,
 				8F469DA620DB3F4D007F1166 /* KSCapture */,
 				8F9B0FEA20D10946005DAF9E /* Assets.xcassets */,
@@ -868,6 +873,7 @@
 				8F469DFF20DB3F4D007F1166 /* KSVideoPlayer.m in Sources */,
 				8F469DFC20DB3F4D007F1166 /* KSTakeVideoOperateView.m in Sources */,
 				8FC717E820E9C36000B02F96 /* SGScanningQRCodeView.m in Sources */,
+				8F45AD7C20EDB3DC005F811F /* ScaleHeaderVC.m in Sources */,
 				8FC717E720E9C36000B02F96 /* SGScanningQRCodeVC.m in Sources */,
 				8FC717E620E9C36000B02F96 /* SGAlertView.m in Sources */,
 				8F469D9F20DA3E62007F1166 /* ScanPhotoVC.m in Sources */,
@@ -1063,7 +1069,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianft.12345678;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1087,7 +1096,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qianft.12345678;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1102,7 +1114,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1117,7 +1133,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1131,7 +1151,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1145,7 +1169,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

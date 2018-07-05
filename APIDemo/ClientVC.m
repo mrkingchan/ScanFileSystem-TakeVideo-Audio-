@@ -36,7 +36,7 @@
     _client = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     NSError *error = nil;
     //连接服务端 IP和Port
-    [_client  connectToHost:@"192.168.0.192"
+    [_client  connectToHost:@"192.168.2.135"
                      onPort:8080
                       error:&error];
     if (error) {
