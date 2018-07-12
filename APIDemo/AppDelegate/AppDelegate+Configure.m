@@ -18,6 +18,7 @@
     [[UMSocialManager defaultManager] setUmSocialAppkey:kAppKey];
     [[UMSocialManager defaultManager] setUmSocialAppSecret:kAppSecrectKey];
     
+    //微信
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession
                                           appKey:kWeChatKey
                                        appSecret:kWeChatSecrectKey
@@ -31,6 +32,12 @@
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatTimeLine
                                           appKey:kWeChatKey
                                        appSecret:kWeChatSecrectKey
+                                     redirectURL:kBaseURL];
+
+    //微博
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina
+                                          appKey:kSinaAppKey
+                                       appSecret:kSinaAppSecretKey
                                      redirectURL:kBaseURL];
 }
 @end

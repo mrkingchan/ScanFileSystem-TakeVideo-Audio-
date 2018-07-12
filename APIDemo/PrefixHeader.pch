@@ -35,12 +35,15 @@
 #import <MJRefresh/MJRefresh.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <EBBannerView/EBBannerView.h>
+#import <WeiboSDK.h>
+#import <JPUSHService.h>
 
 #import "kInitUI.h"
+#import <MJExtension/MJExtension.h>
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
-
+#define kJPushKey @"aebc3d6b31f1120ec7e4add8"
 
 #import "NotificationView.h"
 #define kColorWhite [UIColor whiteColor]
@@ -73,6 +76,8 @@
 #define kWeChatKey @"wxb5ce10e9f77b3f69"
 #define kWeChatSecrectKey @"e93e830ef213f1ed025643fd531f1ef8"
 
+#define kSinaAppKey @"wb1785244603"
+#define kSinaAppSecretKey @"08c85dc66729516fda44d0264c2d17b6"
 
 #define kDocumentPath NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject
 #define kUserDefaults [NSUserDefaults standardUserDefaults]

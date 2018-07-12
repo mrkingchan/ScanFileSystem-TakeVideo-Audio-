@@ -18,6 +18,7 @@
 #import "ScanPhotoVC.h"
 #import "SGScanningQRCodeVC.h"
 #import "ScaleHeaderVC.h"
+#import "InvoicePaperVC.h"
 
 @interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate,SGScanningQRCodeVCDelegate> {
 
@@ -42,7 +43,7 @@
     [self.view addSubview:_tableView];
     
     //都要做文件缓存处理 
-    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放"]];
+    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票"]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除缓存" style:UIBarButtonItemStylePlain target:self action:@selector(clearCache)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"推送测试" style:UIBarButtonItemStylePlain target:self action:@selector(testNotification)];
 }
@@ -218,21 +219,36 @@
                 [items addObject:@(UMSocialPlatformType_WechatSession)];
                 [items addObject:@(UMSocialPlatformType_WechatTimeLine)];
             }
+            if ([WeiboSDK isWeiboAppInstalled] && [WeiboSDK isCanShareInWeiboAPP]) {
+                [items addObject:@(UMSocialPlatformType_Sina)];
+            }
             if (!items.count) {
                 iToastText(@"无可用分享平台!");
                 return;
             }
-// MARK: - Appstore的审核必须加上预定义平台 在审核期间的未安装App是不能出现点击微信的按钮
+// MARK: - Appstore的审核必须加上预定义平台 在审核期间的未安装App是不能出现点击App的按钮
             [UMSocialUIManager setPreDefinePlatforms:items];
             [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-                UMSocialMessageObject *messageObject = [UMSocialMessageObject new];
+                UMShareImageObject*imageObject = [UMShareImageObject new];
+                /*NSMutableArray *imageArray = [NSMutableArray new];
+                for (int i = 0; i < 3; i ++) {
+                    [imageArray addObject:[UIImage imageNamed:@"AppIcon"]];
+                }
+                imageObject.shareImageArray = imageArray;*/
+                imageObject.shareImage = kIMAGE(@"AppIcon");
+                UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObjectWithMediaObject:imageObject];
+                UMShareVideoObject *videoObject = [UMShareVideoObject new];
+                videoObject.videoUrl = @"";
+                
                 messageObject.text = @"xxx";
-                messageObject.shareObject = [UMShareObject shareObjectWithTitle:@"xxx" descr:@"xxx" thumImage:nil];
+                messageObject.title  = @"xxx";
+                //分享到指定平台
                 [[UMSocialManager defaultManager] shareToPlatform:platformType
                                                     messageObject:messageObject currentViewController:self
                                                        completion:^(id result, NSError *error) {
                                                            if (error) {
-                                                               
+                                                               iToastText(error.localizedDescription);
+
                                                            } else {
                                                                if ([result isKindOfClass:[UMSocialShareResponse class]]) {
                                                                    //分享结果
@@ -276,6 +292,11 @@
             //页面缩放效果
             [self.navigationController pushViewController:[ScaleHeaderVC new] animated:YES];
         }
+            break;
+        case 14: {
+            [self.navigationController pushViewController:[InvoicePaperVC new] animated:YES];
+        }
+            break;
         default:
             break;
     }

@@ -21,6 +21,7 @@
     return [[NotificationView alloc] initWithContent:contents complete:complete];
 }
 
+// MARK: - initialized Method
 - (instancetype)initWithContent:(NSArray *)contents complete:(completeBlock)complete {
     if (self = [super initWithFrame:[UIScreen mainScreen].bounds]) {
         self.backgroundColor = [UIColor clearColor];
@@ -76,4 +77,6 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self hide];
 }
+
+
 @end

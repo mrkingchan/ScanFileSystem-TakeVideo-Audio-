@@ -11,8 +11,9 @@
 #import "GuideVC.h"
 #import "AppDelegate+Configure.h"
 #import "WebVC.h"
+#import <UserNotifications/UserNotifications.h>
 
-@interface AppDelegate () {
+@interface AppDelegate ()<WXApiDelegate,WeiboSDKDelegate,JPUSHRegisterDelegate>{
     BOOL _versionUpdate;
     NSString *_messageStr;
     UIAlertController *_alertVC;
@@ -27,7 +28,6 @@
     _window = [UIWindow new];
     _window.frame = [UIScreen mainScreen].bounds;
     _window.backgroundColor = [UIColor whiteColor];
-
     //有版本更新就去服务器拉启动图
     /*if ([kUserDefaultsForKey(@"lanunched") integerValue] == 0 ) {
         //去拉服务器的启动图
@@ -57,7 +57,33 @@
     
     //监听被杀死的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(crashAction) name:UIApplicationWillTerminateNotification object:nil];
+    
+    //app共享路径
+  NSURL *url = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"com.bundel.subApp"];
+    
+    //极光推送
+    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        // 可以添加自定义categories
+    }
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    [JPUSHService setupWithOption:launchOptions appKey:kJPushKey
+                          channel:nil
+                 apsForProduction:DEBUG ? NO :YES
+            advertisingIdentifier:nil];
+    
+   // MARK: - 未经过APNS的socket发过来的数据 相当于是socket长链接接收到的数据，没经过APNS，那就是不会出现通知的下拉横幅
+    [[NSNotificationCenter defaultCenter] addObserverForName:kJPFNetworkDidReceiveMessageNotification object:nil queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification * _Nonnull note) {
+                                                      iToastText([note.userInfo mj_JSONString]);
+                                                  }];
+    
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [JPUSHService registerDeviceToken:deviceToken];
 }
 
 - (void)crashAction {
@@ -137,6 +163,38 @@
     }]resume];
 }
 
+// MARK: - 远程推送
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+    // Required
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        [JPUSHService handleRemoteNotification:userInfo];
+    }
+    completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以选择设置
+}
+
+// iOS 10 Support
+- (void)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler {
+    // Required
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+        [JPUSHService handleRemoteNotification:userInfo];
+    }
+    completionHandler();
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    // Required, iOS 7 Support
+    [JPUSHService handleRemoteNotification:userInfo];
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    // Required,For systems with less than or equal to iOS6
+    [JPUSHService handleRemoteNotification:userInfo];
+}
+
+// MARK: -  本地推送
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     NSDictionary *userInfo = notification.userInfo;
     
@@ -150,6 +208,7 @@
                                          }];*/
     if ([ UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
         //前台状态下模拟远程推送下的下拉通知
+        
 //        [EBBannerView showWithContent:items];
         [[EBBannerView  bannerWithBlock:^(EBBannerViewMaker *make) {
             make.style = EBBannerViewStyleiOS10;
@@ -158,6 +217,16 @@
     }
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [WXApi handleOpenURL:url delegate:self];
+}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    return [WXApi handleOpenURL:url delegate:self];
+}
 -(void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

@@ -21,6 +21,13 @@
 		8F23C8F220E4AD970026A392 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8F120E4AD970026A392 /* CFNetwork.framework */; };
 		8F23C8F420E4AD9C0026A392 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8F320E4AD9C0026A392 /* CoreMotion.framework */; };
 		8F45AD7C20EDB3DC005F811F /* ScaleHeaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F45AD7B20EDB3DC005F811F /* ScaleHeaderVC.m */; };
+		8F45B48720F5ECCA005F811F /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F45B48620F5ECCA005F811F /* NotificationService.m */; };
+		8F45B48B20F5ECCA005F811F /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8F45B48320F5ECCA005F811F /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8F45B49120F601FB005F811F /* InvoicePaperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F45B49020F601FB005F811F /* InvoicePaperView.m */; };
+		8F45B49820F60939005F811F /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F45B49620F60939005F811F /* Cell.m */; };
+		8F45B49920F60939005F811F /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F45B49720F60939005F811F /* Cell.xib */; };
+		8F45B49C20F60C84005F811F /* InvoicePaperVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F45B49B20F60C84005F811F /* InvoicePaperVC.m */; };
+		8F45B4A420F627BF005F811F /* SeperateLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F45B4A320F627BF005F811F /* SeperateLine.m */; };
 		8F469D3520D9FFB9007F1166 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F469D3420D9FFB9007F1166 /* MobileCoreServices.framework */; };
 		8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469D9820DA36CD007F1166 /* ScanVideoVC.m */; };
 		8F469D9C20DA370E007F1166 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469D9B20DA370E007F1166 /* VideoCell.m */; };
@@ -91,6 +98,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8F45B48920F5ECCA005F811F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F9B0FD620D10943005DAF9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F45B48220F5ECCA005F811F;
+			remoteInfo = NotificationService;
+		};
 		8F9B0FF720D10946005DAF9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8F9B0FD620D10943005DAF9E /* Project object */;
@@ -106,6 +120,20 @@
 			remoteInfo = APIDemo;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8F45B44F20F5A029005F811F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8F45B48B20F5ECCA005F811F /* NotificationService.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		182A6A71309150DD36EE3CF1 /* Pods-APIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +154,20 @@
 		8F23C8F820E4B8170026A392 /* kInitUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kInitUI.h; sourceTree = "<group>"; };
 		8F45AD7A20EDB3DC005F811F /* ScaleHeaderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScaleHeaderVC.h; sourceTree = "<group>"; };
 		8F45AD7B20EDB3DC005F811F /* ScaleHeaderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaleHeaderVC.m; sourceTree = "<group>"; };
+		8F45B47E20F5E996005F811F /* APIDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = APIDemo.entitlements; sourceTree = "<group>"; };
+		8F45B48320F5ECCA005F811F /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F45B48520F5ECCA005F811F /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		8F45B48620F5ECCA005F811F /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		8F45B48820F5ECCA005F811F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F45B48F20F601FB005F811F /* InvoicePaperView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvoicePaperView.h; sourceTree = "<group>"; };
+		8F45B49020F601FB005F811F /* InvoicePaperView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvoicePaperView.m; sourceTree = "<group>"; };
+		8F45B49520F60939005F811F /* Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		8F45B49620F60939005F811F /* Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		8F45B49720F60939005F811F /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		8F45B49A20F60C84005F811F /* InvoicePaperVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvoicePaperVC.h; sourceTree = "<group>"; };
+		8F45B49B20F60C84005F811F /* InvoicePaperVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvoicePaperVC.m; sourceTree = "<group>"; };
+		8F45B4A220F627BF005F811F /* SeperateLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeperateLine.h; sourceTree = "<group>"; };
+		8F45B4A320F627BF005F811F /* SeperateLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeperateLine.m; sourceTree = "<group>"; };
 		8F469D3420D9FFB9007F1166 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8F469D9620DA261C007F1166 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		8F469D9720DA36CD007F1166 /* ScanVideoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanVideoVC.h; sourceTree = "<group>"; };
@@ -249,6 +291,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8F45B48020F5ECCA005F811F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8F9B0FDB20D10943005DAF9E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -293,6 +342,27 @@
 				8F23C8DC20E48D6F0026A392 /* AlipaySDK.framework */,
 			);
 			path = AliPay;
+			sourceTree = "<group>";
+		};
+		8F45AD7F20EE144C005F811F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				8F9B0FE120D10943005DAF9E /* AppDelegate.h */,
+				8F9B0FE220D10943005DAF9E /* AppDelegate.m */,
+				8F469E1920E07BDD007F1166 /* AppDelegate+Configure.h */,
+				8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		8F45B48420F5ECCA005F811F /* NotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				8F45B48520F5ECCA005F811F /* NotificationService.h */,
+				8F45B48620F5ECCA005F811F /* NotificationService.m */,
+				8F45B48820F5ECCA005F811F /* Info.plist */,
+			);
+			path = NotificationService;
 			sourceTree = "<group>";
 		};
 		8F469D3320D9FFB9007F1166 /* Frameworks */ = {
@@ -479,6 +549,7 @@
 				8F9B0FE020D10943005DAF9E /* APIDemo */,
 				8F9B0FF920D10946005DAF9E /* APIDemoTests */,
 				8F9B100420D10946005DAF9E /* APIDemoUITests */,
+				8F45B48420F5ECCA005F811F /* NotificationService */,
 				8F9B0FDF20D10943005DAF9E /* Products */,
 				8F469D3320D9FFB9007F1166 /* Frameworks */,
 				D22DEF589A72D060B95F9D66 /* Pods */,
@@ -491,6 +562,7 @@
 				8F9B0FDE20D10943005DAF9E /* APIDemo.app */,
 				8F9B0FF620D10946005DAF9E /* APIDemoTests.xctest */,
 				8F9B100120D10946005DAF9E /* APIDemoUITests.xctest */,
+				8F45B48320F5ECCA005F811F /* NotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -498,17 +570,15 @@
 		8F9B0FE020D10943005DAF9E /* APIDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8FC717D220E9C31000B02F96 /* ScanQRCode */,
+				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
+				8F45AD7F20EE144C005F811F /* AppDelegate */,
+				8FC717D220E9C31000B02F96 /* ScanQRCode */,
 				8F23C8F820E4B8170026A392 /* kInitUI.h */,
-				8F9B0FE120D10943005DAF9E /* AppDelegate.h */,
-				8F9B0FE220D10943005DAF9E /* AppDelegate.m */,
 				8FC717F520EA051200B02F96 /* NotificationView.h */,
 				8FC717F620EA051300B02F96 /* NotificationView.m */,
 				8F45AD7A20EDB3DC005F811F /* ScaleHeaderVC.h */,
 				8F45AD7B20EDB3DC005F811F /* ScaleHeaderVC.m */,
-				8F469E1920E07BDD007F1166 /* AppDelegate+Configure.h */,
-				8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */,
 				8F469E0F20DC86A8007F1166 /* GuideVC.h */,
 				8F469E1020DC86A8007F1166 /* GuideVC.m */,
 				8F469E1C20E07FE9007F1166 /* AVTool.h */,
@@ -517,6 +587,15 @@
 				8F9B0FE520D10943005DAF9E /* ViewController.m */,
 				8F469DA020DA5192007F1166 /* WebVC.h */,
 				8F469DA120DA5192007F1166 /* WebVC.m */,
+				8F45B48F20F601FB005F811F /* InvoicePaperView.h */,
+				8F45B49020F601FB005F811F /* InvoicePaperView.m */,
+				8F45B4A220F627BF005F811F /* SeperateLine.h */,
+				8F45B4A320F627BF005F811F /* SeperateLine.m */,
+				8F45B49A20F60C84005F811F /* InvoicePaperVC.h */,
+				8F45B49B20F60C84005F811F /* InvoicePaperVC.m */,
+				8F45B49520F60939005F811F /* Cell.h */,
+				8F45B49620F60939005F811F /* Cell.m */,
+				8F45B49720F60939005F811F /* Cell.xib */,
 				8FCAAF9620E1CDC600EF9CAA /* ScanVC.h */,
 				8FCAAF9720E1CDC600EF9CAA /* ScanVC.m */,
 				8FCABD4320E3640700EF9CAA /* PhotoCell.h */,
@@ -609,6 +688,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8F45B48220F5ECCA005F811F /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F45B48C20F5ECCA005F811F /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				8F45B47F20F5ECCA005F811F /* Sources */,
+				8F45B48020F5ECCA005F811F /* Frameworks */,
+				8F45B48120F5ECCA005F811F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationService;
+			productName = NotificationService;
+			productReference = 8F45B48320F5ECCA005F811F /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8F9B0FDD20D10943005DAF9E /* APIDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8F9B100A20D10946005DAF9E /* Build configuration list for PBXNativeTarget "APIDemo" */;
@@ -619,10 +715,12 @@
 				8F9B0FDC20D10943005DAF9E /* Resources */,
 				27898C9DD647390EB8425430 /* [CP] Embed Pods Frameworks */,
 				04883EE956577784FB184141 /* [CP] Copy Pods Resources */,
+				8F45B44F20F5A029005F811F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8F45B48A20F5ECCA005F811F /* PBXTargetDependency */,
 			);
 			name = APIDemo;
 			productName = APIDemo;
@@ -674,8 +772,19 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Chan;
 				TargetAttributes = {
+					8F45B48220F5ECCA005F811F = {
+						CreatedOnToolsVersion = 9.3;
+					};
 					8F9B0FDD20D10943005DAF9E = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					8F9B0FF520D10946005DAF9E = {
 						CreatedOnToolsVersion = 9.3;
@@ -705,11 +814,19 @@
 				8F9B0FDD20D10943005DAF9E /* APIDemo */,
 				8F9B0FF520D10946005DAF9E /* APIDemoTests */,
 				8F9B100020D10946005DAF9E /* APIDemoUITests */,
+				8F45B48220F5ECCA005F811F /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8F45B48120F5ECCA005F811F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8F9B0FDC20D10943005DAF9E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -718,6 +835,7 @@
 				8F469DF020DB3F4D007F1166 /* KSCapture_scan_focus@3x.png in Resources */,
 				8F469DF320DB3F4D007F1166 /* KSCaptureFlash_Off@3x.png in Resources */,
 				8F469DEF20DB3F4D007F1166 /* KSCapture_scan_focus.png in Resources */,
+				8F45B49920F60939005F811F /* Cell.xib in Resources */,
 				8F469DF720DB3F4D007F1166 /* KSTakePhoto_Sel@3x.png in Resources */,
 				8F469DEC20DB3F4D007F1166 /* KSTakePhoto_Nor@2x.png in Resources */,
 				8F469DEE20DB3F4D007F1166 /* KSSwitchCamera_Nor@3x.png in Resources */,
@@ -763,10 +881,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo-resources.sh",
+				"${PODS_ROOT}/UMCShare/UMShare/SocialLibraries/Sina/SinaSDK/WeiboSDK.bundle",
 				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -789,6 +909,7 @@
 				"${BUILT_PRODUCTS_DIR}/LCProgressHUD/LCProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/LKDBHelper/LKDBHelper.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework",
@@ -807,6 +928,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LCProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LKDBHelper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSiriWaveformView.framework",
@@ -841,6 +963,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8F45B47F20F5ECCA005F811F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F45B48720F5ECCA005F811F /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8F9B0FDA20D10943005DAF9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -872,12 +1002,14 @@
 				8F469E0020DB3F4D007F1166 /* KSTakePhotoViewController.m in Sources */,
 				8F469DFF20DB3F4D007F1166 /* KSVideoPlayer.m in Sources */,
 				8F469DFC20DB3F4D007F1166 /* KSTakeVideoOperateView.m in Sources */,
+				8F45B49820F60939005F811F /* Cell.m in Sources */,
 				8FC717E820E9C36000B02F96 /* SGScanningQRCodeView.m in Sources */,
 				8F45AD7C20EDB3DC005F811F /* ScaleHeaderVC.m in Sources */,
 				8FC717E720E9C36000B02F96 /* SGScanningQRCodeVC.m in Sources */,
 				8FC717E620E9C36000B02F96 /* SGAlertView.m in Sources */,
 				8F469D9F20DA3E62007F1166 /* ScanPhotoVC.m in Sources */,
 				8F469E0520DB8A6A007F1166 /* NetTool.m in Sources */,
+				8F45B49120F601FB005F811F /* InvoicePaperView.m in Sources */,
 				8F9B0FF120D10946005DAF9E /* main.m in Sources */,
 				8F469E0E20DB9B1F007F1166 /* ScanAudioVC.m in Sources */,
 				8F469DE420DB3F4D007F1166 /* KSAVFoundationManager.m in Sources */,
@@ -885,10 +1017,12 @@
 				8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */,
 				8FC717F120E9F8F300B02F96 /* PreViewCell.m in Sources */,
 				8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */,
+				8F45B4A420F627BF005F811F /* SeperateLine.m in Sources */,
 				8FCAAF9820E1CDC700EF9CAA /* ScanVC.m in Sources */,
 				8F469DFA20DB3F4D007F1166 /* KSTakeVideoViewController.m in Sources */,
 				8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */,
 				8FC717E520E9C36000B02F96 /* SGGenerateQRCodeVC.m in Sources */,
+				8F45B49C20F60C84005F811F /* InvoicePaperVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,6 +1045,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8F45B48A20F5ECCA005F811F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F45B48220F5ECCA005F811F /* NotificationService */;
+			targetProxy = 8F45B48920F5ECCA005F811F /* PBXContainerItemProxy */;
+		};
 		8F9B0FF820D10946005DAF9E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8F9B0FDD20D10943005DAF9E /* APIDemo */;
@@ -943,6 +1082,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8F45B48D20F5ECCA005F811F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NC2K63V9RT;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.API.www.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F45B48E20F5ECCA005F811F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NC2K63V9RT;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.API.www.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		8F9B100820D10946005DAF9E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1058,8 +1233,9 @@
 			baseConfigurationReference = 34C5123FB8A83D0E766DA960 /* Pods-APIDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = APIDemo/APIDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V3WGXX8M8S;
+				DEVELOPMENT_TEAM = NC2K63V9RT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/APIDemo/JETIN",
@@ -1074,7 +1250,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qianft.12345678;
+				PRODUCT_BUNDLE_IDENTIFIER = com.API.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1085,8 +1261,9 @@
 			baseConfigurationReference = 182A6A71309150DD36EE3CF1 /* Pods-APIDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = APIDemo/APIDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V3WGXX8M8S;
+				DEVELOPMENT_TEAM = NC2K63V9RT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/APIDemo/JETIN",
@@ -1101,7 +1278,7 @@
 					"@executable_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.qianft.12345678;
+				PRODUCT_BUNDLE_IDENTIFIER = com.API.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1184,6 +1361,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8F45B48C20F5ECCA005F811F /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F45B48D20F5ECCA005F811F /* Debug */,
+				8F45B48E20F5ECCA005F811F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8F9B0FD920D10943005DAF9E /* Build configuration list for PBXProject "APIDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

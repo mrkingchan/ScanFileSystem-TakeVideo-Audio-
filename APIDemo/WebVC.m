@@ -20,6 +20,7 @@
 @interface WebVC () <WKScriptMessageHandler,WKNavigationDelegate,KSTakePhotoDelegate,KSTakeVideoDelegate,IQAudioRecorderViewControllerDelegate,SGScanningQRCodeVCDelegate,TZImagePickerControllerDelegate> {
     WKWebView*_webView;
     UIProgressView *_progressView;
+    
 }
 @end
 
@@ -43,8 +44,9 @@
         self.additionalSafeAreaInsets = UIEdgeInsetsMake(0, 0, iPhoneX_BOTTOM_HEIGHT, 0);
     }
     
-  _progressView =  [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth, 2)];
-    _progressView.backgroundColor = [UIColor blueColor];
+    _progressView =  [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth, 2)];
+    _progressView.progressTintColor = [UIColor redColor];
+    _progressView.trackTintColor = [UIColor clearColor];
     _progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
     [self.view addSubview:_progressView];
     
@@ -111,6 +113,7 @@
 
 // MARK: - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    //加载进度条
     if ([keyPath isEqualToString:@"estimatedProgress"]) {
         _progressView.progress = _webView.estimatedProgress;
         if (_progressView.progress == 1) {
@@ -140,6 +143,25 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     iToastHide;
     self.navigationItem.title =  webView.title;
+    [webView evaluateJavaScript:@"function registerImageClickAction(){\
+     var imgs=document.getElementsByTagName('img');\
+     var length=imgs.length;\
+     for(var i=0;i<length;i++){\
+     img=imgs[i];\
+     img.onclick=function(){\
+     window.imageUrl.bitUrl(this.src);}\
+     }\
+     }"
+              completionHandler:^(id _Nullable object, NSError * _Nullable error) {
+                  if (error) {
+                      
+                  }
+              }];
+    [_webView evaluateJavaScript:@"registerImageClickAction();"
+               completionHandler:^(id _Nullable object, NSError * _Nullable error) {
+                   
+               }];
+    
 }
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
@@ -185,7 +207,6 @@
         [self.navigationController presentAudioRecorderViewControllerAnimated:VC];
     } else if ([message.name isEqualToString:@"sfsRecordingfile"]) {
         [self.navigationController pushViewController:[ScanAudioVC new] animated:YES];
-
     } else if ([message.name isEqualToString:@"sQRCode"]) {
         
         //扫描二维码
@@ -195,12 +216,24 @@
         
     } else if ([message.name isEqualToString:@"tpSharing"]) {
         //分享
+        NSString *jsonStr = message.body;
+        NSDictionary *jsonDic = [jsonStr mj_JSONObject];
+        __block NSMutableString *contentStr = [NSMutableString new];
+        [jsonDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            [contentStr appendString:[NSString stringWithFormat:@"%@\n",obj]];
+        }];
+
+        
         NSMutableArray *items = [NSMutableArray new];
         if ([WXApi isWXAppInstalled] && [WXApi  isWXAppSupportApi]) {
             [items addObject:@(UMSocialPlatformType_WechatFavorite)];
             [items addObject:@(UMSocialPlatformType_WechatSession)];
             [items addObject:@(UMSocialPlatformType_WechatTimeLine)];
         }
+        if ([WeiboSDK isWeiboAppInstalled] && [WeiboSDK isCanShareInWeiboAPP]) {
+            [items addObject:@(UMSocialPlatformType_Sina)];
+        }
+        
         if (!items.count) {
             iToastText(@"无可用分享平台!");
             return;
@@ -209,13 +242,16 @@
         [UMSocialUIManager setPreDefinePlatforms:items];
         [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
             UMSocialMessageObject *messageObject = [UMSocialMessageObject new];
-            messageObject.text = @"xxx";
-            messageObject.shareObject = [UMShareObject shareObjectWithTitle:@"xxx" descr:@"xxx" thumImage:nil];
+            messageObject.title = jsonDic[@"title"];
+            messageObject.text = jsonDic[@"content"];
+          UMShareImageObject *image =  [UMShareImageObject new];
+            image.shareImage = jsonDic[@"image"];
+            messageObject.shareObject = image;
             [[UMSocialManager defaultManager] shareToPlatform:platformType
                                                 messageObject:messageObject currentViewController:self
                                                    completion:^(id result, NSError *error) {
                                                        if (error) {
-                                                           
+                                                           iToastText(error.localizedDescription);
                                                        } else {
                                                            if ([result isKindOfClass:[UMSocialShareResponse class]]) {
                                                                //分享结果
@@ -300,12 +336,13 @@
 }
 
 -(void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
-    
+
 }
 
 -(void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
+
 // MARK: - KSTakeVideoDelegate
 
 - (void)takeVideoFinish:(NSString *)videoPath {
@@ -315,9 +352,14 @@
 
 // MARK: - KSTakePhotoDelegate
 - (void)takePhotoFinish:(UIImage *)image {
-    
+    //保存到相册
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
 }
 
+// MARK: - 保存至相册必须实现的协议方法，不然会出现奔溃情况
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    
+}
 
 // MARK: - memory management
 -(void)dealloc {
@@ -326,5 +368,4 @@
         _webView = nil;
     }
 }
-
 @end

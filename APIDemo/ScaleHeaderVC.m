@@ -17,6 +17,7 @@
 
 @implementation ScaleHeaderVC
 
+// MARK: - viewController‘s view’s LifeCircle
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
