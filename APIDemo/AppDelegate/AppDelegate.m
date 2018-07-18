@@ -12,6 +12,7 @@
 #import "AppDelegate+Configure.h"
 #import "WebVC.h"
 #import <UserNotifications/UserNotifications.h>
+#import "MainTabbarVC.h"
 
 @interface AppDelegate ()<WXApiDelegate,WeiboSDKDelegate,JPUSHRegisterDelegate>{
     BOOL _versionUpdate;
@@ -41,7 +42,8 @@
         };
     } else {*/
         //主页
-        _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+//        _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    _window.rootViewController = [MainTabbarVC new];
 //    _window.rootViewController = [WebVC new];
 //    }
     //检查更新
@@ -58,7 +60,7 @@
     
     //监听被杀死的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(crashAction) name:UIApplicationWillTerminateNotification object:nil];
-    
+
     //app共享路径
   NSURL *url = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"com.bundel.subApp"];
     /*
