@@ -34,6 +34,7 @@
 // MARK: - setUI
 -(void)setUI {
     
+    //tableView
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width,[UIScreen mainScreen].bounds.size.height) style:0];
     
     _tableView.separatorColor = [UIColor whiteColor];
@@ -53,12 +54,14 @@
     imageView.image = [UIImage imageNamed:@"AppIcon"];
     [headerView addSubview:imageView];
     
+    //店名
     UILabel *name = [[UILabel alloc] initWithFrame:CGRectMake(0, imageView.frame.origin.y +  60 +10, self.frame.size.width, 40)];
     name.textAlignment = 1;
     name.font = [UIFont boldSystemFontOfSize:18];
     name.text = _json[@"resturantName"];
     [headerView addSubview:name];
 
+    //订单标题
     UILabel *payTitle = [[UILabel alloc] initWithFrame:CGRectMake(15, name.frame.origin.y +  40 + 10, self.frame.size.width - 30, 30)];
     payTitle.backgroundColor = [UIColor blackColor];
     payTitle.textAlignment = 1;
@@ -67,6 +70,7 @@
     payTitle.text = @"结账单";
     [headerView addSubview:payTitle];
     
+    //订单时间
     UILabel *orderTime = [[UILabel alloc] initWithFrame:CGRectMake(0, payTitle.frame.origin.y + 30 + 5, self.frame.size.width, 30)];
     orderTime.layer.borderWidth = 0.0;
     orderTime.font = [UIFont systemFontOfSize:13];
@@ -74,6 +78,7 @@
     orderTime.text = _json[@"orderTime"];
     [headerView addSubview:orderTime];
     
+    //分割线
     for (int i = 0 ; i < 2; i ++) {
         SeperateLine *line = [[SeperateLine alloc] initWithY:i == 0 ? orderTime.frame.origin.y + 2  :orderTime.frame.origin.y +  30 +  5];
         [headerView addSubview:line];
@@ -85,6 +90,7 @@
     UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 0)];
     footerView.layer.borderWidth = 0;
     
+    //总价
     UILabel * totalPrice = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, self.frame.size.width - 20, 30)];
     totalPrice.layer.borderWidth = 0.0;
     totalPrice.font = [UIFont systemFontOfSize:13];
@@ -92,13 +98,16 @@
     totalPrice.text = _json[@"totalPrice"];
     [footerView addSubview:totalPrice];
     
+    //分割线
     for (int i = 0 ; i < 2; i ++) {
         SeperateLine *line = [[SeperateLine alloc] initWithY:i == 0 ? 2 :totalPrice.frame.origin.y +  30 +  5];
         [footerView addSubview:line];
     }
     
+    //花型分割线
     UILabel *flowerView = [[UILabel alloc] initWithFrame:CGRectMake(10, totalPrice.frame.origin.y + 30 + 25, self.frame.size.width - 20, 8)];
     NSMutableString *content = [NSMutableString new];
+    //分割线
     for (int i = 0 ; i < 200; i ++) {
         [content appendString:@"*"];
     }
@@ -106,15 +115,14 @@
     flowerView.textAlignment = 1;
     [footerView addSubview:flowerView];
     
-    
+    //欢迎光临
     UILabel *welcome = [[UILabel alloc] initWithFrame:CGRectMake(50, totalPrice.frame.origin.y +  35 +  50, self.frame.size.width -  100, 30)];
     welcome.textAlignment = 1;
     welcome.font = [UIFont systemFontOfSize:20];
     welcome.text = @"欢迎下次光临!";
     [footerView addSubview:welcome];
     
-    //address
-    
+    //地址
     UILabel *address = [[UILabel alloc] initWithFrame:CGRectMake(0, welcome.frame.origin.y + 10 + 25, self.frame.size.width, 50)];
     address.textAlignment = 1;
     address.numberOfLines = 0;

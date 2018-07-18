@@ -37,6 +37,8 @@
 #import <EBBannerView/EBBannerView.h>
 #import <WeiboSDK.h>
 #import <JPUSHService.h>
+#import <CYTabBar/CYTabBar.h>
+#import <CYTabBar/CYTabBarController.h>
 
 #import "kInitUI.h"
 #import <MJExtension/MJExtension.h>

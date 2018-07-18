@@ -17,6 +17,8 @@
 #import "ClientVC.h"
 #import "ScanPhotoVC.h"
 #import "SGScanningQRCodeVC.h"
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+
 @interface WebVC () <WKScriptMessageHandler,WKNavigationDelegate,KSTakePhotoDelegate,KSTakeVideoDelegate,IQAudioRecorderViewControllerDelegate,SGScanningQRCodeVCDelegate,TZImagePickerControllerDelegate> {
     WKWebView*_webView;
     UIProgressView *_progressView;
@@ -38,13 +40,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.title = @"loading...";
+    self.navigationItem.title = @"加载中...";
     self.edgesForExtendedLayout = UIRectEdgeNone;
     if (@available(iOS 11.0, *)) {
         self.additionalSafeAreaInsets = UIEdgeInsetsMake(0, 0, iPhoneX_BOTTOM_HEIGHT, 0);
     }
     
-    _progressView =  [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth, 2)];
+    _progressView =  [[UIProgressView alloc] initWithFrame:CGRectMake(0, kStatusBarHeight, kAppWidth, 2)];
     _progressView.progressTintColor = [UIColor redColor];
     _progressView.trackTintColor = [UIColor clearColor];
     _progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
@@ -66,14 +68,18 @@
     [userContentController addUserScript:noneSelectScript];
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     configuration.userContentController = userContentController;
-    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 3, kAppWidth, kAppHeight - 3) configuration:configuration];
+    _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kStatusBarHeight, kAppWidth, kAppHeight - kStatusBarHeight ) configuration:configuration];
     _webView.navigationDelegate = self;
+    [self.view addSubview:_webView];
+    //    @"http://192.168.1.3/"
+    [_webView loadRequest:[NSURLRequest requestWithURL:kURL(@"https://www.atmex.io")]];
     if (@available(iOS 11.0, *)) {
+        self.additionalSafeAreaInsets = UIEdgeInsetsMake(0, 0, iPhoneX_BOTTOM_HEIGHT, 0);
         _webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
-        // Fallback on earlier versions
+        self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    [_webView loadRequest:[NSURLRequest requestWithURL:kURL(@"http://192.168.1.3/")]];
+    
     @weakify(self);
     [_webView.scrollView addLegendHeaderWithRefreshingBlock:^{
         @strongify(self);
@@ -82,7 +88,6 @@
         });
         [self->_webView reload];
     }];
-    [self.view addSubview:_webView];
     
     //注册监听
     [configuration.userContentController addScriptMessageHandler:self name:@"photograph"];

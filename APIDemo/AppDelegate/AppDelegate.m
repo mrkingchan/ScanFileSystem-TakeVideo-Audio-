@@ -42,6 +42,7 @@
     } else {*/
         //主页
         _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+//    _window.rootViewController = [WebVC new];
 //    }
     //检查更新
     [self checkUpdateInfo];
@@ -60,7 +61,7 @@
     
     //app共享路径
   NSURL *url = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"com.bundel.subApp"];
-    
+    /*
     //极光推送
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
@@ -78,6 +79,8 @@
                                                   usingBlock:^(NSNotification * _Nonnull note) {
                                                       iToastText([note.userInfo mj_JSONString]);
                                                   }];
+     */
+    
     
     return YES;
 }

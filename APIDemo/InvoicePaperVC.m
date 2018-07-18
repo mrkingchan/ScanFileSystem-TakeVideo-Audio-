@@ -42,32 +42,40 @@
                           };
     InvoicePaperView *subView = [[InvoicePaperView alloc] initWithFrame:CGRectMake(40 , 0, kAppW - 80, [jsonDic[@"food"] count] * 30) JsonData:jsonDic];
     [self.view addSubview:subView];
+    
+    // MARK: - TabbarData
     NSDictionary *json =    @{@"bottomTabbarData":@[
-                                      @{@"icon":@"http://wwww.xxx.png",
+                                      @{@"normalImage":@"http://wwww.xxx.png",
+                                        @"selectedImage":@"http://www.xxx.png",
                                         @"title":@"xxx",
                                         @"loadUrl":@"http://www.xxx.com"
                                         },
                                       
-                                      @{@"icon":@"http://wwww.xxx.png",
+                                      @{@"normalImage":@"http://wwww.xxx.png",
+                                        @"selectedImage":@"http://www.xxx.png",
                                         @"title":@"xxx",
                                         @"loadUrl":@"http://www.xxx.com"
                                         },
-                                      @{@"icon":@"http://wwww.xxx.png",
+                                      @{@"normalImage":@"http://wwww.xxx.png",
+                                        @"selectedImage":@"http://www.xxx.png",
                                         @"title":@"xxx",
                                         @"loadUrl":@"http://www.xxx.com"
                                         },
-                                      @{@"icon":@"http://wwww.xxx.png",
+                                      @{@"normalImage":@"http://wwww.xxx.png",
+                                        @"selectedImage":@"http://www.xxx.png",
                                         @"title":@"xxx",
                                         @"loadUrl":@"http://www.xxx.com"
                                         },
-                                      @{@"icon":@"http://wwww.xxx.png",
+                                      @{@"normalImage":@"http://wwww.xxx.png",
+                                        @"selectedImage":@"http://www.xxx.png",
                                         @"title":@"xxx",
                                         @"loadUrl":@"http://www.xxx.com"
                                         },
                                       ]};
+    //写入沙盒的pdf
   NSString *filePath =  [self createPDFfromUIView:self.view saveToDocumentsWithFileName:[NSString stringWithFormat:@"%@.pdf",json[@"resturantName"]]];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"打印" style:UIBarButtonItemStylePlain target:self action:@selector(printAction:)];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"打印" style:UIBarButtonItemStylePlain target:self action:@selector(printAction:)];
     // 打印PDF
 }
 
@@ -84,27 +92,20 @@
         printController.printInfo = printInfo;
         printController.printingItem = [[self class] imageWithView:self.view];
         void (^completionHandler)(UIPrintInteractionController *, BOOL, NSError *) = ^(UIPrintInteractionController *printController, BOOL completed, NSError *error) {
-            if (!completed && error)
-            {
+            if (!completed && error) {
                 NSLog(@"PRINT FAILED: %@", [error description]);
             }
         };
-        
         [printController presentAnimated:YES completionHandler:completionHandler];
     }
 }
 
-
 // MARK: - 由于打印机器只能打印PDF doc png等等格式
 + (UIImage *) imageWithView:(UIView *)view {
     UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
-    
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
     UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
-    
     UIGraphicsEndImageContext();
-    
     return img;
 }
 
@@ -135,4 +136,5 @@
     NSLog(@"documentDirectoryFileName: %@",documentDirectoryFilename);
     return documentDirectoryFilename;
 }
-    @end
+
+@end

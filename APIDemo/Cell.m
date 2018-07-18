@@ -21,7 +21,6 @@
     // Configure the view for the selected state
 }
 
-
 - (void)setCellWithData:(NSDictionary *)json {
     _name.text = [NSString stringWithFormat:@"    %@",json[@"name"]];
     _number.text = [NSString stringWithFormat:@"X%d",[json[@"number"]integerValue]];
