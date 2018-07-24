@@ -96,12 +96,13 @@
 -(void)configureAVFile {
     //创建audios videos文件夹 用以存储 视频和音频文件
     NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-    
+    ///var/mobile/Containers/Data/Application/B1BAC66A-ECA0-4B0A-AD42-AF6039F1F85B/Documents
+
     NSLog(@"documentsPath = %@",documentPath);
     NSString *audios = [documentPath stringByAppendingPathComponent:@"audios"];
     NSString *videos = [documentPath stringByAppendingPathComponent:@"videos"];
     [[NSFileManager defaultManager] createDirectoryAtPath:audios withIntermediateDirectories:YES attributes:nil error:nil];
-    [[NSFileManager defaultManager] createDirectoryAtPath:videos withIntermediateDirectories:YES attributes:nil error:nil];
+    [[NSFileManager defaultManager] createDirectoryAtPath:videos withIntermediateDirectories:YES attributes:nil error:nil];    
 }
 
 // MARK: - 配置推送
@@ -264,5 +265,4 @@
 - (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
     
 }
-
 @end

@@ -45,13 +45,12 @@
 #import "iToast.h"
 #import "iToast+Category.h"
 #import <SVProgressHUD/SVProgressHUD.h>
-
+#import "NotificationView.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kJPushKey @"aebc3d6b31f1120ec7e4add8"
 
-#import "NotificationView.h"
 #define kColorWhite [UIColor whiteColor]
 #define kColorClear [UIColor clearColor]
 #define kColorRed [UIColor redColor]

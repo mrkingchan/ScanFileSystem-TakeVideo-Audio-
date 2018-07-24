@@ -25,4 +25,18 @@ typedef void(^complete)(id responseObject);
                                   imageArray:(NSArray *)imageArray
                                     fileName:(NSString *)fileName
                                       sucess:(complete)sucess;
+
+
+/**
+ post请求
+
+ @param path 路径
+ @param dic 参数
+ @param success 成功回调
+ @return 网络请求任务
+ */
++ (NSURLSessionDataTask *)innerPostWithPath:(NSString *)path
+                                     params:(NSDictionary*)dic
+                                     sucess:(complete)success;
+
 @end

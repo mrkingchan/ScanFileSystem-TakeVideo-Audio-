@@ -99,5 +99,4 @@
     }
     [_contentView removeObserver:self forKeyPath:@"contentOffset"];
 }
-
 @end

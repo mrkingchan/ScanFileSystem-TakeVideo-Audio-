@@ -72,4 +72,16 @@
         _headerView.transform = CGAffineTransformMakeScale(scale, scale);
     }
 }
+
+// MARK: - memory management
+- (void)dealloc {
+    if (_tableView) {
+        _tableView.delegate = nil;
+        _tableView.dataSource = nil;
+        _tableView = nil;
+    }
+    if (_headerView) {
+        _headerView = nil;
+    }
+}
 @end

@@ -364,6 +364,8 @@
 		8F208F962106D0B300F50EF0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				8F469E1C20E07FE9007F1166 /* AVTool.h */,
+				8F469E1D20E07FE9007F1166 /* AVTool.m */,
 				8F23C8F820E4B8170026A392 /* kInitUI.h */,
 				8FCAAFA020E2486900EF9CAA /* LocalPushCenter.h */,
 				8FCAAF9F20E2486800EF9CAA /* LocalPushCenter.m */,
@@ -638,8 +640,6 @@
 				8F45AD7B20EDB3DC005F811F /* ScaleHeaderVC.m */,
 				8F469E0F20DC86A8007F1166 /* GuideVC.h */,
 				8F469E1020DC86A8007F1166 /* GuideVC.m */,
-				8F469E1C20E07FE9007F1166 /* AVTool.h */,
-				8F469E1D20E07FE9007F1166 /* AVTool.m */,
 				8F9B0FE420D10943005DAF9E /* ViewController.h */,
 				8F9B0FE520D10943005DAF9E /* ViewController.m */,
 				8F469DA020DA5192007F1166 /* WebVC.h */,
@@ -1160,7 +1160,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NC2K63V9RT;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.API.www.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1174,7 +1178,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NC2K63V9RT;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.API.www.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1309,7 +1317,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.API.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1334,7 +1345,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.API.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1349,7 +1363,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1364,7 +1382,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1378,7 +1400,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1392,7 +1418,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

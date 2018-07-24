@@ -11,4 +11,5 @@
 @interface ScanVideoVC : UIViewController
 
 @property(nonatomic,strong)NSMutableArray *dataArray;
+
 @end

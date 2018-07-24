@@ -74,12 +74,12 @@
                                       ]};
     //写入沙盒的pdf
   NSString *filePath =  [self createPDFfromUIView:self.view saveToDocumentsWithFileName:[NSString stringWithFormat:@"%@.pdf",json[@"resturantName"]]];
-    
+    NSLog(@"print Path = %@",filePath);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"打印" style:UIBarButtonItemStylePlain target:self action:@selector(printAction:)];
     // 打印PDF
 }
 
-// MARK: - prtin
+// MARK: - print Method
 - (void)printAction:(UIButton *)sender {
     UIPrintInteractionController *printController = [UIPrintInteractionController sharedPrintController];
     if(printController) {
@@ -116,7 +116,6 @@
     UIGraphicsBeginPDFContextToData(pdfData, aView.bounds, nil);
     UIGraphicsBeginPDFPage();
     CGContextRef pdfContext = UIGraphicsGetCurrentContext();
-    
     
     // draws rect to the view and thus this is captured by UIGraphicsBeginPDFContextToData
     

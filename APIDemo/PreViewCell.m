@@ -25,6 +25,7 @@
     return self;
 }
 
+// MARK: - setCellWithData
 -(void)setCellWithData:(id)model {
     if ([model isKindOfClass:[ALAsset class]]) {
         ALAsset *asset = (ALAsset *)model;

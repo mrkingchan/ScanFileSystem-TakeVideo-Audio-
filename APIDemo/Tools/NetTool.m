@@ -53,4 +53,23 @@
     return task;
 }
 
+// MARK: - POST
++ (NSURLSessionDataTask *)innerPostWithPath:(NSString *)path params:(NSDictionary *)dic sucess:(complete)success {
+    NSURLSessionDataTask *task = [kHttpClient POST:path
+                                        parameters:dic
+                         constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+                             
+                         } progress:^(NSProgress * _Nonnull uploadProgress) {
+                             
+                         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                             id json = kJson(responseObject);
+                             if (success) {
+                                 success(json);
+                             }
+                         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                             
+                         }];
+    return task;
+    
+}
 @end
