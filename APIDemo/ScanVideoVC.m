@@ -73,4 +73,12 @@
     [self presentMoviePlayerViewControllerAnimated:playViewController];
 }
 
+// MARK: - memory management
+- (void)dealloc {
+    if (_collectionView) {
+        _collectionView.dataSource = nil;
+        _collectionView.delegate = nil;
+        _collectionView = nil;
+    }
+}
 @end

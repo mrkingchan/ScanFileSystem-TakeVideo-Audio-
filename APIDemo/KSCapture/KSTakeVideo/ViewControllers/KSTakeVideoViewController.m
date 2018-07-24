@@ -41,7 +41,7 @@
 
     //初始化-删除目录下视频文件
 //    [KSCaptureTool deleteVideo];
-
+    
     [self.view addSubview:self.captureView];
 
     [self.recordManager showPreviewLayerInView:self.captureView];
@@ -145,6 +145,7 @@
             break;
     }
 #endif
+    
 }
 - (void)btnFlashSwitchClicked:(UIButton *)btn
 {
