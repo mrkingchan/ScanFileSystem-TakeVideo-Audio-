@@ -42,6 +42,10 @@
 
 #import "kInitUI.h"
 #import <MJExtension/MJExtension.h>
+#import "iToast.h"
+#import "iToast+Category.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -136,9 +140,11 @@ CG_INLINE id kJson(id value) {
     return resultValue == nil?  @{}:resultValue;
 }
 
-#define iToastText(xxx)     [LCProgressHUD showMessage:xxx]
-#define iToastLoding     [LCProgressHUD showLoading:@""]
-#define iToastHide [LCProgressHUD hide]
+//#define iToastText(xxx)     [LCProgressHUD showMessage:xxx]
+ #define iToastLoding [SVProgressHUD show]
+#define iToastHide [SVProgressHUD dismiss]
+//#define iToastLoding     [LCProgressHUD showLoading:@""]
+//#define iToastHide [LCProgressHUD hide]
 #define kBaseURL @"http://www.baidu.com"
 #define kAppID @"AppID"
 

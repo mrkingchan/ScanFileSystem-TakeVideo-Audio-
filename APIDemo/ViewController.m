@@ -32,16 +32,35 @@
 
 // MARK: - viewController'view's lifeCircle
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad];    
     self.title = @"数据管理";
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth, kAppHeight) style:0];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     
+    //头部
+    @weakify(self);
+    [_tableView addLegendHeaderWithRefreshingBlock:^{
+        iToastLoding;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            @strongify(self);
+            iToastHide;
+            [self->_tableView.header endRefreshing];
+        });
+    }];
+    
+    //尾部
+    [_tableView addLegendFooterWithRefreshingBlock:^{
+        iToastLoding;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            @strongify(self);
+            iToastHide;
+            [self->_tableView.footer endRefreshing];
+        });
+    }];
     //都要做文件缓存处理 
     _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票"]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除缓存" style:UIBarButtonItemStylePlain target:self action:@selector(clearCache)];
@@ -54,6 +73,7 @@
         make.content = NSStringFromSelector(_cmd);
     }]show];
 }
+
 // MARK: - loadData (GET)
 - (void)loadData {
   NSURLSessionDataTask *task =  [kHttpClient GET:kBaseURL
@@ -126,10 +146,12 @@
 -(void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
+
 // MARK: - KSTakeVideoDelegate
 
 - (void)takeVideoFinish:(NSString *)videoPath {
     [self.navigationController popViewControllerAnimated:YES];
+    iToastText(@"录制完成!");
     NSLog(@"videoPath = %@",videoPath);
 }
 

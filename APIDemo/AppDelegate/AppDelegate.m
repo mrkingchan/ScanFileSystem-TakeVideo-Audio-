@@ -41,8 +41,8 @@
         };
     } else {*/
         //主页
-//        _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
-    _window.rootViewController = [MainTabbarVC new];
+        _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+//    _window.rootViewController = [MainTabbarVC new];
 //    _window.rootViewController = [WebVC new];
 //    }
     //检查更新

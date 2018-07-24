@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6CACD36C2EAD120D5228026D /* Pods_APIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57D2936041215A73C3AD926 /* Pods_APIDemo.framework */; };
 		8F208F932106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208F922106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m */; };
+		8F208F9C2106D45500F50EF0 /* iToast+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208F982106D45400F50EF0 /* iToast+Category.m */; };
+		8F208F9D2106D45500F50EF0 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208F9B2106D45400F50EF0 /* iToast.m */; };
 		8F23C8DD20E48D6F0026A392 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */; };
 		8F23C8E020E4AD540026A392 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8DF20E4AD540026A392 /* libc++.tbd */; };
 		8F23C8E220E4AD5A0026A392 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8E120E4AD5A0026A392 /* libz.tbd */; };
@@ -143,6 +145,10 @@
 		34C5123FB8A83D0E766DA960 /* Pods-APIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8F208F912106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ThirdPartConfig.h"; sourceTree = "<group>"; };
 		8F208F922106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ThirdPartConfig.m"; sourceTree = "<group>"; };
+		8F208F982106D45400F50EF0 /* iToast+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iToast+Category.m"; sourceTree = "<group>"; };
+		8F208F992106D45400F50EF0 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
+		8F208F9A2106D45400F50EF0 /* iToast+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iToast+Category.h"; sourceTree = "<group>"; };
+		8F208F9B2106D45400F50EF0 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 		8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		8F23C8DC20E48D6F0026A392 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		8F23C8DF20E4AD540026A392 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -358,6 +364,7 @@
 		8F208F962106D0B300F50EF0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				8F23C8F820E4B8170026A392 /* kInitUI.h */,
 				8FCAAFA020E2486900EF9CAA /* LocalPushCenter.h */,
 				8FCAAF9F20E2486800EF9CAA /* LocalPushCenter.m */,
 				8F469E0320DB8A6A007F1166 /* NetTool.h */,
@@ -366,6 +373,17 @@
 				8F469E0720DB8B1C007F1166 /* HttpClient.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		8F208F972106D45400F50EF0 /* iToast */ = {
+			isa = PBXGroup;
+			children = (
+				8F208F9A2106D45400F50EF0 /* iToast+Category.h */,
+				8F208F982106D45400F50EF0 /* iToast+Category.m */,
+				8F208F992106D45400F50EF0 /* iToast.h */,
+				8F208F9B2106D45400F50EF0 /* iToast.m */,
+			);
+			path = iToast;
 			sourceTree = "<group>";
 		};
 		8F23C8DA20E48D6F0026A392 /* AliPay */ = {
@@ -605,15 +623,15 @@
 		8F9B0FE020D10943005DAF9E /* APIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
+				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
+				8F208F972106D45400F50EF0 /* iToast */,
+				8F45AD7F20EE144C005F811F /* AppDelegate */,
 				8F208F962106D0B300F50EF0 /* Tools */,
 				8F208F942106D07600F50EF0 /* Scoket */,
 				8FA836B4210093890055F177 /* Invoice */,
-				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8FA835C820FF22110055F177 /* MainTabbar */,
-				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
-				8F45AD7F20EE144C005F811F /* AppDelegate */,
 				8FC717D220E9C31000B02F96 /* ScanQRCode */,
-				8F23C8F820E4B8170026A392 /* kInitUI.h */,
 				8FC717F520EA051200B02F96 /* NotificationView.h */,
 				8FC717F620EA051300B02F96 /* NotificationView.m */,
 				8F45AD7A20EDB3DC005F811F /* ScaleHeaderVC.h */,
@@ -1029,6 +1047,7 @@
 				8F469E1120DC86A8007F1166 /* GuideVC.m in Sources */,
 				8F469DFB20DB3F4D007F1166 /* KSRecordProgressView.m in Sources */,
 				8F9B0FE620D10943005DAF9E /* ViewController.m in Sources */,
+				8F208F9C2106D45500F50EF0 /* iToast+Category.m in Sources */,
 				8FCAAF9E20E2425700EF9CAA /* Server.m in Sources */,
 				8F469DE520DB3F4D007F1166 /* KSCaptureView.m in Sources */,
 				8FC717F720EA051300B02F96 /* NotificationView.m in Sources */,
@@ -1068,6 +1087,7 @@
 				8F469E0120DB3F4D007F1166 /* KSTakePhotoOperateView.m in Sources */,
 				8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */,
 				8FC717F120E9F8F300B02F96 /* PreViewCell.m in Sources */,
+				8F208F9D2106D45500F50EF0 /* iToast.m in Sources */,
 				8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */,
 				8F45B4A420F627BF005F811F /* SeperateLine.m in Sources */,
 				8FCAAF9820E1CDC700EF9CAA /* ScanVC.m in Sources */,
@@ -1140,11 +1160,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NC2K63V9RT;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.API.www.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1158,11 +1174,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NC2K63V9RT;
 				INFOPLIST_FILE = NotificationService/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.API.www.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1297,10 +1309,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.API.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1325,10 +1334,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/APIDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = APIDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.API.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1343,11 +1349,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1362,11 +1364,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1380,11 +1378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1398,11 +1392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V3WGXX8M8S;
 				INFOPLIST_FILE = APIDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Chan.APIDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

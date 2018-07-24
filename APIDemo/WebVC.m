@@ -71,8 +71,7 @@
     _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kStatusBarHeight, kAppWidth, kAppHeight - kStatusBarHeight ) configuration:configuration];
     _webView.navigationDelegate = self;
     [self.view addSubview:_webView];
-    //    @"http://192.168.1.3/"
-    [_webView loadRequest:[NSURLRequest requestWithURL:kURL(@"https://www.atmex.io")]];
+    [_webView loadRequest:[NSURLRequest requestWithURL:kURL(@"http://192.168.1.3/")]];
     if (@available(iOS 11.0, *)) {
         self.additionalSafeAreaInsets = UIEdgeInsetsMake(0, 0, iPhoneX_BOTTOM_HEIGHT, 0);
         _webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -363,7 +362,11 @@
 
 // MARK: - 保存至相册必须实现的协议方法，不然会出现奔溃情况
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
-    
+    if (!error) {
+        iToastText(@"保存成功!");
+    } else {
+        iToastText(error.localizedDescription);
+    }
 }
 
 // MARK: - memory management
@@ -373,4 +376,5 @@
         _webView = nil;
     }
 }
+
 @end

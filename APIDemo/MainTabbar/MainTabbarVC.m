@@ -63,8 +63,6 @@
     [((BadgeView *) _badgeViews[index]) updateCount:0];
 }
 
-
-
 /**
  build the viewController with the given title,normalImage,selectedImage
 
