@@ -18,13 +18,14 @@
 
 @implementation ScanAudioVC
 
+// MARK: - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    //开扬声器
-    UInt32 audioRouteOverride = 1;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    //开扬声器
+    UInt32 audioRouteOverride = 1;
     AudioSessionSetProperty (kAudioSessionProperty_OverrideCategoryDefaultToSpeaker,
                              sizeof (audioRouteOverride),
                              &audioRouteOverride);
@@ -88,5 +89,4 @@
         _player = nil;
     }
 }
-
 @end

@@ -14,12 +14,13 @@
 @end
 
 @implementation BadgeView
+
+// MARK: - initialized Method
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _count = 0;
         self.clipsToBounds = YES;
         self.layer.cornerRadius = frame.size.height / 2;
-    
         self.backgroundColor = [UIColor redColor];
         _countLabel = [UILabel new];
         _countLabel.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
@@ -45,6 +46,13 @@
         AudioServicesPlaySystemSound(1007);
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         _countLabel.text = [NSString stringWithFormat:@"%zd",_count];
+    }
+}
+
+// MARK: - memory management
+- (void)dealloc {
+    if (_countLabel) {
+        _countLabel = nil;
     }
 }
 @end

@@ -23,7 +23,9 @@
 
 - (void)setCellWithData:(NSDictionary *)json {
     _name.text = [NSString stringWithFormat:@"    %@",json[@"name"]];
-    _number.text = [NSString stringWithFormat:@"X%d",[json[@"number"]integerValue]];
+    _number.text = [NSString stringWithFormat:@"X%zd",[json[@"number"]integerValue]];
     _price.text = json[@"price"];
 }
+
+
 @end

@@ -60,6 +60,7 @@
 
 // MARK: - hide
 - (void)hide {
+    //动画消失
     CABasicAnimation *animataion = [CABasicAnimation animationWithKeyPath:@"position"];
     animataion.duration = 1.0;
     animataion.speed = 0.8;
@@ -78,5 +79,10 @@
     [self hide];
 }
 
-
+// MARK: - memory management
+- (void)dealloc {
+    if (_contentView) {
+        _contentView = nil;
+    }
+}
 @end

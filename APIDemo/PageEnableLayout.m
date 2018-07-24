@@ -25,6 +25,7 @@
     return self;
 }
 
+// MARK: - 重写布局方法
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
     return YES;
 }

@@ -63,7 +63,19 @@
     [((BadgeView *) _badgeViews[index]) updateCount:0];
 }
 
-- (UIViewController *)viewControlleWithtitle:(NSString *)title  normalimage:(UIImage *)normalImage selectedImage:(UIImage *)selectedImage {
+
+
+/**
+ build the viewController with the given title,normalImage,selectedImage
+
+ @param title title
+ @param normalImage normalImage
+ @param selectedImage selectedImage
+ @return viewController with the given paramters
+ */
+- (UIViewController *)viewControlleWithtitle:(NSString *)title
+                                 normalimage:(UIImage *)normalImage
+                               selectedImage:(UIImage *)selectedImage {
     UIViewController *viewControler = [UIViewController new];
     viewControler.view.backgroundColor = kRandomColor;
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:title

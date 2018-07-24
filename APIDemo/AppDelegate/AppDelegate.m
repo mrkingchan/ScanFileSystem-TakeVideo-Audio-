@@ -18,7 +18,6 @@
     BOOL _versionUpdate;
     NSString *_messageStr;
     UIAlertController *_alertVC;
-    
 }
 @end
 
@@ -82,8 +81,6 @@
                                                       iToastText([note.userInfo mj_JSONString]);
                                                   }];
      */
-    
-    
     return YES;
 }
 
@@ -117,9 +114,11 @@
         //注册远程通知
         [[UIApplication sharedApplication] registerForRemoteNotifications];
     } else {
-        
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         //iOS8以下的通知
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge |  UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
+#pragma clang diagnostic pop
     }
 }
 
@@ -213,7 +212,7 @@
                                          }];*/
     if ([ UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
         //前台状态下模拟远程推送下的下拉通知
-        
+
 //        [EBBannerView showWithContent:items];
         [[EBBannerView  bannerWithBlock:^(EBBannerViewMaker *make) {
             make.style = EBBannerViewStyleiOS10;
@@ -222,6 +221,7 @@
     }
 }
 
+// MARK: - 处理三方跳转回调
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     return [WXApi handleOpenURL:url delegate:self];
 }
@@ -232,6 +232,7 @@
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     return [WXApi handleOpenURL:url delegate:self];
 }
+
 -(void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -253,6 +254,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+// MARK: - WeiboSDKDelegate
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request {
+    
+}
+
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
+    
 }
 
 @end
