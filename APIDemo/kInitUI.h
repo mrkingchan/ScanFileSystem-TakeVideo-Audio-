@@ -912,5 +912,14 @@ CG_INLINE void KillTimer(NSTimer *timer)
     }
 }
 
+CG_INLINE UIViewController *kBuildViewControllerwithConfiguration(Class className,NSString *titleStr,UIImage* normalImage,UIImage *selectedImage) {
+    assert(![className isSubclassOfClass:[UIViewController class]]);
+    UIViewController *viewController = [className new];
+    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:titleStr
+                                                       image:normalImage
+                                               selectedImage:selectedImage];
+    viewController.tabBarItem = item;
+    return viewController;
+}
 
 #endif /* kInitUI_h */

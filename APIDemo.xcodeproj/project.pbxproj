@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6CACD36C2EAD120D5228026D /* Pods_APIDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57D2936041215A73C3AD926 /* Pods_APIDemo.framework */; };
+		8F208F932106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208F922106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m */; };
 		8F23C8DD20E48D6F0026A392 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */; };
 		8F23C8E020E4AD540026A392 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8DF20E4AD540026A392 /* libc++.tbd */; };
 		8F23C8E220E4AD5A0026A392 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8E120E4AD5A0026A392 /* libz.tbd */; };
@@ -140,6 +141,8 @@
 /* Begin PBXFileReference section */
 		182A6A71309150DD36EE3CF1 /* Pods-APIDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo.release.xcconfig"; sourceTree = "<group>"; };
 		34C5123FB8A83D0E766DA960 /* Pods-APIDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APIDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-APIDemo/Pods-APIDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		8F208F912106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ThirdPartConfig.h"; sourceTree = "<group>"; };
+		8F208F922106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ThirdPartConfig.m"; sourceTree = "<group>"; };
 		8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		8F23C8DC20E48D6F0026A392 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		8F23C8DF20E4AD540026A392 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -357,6 +360,8 @@
 				8F9B0FE220D10943005DAF9E /* AppDelegate.m */,
 				8F469E1920E07BDD007F1166 /* AppDelegate+Configure.h */,
 				8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */,
+				8F208F912106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.h */,
+				8F208F922106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -1039,6 +1044,7 @@
 				8F469E0520DB8A6A007F1166 /* NetTool.m in Sources */,
 				8FA835CB20FF22260055F177 /* MainTabbarVC.m in Sources */,
 				8F45B49120F601FB005F811F /* InvoicePaperView.m in Sources */,
+				8F208F932106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m in Sources */,
 				8F9B0FF120D10946005DAF9E /* main.m in Sources */,
 				8F469E0E20DB9B1F007F1166 /* ScanAudioVC.m in Sources */,
 				8FA835CE20FF22780055F177 /* BadgeView.m in Sources */,
