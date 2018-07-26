@@ -14,17 +14,13 @@
     UIImageView *_imageView;
 }
 @end
-@implementation PhotoCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-}
+@implementation PhotoCell
 
 // MARK: - initialize Method
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        
         [self addSubview:_imageView];
     }
     return self;
@@ -39,5 +35,4 @@
         _imageView.image = image;
     }
 }
-
 @end

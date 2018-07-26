@@ -55,10 +55,15 @@
 }
 
 // MARK: - UIScrollViewDelegate
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSInteger index = scrollView.contentOffset.x / kAppWidth;
-    self.navigationItem.title = [NSString stringWithFormat:@"%zd/%zd",index + 1,_dataArray.count];
+    self.navigationItem.title = [NSString stringWithFormat:@"%zd/%lu",index + 1,(unsigned long)_dataArray.count];
 }
 
+// MARK: - memory management
+- (void)dealloc {
+    if (_collectionView) {
+        _collectionView = nil;
+    }
+}
 @end

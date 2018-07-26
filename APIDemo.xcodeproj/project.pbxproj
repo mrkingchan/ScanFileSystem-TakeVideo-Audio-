@@ -16,6 +16,7 @@
 		8F208FAA210853DE00F50EF0 /* BlurModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FA9210853DE00F50EF0 /* BlurModel.m */; };
 		8F208FB02108579E00F50EF0 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FAE2108579D00F50EF0 /* UIView+Frame.m */; };
 		8F208FB6210963A700F50EF0 /* ContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FB5210963A700F50EF0 /* ContainerView.m */; };
+		8F208FBA21099E8000F50EF0 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FB921099E8000F50EF0 /* Tool.m */; };
 		8F23C8DD20E48D6F0026A392 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */; };
 		8F23C8E020E4AD540026A392 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8DF20E4AD540026A392 /* libc++.tbd */; };
 		8F23C8E220E4AD5A0026A392 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8E120E4AD5A0026A392 /* libz.tbd */; };
@@ -164,6 +165,8 @@
 		8F208FAF2108579E00F50EF0 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		8F208FB4210963A700F50EF0 /* ContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerView.h; sourceTree = "<group>"; };
 		8F208FB5210963A700F50EF0 /* ContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerView.m; sourceTree = "<group>"; };
+		8F208FB821099E8000F50EF0 /* Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		8F208FB921099E8000F50EF0 /* Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
 		8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		8F23C8DC20E48D6F0026A392 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		8F23C8DF20E4AD540026A392 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -390,6 +393,8 @@
 				8F469E0420DB8A6A007F1166 /* NetTool.m */,
 				8F469E0620DB8B1C007F1166 /* HttpClient.h */,
 				8F469E0720DB8B1C007F1166 /* HttpClient.m */,
+				8F208FB821099E8000F50EF0 /* Tool.h */,
+				8F208FB921099E8000F50EF0 /* Tool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -681,9 +686,9 @@
 		8F9B0FE020D10943005DAF9E /* APIDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8F208FA12108531800F50EF0 /* BlurEffect */,
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
+				8F208FA12108531800F50EF0 /* BlurEffect */,
 				8F208F972106D45400F50EF0 /* iToast */,
 				8F45AD7F20EE144C005F811F /* AppDelegate */,
 				8F208F962106D0B300F50EF0 /* Tools */,
@@ -1153,6 +1158,7 @@
 				8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */,
 				8F45B4A420F627BF005F811F /* SeperateLine.m in Sources */,
 				8FCAAF9820E1CDC700EF9CAA /* ScanVC.m in Sources */,
+				8F208FBA21099E8000F50EF0 /* Tool.m in Sources */,
 				8F469DFA20DB3F4D007F1166 /* KSTakeVideoViewController.m in Sources */,
 				8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */,
 				8FC717E520E9C36000B02F96 /* SGGenerateQRCodeVC.m in Sources */,

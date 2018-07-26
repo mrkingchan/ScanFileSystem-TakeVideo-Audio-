@@ -47,6 +47,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "NotificationView.h"
 #import "UIView+Frame.h"
+#import "Tool.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
