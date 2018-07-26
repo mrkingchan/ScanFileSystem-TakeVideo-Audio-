@@ -11,6 +11,11 @@
 		8F208F932106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208F922106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m */; };
 		8F208F9C2106D45500F50EF0 /* iToast+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208F982106D45400F50EF0 /* iToast+Category.m */; };
 		8F208F9D2106D45500F50EF0 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208F9B2106D45400F50EF0 /* iToast.m */; };
+		8F208FA42108533C00F50EF0 /* BlurVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FA32108533C00F50EF0 /* BlurVC.m */; };
+		8F208FA72108534F00F50EF0 /* BlurCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FA62108534F00F50EF0 /* BlurCell.m */; };
+		8F208FAA210853DE00F50EF0 /* BlurModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FA9210853DE00F50EF0 /* BlurModel.m */; };
+		8F208FB02108579E00F50EF0 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FAE2108579D00F50EF0 /* UIView+Frame.m */; };
+		8F208FB6210963A700F50EF0 /* ContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FB5210963A700F50EF0 /* ContainerView.m */; };
 		8F23C8DD20E48D6F0026A392 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */; };
 		8F23C8E020E4AD540026A392 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8DF20E4AD540026A392 /* libc++.tbd */; };
 		8F23C8E220E4AD5A0026A392 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8E120E4AD5A0026A392 /* libz.tbd */; };
@@ -149,6 +154,16 @@
 		8F208F992106D45400F50EF0 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
 		8F208F9A2106D45400F50EF0 /* iToast+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iToast+Category.h"; sourceTree = "<group>"; };
 		8F208F9B2106D45400F50EF0 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
+		8F208FA22108533C00F50EF0 /* BlurVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurVC.h; sourceTree = "<group>"; };
+		8F208FA32108533C00F50EF0 /* BlurVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurVC.m; sourceTree = "<group>"; };
+		8F208FA52108534F00F50EF0 /* BlurCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurCell.h; sourceTree = "<group>"; };
+		8F208FA62108534F00F50EF0 /* BlurCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurCell.m; sourceTree = "<group>"; };
+		8F208FA8210853DE00F50EF0 /* BlurModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlurModel.h; sourceTree = "<group>"; };
+		8F208FA9210853DE00F50EF0 /* BlurModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlurModel.m; sourceTree = "<group>"; };
+		8F208FAE2108579D00F50EF0 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		8F208FAF2108579E00F50EF0 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		8F208FB4210963A700F50EF0 /* ContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerView.h; sourceTree = "<group>"; };
+		8F208FB5210963A700F50EF0 /* ContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerView.m; sourceTree = "<group>"; };
 		8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		8F23C8DC20E48D6F0026A392 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		8F23C8DF20E4AD540026A392 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -364,6 +379,8 @@
 		8F208F962106D0B300F50EF0 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				8F208FAF2108579E00F50EF0 /* UIView+Frame.h */,
+				8F208FAE2108579D00F50EF0 /* UIView+Frame.m */,
 				8F469E1C20E07FE9007F1166 /* AVTool.h */,
 				8F469E1D20E07FE9007F1166 /* AVTool.m */,
 				8F23C8F820E4B8170026A392 /* kInitUI.h */,
@@ -386,6 +403,45 @@
 				8F208F9B2106D45400F50EF0 /* iToast.m */,
 			);
 			path = iToast;
+			sourceTree = "<group>";
+		};
+		8F208FA12108531800F50EF0 /* BlurEffect */ = {
+			isa = PBXGroup;
+			children = (
+				8F208FB321095D6A00F50EF0 /* Models */,
+				8F208FB121095D5500F50EF0 /* Controllers */,
+				8F208FB221095D5E00F50EF0 /* Views */,
+			);
+			path = BlurEffect;
+			sourceTree = "<group>";
+		};
+		8F208FB121095D5500F50EF0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8F208FA22108533C00F50EF0 /* BlurVC.h */,
+				8F208FA32108533C00F50EF0 /* BlurVC.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8F208FB221095D5E00F50EF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F208FA52108534F00F50EF0 /* BlurCell.h */,
+				8F208FA62108534F00F50EF0 /* BlurCell.m */,
+				8F208FB4210963A700F50EF0 /* ContainerView.h */,
+				8F208FB5210963A700F50EF0 /* ContainerView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8F208FB321095D6A00F50EF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F208FA8210853DE00F50EF0 /* BlurModel.h */,
+				8F208FA9210853DE00F50EF0 /* BlurModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8F23C8DA20E48D6F0026A392 /* AliPay */ = {
@@ -625,6 +681,7 @@
 		8F9B0FE020D10943005DAF9E /* APIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8F208FA12108531800F50EF0 /* BlurEffect */,
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
 				8F208F972106D45400F50EF0 /* iToast */,
@@ -1063,22 +1120,26 @@
 				8F469DF920DB3F4D007F1166 /* KSCaptureTool.m in Sources */,
 				8FC717EE20E9D59F00B02F96 /* PreviewPhotoVC.m in Sources */,
 				8F469E0820DB8B1C007F1166 /* HttpClient.m in Sources */,
+				8F208FA42108533C00F50EF0 /* BlurVC.m in Sources */,
 				8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */,
 				8F469DFE20DB3F4D007F1166 /* KSTakeVideoManager.m in Sources */,
 				8FCABD4620E3640700EF9CAA /* PhotoCell.m in Sources */,
 				8F469DA220DA5192007F1166 /* WebVC.m in Sources */,
 				8F469E0020DB3F4D007F1166 /* KSTakePhotoViewController.m in Sources */,
 				8F469DFF20DB3F4D007F1166 /* KSVideoPlayer.m in Sources */,
+				8F208FAA210853DE00F50EF0 /* BlurModel.m in Sources */,
 				8F469DFC20DB3F4D007F1166 /* KSTakeVideoOperateView.m in Sources */,
 				8F45B49820F60939005F811F /* Cell.m in Sources */,
 				8FC717E820E9C36000B02F96 /* SGScanningQRCodeView.m in Sources */,
 				8F45AD7C20EDB3DC005F811F /* ScaleHeaderVC.m in Sources */,
+				8F208FA72108534F00F50EF0 /* BlurCell.m in Sources */,
 				8FC717E720E9C36000B02F96 /* SGScanningQRCodeVC.m in Sources */,
 				8FC717E620E9C36000B02F96 /* SGAlertView.m in Sources */,
 				8F469D9F20DA3E62007F1166 /* ScanPhotoVC.m in Sources */,
 				8F469E0520DB8A6A007F1166 /* NetTool.m in Sources */,
 				8FA835CB20FF22260055F177 /* MainTabbarVC.m in Sources */,
 				8F45B49120F601FB005F811F /* InvoicePaperView.m in Sources */,
+				8F208FB6210963A700F50EF0 /* ContainerView.m in Sources */,
 				8F208F932106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m in Sources */,
 				8F9B0FF120D10946005DAF9E /* main.m in Sources */,
 				8F469E0E20DB9B1F007F1166 /* ScanAudioVC.m in Sources */,
@@ -1087,6 +1148,7 @@
 				8F469E0120DB3F4D007F1166 /* KSTakePhotoOperateView.m in Sources */,
 				8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */,
 				8FC717F120E9F8F300B02F96 /* PreViewCell.m in Sources */,
+				8F208FB02108579E00F50EF0 /* UIView+Frame.m in Sources */,
 				8F208F9D2106D45500F50EF0 /* iToast.m in Sources */,
 				8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */,
 				8F45B4A420F627BF005F811F /* SeperateLine.m in Sources */,

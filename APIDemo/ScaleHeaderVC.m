@@ -32,7 +32,6 @@
     [super viewDidLoad];
     _headerView = kInsertViewWithBorderAndCorRadius(self.view, CGRectMake(0, 0, kAppWidth, 150), kColorClear, 0.0, nil, 0);
     _headerView.layer.contents = (id) kIMAGE(@"AppIcon").CGImage;
-    
     _tableView = kInsertTableView(self.view,CGRectMake(0,150, kAppWidth, self.view.frame.size.height - 150), self, self, 0, 0);
 }
 

@@ -19,6 +19,7 @@
 #import "SGScanningQRCodeVC.h"
 #import "ScaleHeaderVC.h"
 #import "InvoicePaperVC.h"
+#import "BlurVC.h"
 
 @interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate,SGScanningQRCodeVCDelegate> {
 
@@ -32,11 +33,11 @@
 
 // MARK: - viewController'view's lifeCircle
 - (void)viewDidLoad {
-    [super viewDidLoad];    
+    [super viewDidLoad];
     self.title = @"数据管理";
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth, kAppHeight) style:0];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kAppWidth, self.view.height) style:0];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
@@ -62,11 +63,12 @@
         });
     }];
     //都要做文件缓存处理 
-    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票"]];
+    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票",@"标签"]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除缓存" style:UIBarButtonItemStylePlain target:self action:@selector(clearCache)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"推送测试" style:UIBarButtonItemStylePlain target:self action:@selector(testNotification)];
 }
 
+// MARK: - 推送
 - (void)testNotification {
     [[EBBannerView bannerWithBlock:^(EBBannerViewMaker *make) {
         make.style = EBBannerViewStyleiOS11;
@@ -319,6 +321,11 @@
             [self.navigationController pushViewController:[InvoicePaperVC new] animated:YES];
         }
             break;
+            case 15:
+        {
+            [self.navigationController pushViewController:[BlurVC new] animated:YES];
+        }
+            break;
         default:
             break;
     }
@@ -335,10 +342,11 @@
 }
 // MARK: - IQAudioEcorderViewContorllerDelegate
 - (void)presentAudioRecorderViewControllerAnimated:(IQAudioRecorderViewController *)audioRecorderViewController {
-    
+    puts(__func__);
 }
 
 - (void)audioRecorderControllerDidCancel:(IQAudioRecorderViewController *)controller  {
+    puts(__func__);
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -382,4 +390,5 @@
         _tableView = nil;
     }
 }
+
 @end
