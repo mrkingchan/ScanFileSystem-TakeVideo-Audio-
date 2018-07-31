@@ -35,4 +35,12 @@
         _imageView.image = image;
     }
 }
+
+// MARK: - memory management
+
+- (void)dealloc {
+    if (_imageView) {
+        _imageView = nil;
+    }
+}
 @end

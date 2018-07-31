@@ -100,7 +100,6 @@
 }
 
 // MARK: - memory management
-
 - (void)dealloc {
     if (_collectionView) {
         _collectionView.delegate = nil;

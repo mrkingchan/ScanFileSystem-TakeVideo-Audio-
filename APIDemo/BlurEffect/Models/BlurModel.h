@@ -16,5 +16,6 @@
 
 @property(nonatomic,strong)NSString *iconUrl;
 
+@property(nonatomic,strong)NSString *typeName;
 
 @end

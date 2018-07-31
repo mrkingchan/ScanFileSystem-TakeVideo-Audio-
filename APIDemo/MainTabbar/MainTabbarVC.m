@@ -11,7 +11,7 @@
 
 @interface MainTabbarVC () {
     NSMutableArray *_badgeViews;
-    NSInteger i;
+    NSInteger count;
 }
 
 @end
@@ -51,16 +51,20 @@
     }
 }
 
+// MARK: - private Method
 -(void)timeAction:(NSTimer *)timer {
-    i ++ ;
+    count ++ ;
     for (BadgeView *dotView in _badgeViews) {
-        [dotView updateCount:i];
+        [dotView updateCount:count];
     }
 }
 // MARK: - UITabbarDelegate
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     NSInteger index = [self.tabBar.items indexOfObject:item];
-    [((BadgeView *) _badgeViews[index]) updateCount:0];
+    if (_badgeViews.count) {
+        //置空
+        [((BadgeView *) _badgeViews[index]) updateCount:0];
+    }
 }
 
 /**

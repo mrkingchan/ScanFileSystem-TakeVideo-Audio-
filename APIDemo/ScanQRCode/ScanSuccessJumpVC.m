@@ -22,12 +22,6 @@
 
 @implementation ScanSuccessJumpVC
 
--(void)viewWillAppear:(BOOL)animated  {
-    [super viewWillAppear:animated];
-    if (_cmd) {
-        NSString *cmdStr = NSStringFromSelector(_cmd);
-    }
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

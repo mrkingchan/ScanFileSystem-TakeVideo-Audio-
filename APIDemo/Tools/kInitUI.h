@@ -16,6 +16,7 @@ CG_INLINE UICollectionView *kInsertCollectionView(id superView,CGRect rec,id <UI
     layout.itemSize = itemSize;
     layout.minimumLineSpacing = 5.0;
     layout.minimumInteritemSpacing = 5.0;
+    layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:rec collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor whiteColor];
     if (superView) {

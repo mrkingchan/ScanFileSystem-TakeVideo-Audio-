@@ -41,10 +41,11 @@
         self.hidden = YES;
     } else {
         self.hidden = NO;
+        /*
         //播放系统音效
         // 系统声音
         AudioServicesPlaySystemSound(1007);
-        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);*/
         _countLabel.text = [NSString stringWithFormat:@"%zd",_count];
     }
 }

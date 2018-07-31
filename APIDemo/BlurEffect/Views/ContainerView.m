@@ -13,14 +13,17 @@
     UIButton *_items[30];
     UIVisualEffectView *_effectView[30];
     BlurModel *_model;
+    dispatch_queue_t _queue;
 
 }
 @end
 
 @implementation ContainerView
 
+// MARK: - initialized Method
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        _queue = dispatch_queue_create("com.cell.blurCell", DISPATCH_QUEUE_CONCURRENT);
         for (int i = 0 ; i < 30; i ++) {
             _items[i] = kInsertButtonWithType(self, CGRectZero, i + 100000, self, @selector(buttonAction:), UIButtonTypeCustom);
             //加毛玻璃效果
@@ -33,8 +36,9 @@
             [_effectView[i] addGestureRecognizer:tap];
             _items[i].clipsToBounds = YES;
             _items[i].layer.cornerRadius = 4.0;
-            _items[i].titleLabel.font = KSFont(15);
+            _items[i].titleLabel.font = KSFont(13);
             _items[i].titleLabel.textAlignment = 1;
+            
         }
     }
     return self;
@@ -46,18 +50,23 @@
         _items[i].hidden = YES;
     }
     _model = model;
-    NSInteger  column = 0;
+    __block NSInteger  column = 0;
+    @weakify(self);
     for (int i = 0 ; i < model.items.count; i ++) {
         _items[i].hidden = NO;
-        BOOL changeColumn = i == 0 ?NO:_items[i - 1].right + kgap + [Tool widthWithString:model.items[i] font:KSFont(15)] > kAppWidth - 20;
-        if (changeColumn) {
-            column ++;
-        }
-        _items[i].frame = CGRectMake(i == 0 ? kgap:changeColumn?kgap:_items[i - 1].right + kgap ,kgap *(column + 1) + (column * kitemH), [Tool widthWithString:model.items[i] font:KSFont(15)], kitemH);
-        [_items[i] setTitle:model.items[i] forState:UIControlStateNormal];
-        [_items[i] setTitleColor:[Tool colorWithHexString:model.colorStr] forState:UIControlStateNormal];
-        _items[i].backgroundColor = [Tool colorWithHexString:model.colorStr];
-        _effectView[i].frame = _items[i].bounds;
+            @strongify(self);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                BOOL changeColumn = i == 0 ?NO:self->_items[i - 1].right + kgap + [Tool widthWithString:model.items[i] font:KSFont(13)] > kAppWidth - 20;
+                if (changeColumn) {
+                    column ++;
+                }
+                CGRect rect = CGRectMake(i == 0 ? kgap:changeColumn?kgap:self->_items[i - 1].right + kgap ,kgap *(column + 1) + (column * kitemH), [Tool widthWithString:model.items[i] font:KSFont(13)], kitemH);
+                self->_items[i].frame = rect;
+                [self->_items[i] setTitle:model.items[i] forState:UIControlStateNormal];
+                [self->_items[i] setTitleColor:[Tool colorWithHexString:model.colorStr] forState:UIControlStateNormal];
+                self->_items[i].backgroundColor = [Tool colorWithHexString:model.colorStr];
+                self->_effectView[i].frame =self-> _items[i].bounds;
+            });
     }
 }
 
@@ -69,11 +78,12 @@
     }
 }
 
+// MARK: - height
 + (CGFloat)containerHeightWithData:(BlurModel *)model {
     NSInteger column = 0;
     CGFloat itemR = 0;
     for (int i = 0; i< model.items.count; i ++) {
-        itemR  = itemR + kgap + [Tool widthWithString:model.items[i] font:KSFont(15)];
+        itemR  = itemR + kgap + [Tool widthWithString:model.items[i] font:KSFont(13)];
         BOOL changeColumn = itemR > kAppWidth - 20;
         if (changeColumn) {
             column ++;
@@ -83,4 +93,10 @@
     return kgap *(column + 1) + ((column+1) * kitemH) + kgap;
 }
 
+// MARK: - memory management
+- (void)dealloc {
+    if (_model) {
+        _model = nil;
+    }
+}
 @end

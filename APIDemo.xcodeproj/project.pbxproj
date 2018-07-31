@@ -17,6 +17,9 @@
 		8F208FB02108579E00F50EF0 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FAE2108579D00F50EF0 /* UIView+Frame.m */; };
 		8F208FB6210963A700F50EF0 /* ContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FB5210963A700F50EF0 /* ContainerView.m */; };
 		8F208FBA21099E8000F50EF0 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FB921099E8000F50EF0 /* Tool.m */; };
+		8F208FC221100C1D00F50EF0 /* HeadeReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FC121100C1D00F50EF0 /* HeadeReusableView.m */; };
+		8F208FC521100CAF00F50EF0 /* BannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FC421100CAF00F50EF0 /* BannerVC.m */; };
+		8F208FC82110328500F50EF0 /* UICollectionSectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FC72110328500F50EF0 /* UICollectionSectionViewFlowLayout.m */; };
 		8F23C8DD20E48D6F0026A392 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */; };
 		8F23C8E020E4AD540026A392 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8DF20E4AD540026A392 /* libc++.tbd */; };
 		8F23C8E220E4AD5A0026A392 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8E120E4AD5A0026A392 /* libz.tbd */; };
@@ -167,6 +170,12 @@
 		8F208FB5210963A700F50EF0 /* ContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerView.m; sourceTree = "<group>"; };
 		8F208FB821099E8000F50EF0 /* Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
 		8F208FB921099E8000F50EF0 /* Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		8F208FC021100C1D00F50EF0 /* HeadeReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeadeReusableView.h; sourceTree = "<group>"; };
+		8F208FC121100C1D00F50EF0 /* HeadeReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeadeReusableView.m; sourceTree = "<group>"; };
+		8F208FC321100CAF00F50EF0 /* BannerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerVC.h; sourceTree = "<group>"; };
+		8F208FC421100CAF00F50EF0 /* BannerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerVC.m; sourceTree = "<group>"; };
+		8F208FC62110328500F50EF0 /* UICollectionSectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionSectionViewFlowLayout.h; sourceTree = "<group>"; };
+		8F208FC72110328500F50EF0 /* UICollectionSectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICollectionSectionViewFlowLayout.m; sourceTree = "<group>"; };
 		8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		8F23C8DC20E48D6F0026A392 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		8F23C8DF20E4AD540026A392 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -449,6 +458,62 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8F208FBB210AACF000F50EF0 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				8F208FBE210AAD5400F50EF0 /* Models */,
+				8F208FBD210AAD3D00F50EF0 /* Views */,
+				8F208FBC210AAD3000F50EF0 /* Controllers */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		8F208FBC210AAD3000F50EF0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8FC717EC20E9D59F00B02F96 /* PreviewPhotoVC.h */,
+				8FC717ED20E9D59F00B02F96 /* PreviewPhotoVC.m */,
+				8F469D9D20DA3E62007F1166 /* ScanPhotoVC.h */,
+				8F469D9E20DA3E62007F1166 /* ScanPhotoVC.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8F208FBD210AAD3D00F50EF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8FCABD4320E3640700EF9CAA /* PhotoCell.h */,
+				8FCABD4420E3640700EF9CAA /* PhotoCell.m */,
+				8FC717EF20E9F8F300B02F96 /* PreViewCell.h */,
+				8FC717F020E9F8F300B02F96 /* PreViewCell.m */,
+				8F469D9A20DA370E007F1166 /* VideoCell.h */,
+				8F469D9B20DA370E007F1166 /* VideoCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8F208FBE210AAD5400F50EF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8FC717F220EA029500B02F96 /* PageEnableLayout.h */,
+				8FC717F320EA029500B02F96 /* PageEnableLayout.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F208FBF21100BF400F50EF0 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				8F208FC021100C1D00F50EF0 /* HeadeReusableView.h */,
+				8F208FC121100C1D00F50EF0 /* HeadeReusableView.m */,
+				8F208FC321100CAF00F50EF0 /* BannerVC.h */,
+				8F208FC421100CAF00F50EF0 /* BannerVC.m */,
+				8F208FC62110328500F50EF0 /* UICollectionSectionViewFlowLayout.h */,
+				8F208FC72110328500F50EF0 /* UICollectionSectionViewFlowLayout.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
 		8F23C8DA20E48D6F0026A392 /* AliPay */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,6 +753,7 @@
 			children = (
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
+				8F208FBB210AACF000F50EF0 /* Photo */,
 				8F208FA12108531800F50EF0 /* BlurEffect */,
 				8F208F972106D45400F50EF0 /* iToast */,
 				8F45AD7F20EE144C005F811F /* AppDelegate */,
@@ -696,6 +762,9 @@
 				8FA836B4210093890055F177 /* Invoice */,
 				8FA835C820FF22110055F177 /* MainTabbar */,
 				8FC717D220E9C31000B02F96 /* ScanQRCode */,
+				8F208FBF21100BF400F50EF0 /* Banner */,
+				8FCAAF9720E1CDC600EF9CAA /* ScanVC.m */,
+				8FCAAF9620E1CDC600EF9CAA /* ScanVC.h */,
 				8FC717F520EA051200B02F96 /* NotificationView.h */,
 				8FC717F620EA051300B02F96 /* NotificationView.m */,
 				8F45AD7A20EDB3DC005F811F /* ScaleHeaderVC.h */,
@@ -706,24 +775,10 @@
 				8F9B0FE520D10943005DAF9E /* ViewController.m */,
 				8F469DA020DA5192007F1166 /* WebVC.h */,
 				8F469DA120DA5192007F1166 /* WebVC.m */,
-				8FCAAF9620E1CDC600EF9CAA /* ScanVC.h */,
-				8FCAAF9720E1CDC600EF9CAA /* ScanVC.m */,
-				8FCABD4320E3640700EF9CAA /* PhotoCell.h */,
-				8FCABD4420E3640700EF9CAA /* PhotoCell.m */,
-				8FC717EC20E9D59F00B02F96 /* PreviewPhotoVC.h */,
-				8FC717ED20E9D59F00B02F96 /* PreviewPhotoVC.m */,
-				8FC717F220EA029500B02F96 /* PageEnableLayout.h */,
-				8FC717F320EA029500B02F96 /* PageEnableLayout.m */,
-				8FC717EF20E9F8F300B02F96 /* PreViewCell.h */,
-				8FC717F020E9F8F300B02F96 /* PreViewCell.m */,
 				8F469D9720DA36CD007F1166 /* ScanVideoVC.h */,
 				8F469D9820DA36CD007F1166 /* ScanVideoVC.m */,
 				8F469E0C20DB9B1F007F1166 /* ScanAudioVC.h */,
 				8F469E0D20DB9B1F007F1166 /* ScanAudioVC.m */,
-				8F469D9A20DA370E007F1166 /* VideoCell.h */,
-				8F469D9B20DA370E007F1166 /* VideoCell.m */,
-				8F469D9D20DA3E62007F1166 /* ScanPhotoVC.h */,
-				8F469D9E20DA3E62007F1166 /* ScanPhotoVC.m */,
 				8F23C8DA20E48D6F0026A392 /* AliPay */,
 				8F9B0FE720D10943005DAF9E /* Main.storyboard */,
 				8F469DA620DB3F4D007F1166 /* KSCapture */,
@@ -1041,6 +1096,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SGQRCode/SGQRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -1061,6 +1117,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSiriWaveformView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGQRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -1124,6 +1181,8 @@
 				8FCAAF9B20E21DF600EF9CAA /* ClientVC.m in Sources */,
 				8F469DF920DB3F4D007F1166 /* KSCaptureTool.m in Sources */,
 				8FC717EE20E9D59F00B02F96 /* PreviewPhotoVC.m in Sources */,
+				8F208FC82110328500F50EF0 /* UICollectionSectionViewFlowLayout.m in Sources */,
+				8F208FC521100CAF00F50EF0 /* BannerVC.m in Sources */,
 				8F469E0820DB8B1C007F1166 /* HttpClient.m in Sources */,
 				8F208FA42108533C00F50EF0 /* BlurVC.m in Sources */,
 				8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */,
@@ -1160,6 +1219,7 @@
 				8FCAAF9820E1CDC700EF9CAA /* ScanVC.m in Sources */,
 				8F208FBA21099E8000F50EF0 /* Tool.m in Sources */,
 				8F469DFA20DB3F4D007F1166 /* KSTakeVideoViewController.m in Sources */,
+				8F208FC221100C1D00F50EF0 /* HeadeReusableView.m in Sources */,
 				8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */,
 				8FC717E520E9C36000B02F96 /* SGGenerateQRCodeVC.m in Sources */,
 				8F45B49C20F60C84005F811F /* InvoicePaperVC.m in Sources */,

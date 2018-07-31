@@ -18,6 +18,7 @@
     BOOL _versionUpdate;
     NSString *_messageStr;
     UIAlertController *_alertVC;
+    BOOL _switchRoot;
 }
 @end
 
@@ -62,6 +63,16 @@
 
     //app共享路径
   NSURL *url = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"com.bundel.subApp"];
+    /*@weakify(self);
+    [NSTimer scheduledTimerWithTimeInterval:10.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        @strongify(self);
+        self->_switchRoot = !self->_switchRoot;
+        if (self->_switchRoot) {
+            self->_window.rootViewController = [ViewController new];
+        } else {
+            self->_window.rootViewController = [MainTabbarVC new];
+        }
+    }];*/
     /*
     //极光推送
     JPUSHRegisterEntity * entity = [JPUSHRegisterEntity new];
@@ -265,4 +276,5 @@
 - (void)didReceiveWeiboResponse:(WBBaseResponse *)response {
     
 }
+
 @end
