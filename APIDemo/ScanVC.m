@@ -137,5 +137,4 @@
     NSLog(@"WBQRCodeScanningVC - dealloc");
     [self removeScanningView];
 }
-
 @end

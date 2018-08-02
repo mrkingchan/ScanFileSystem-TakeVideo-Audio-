@@ -20,6 +20,7 @@
 
 @implementation AddresssPickerVC
 
+// MARK: - viewController's view's lifeCircle
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     //默认选择每列的第一行
@@ -143,7 +144,7 @@
                   };
     _selectedDistrictRow = 0;
     _selectedProvinceStr = @"江西省";
-    _selectedDistrictStr = @"宜春";
+    _selectedDistrictStr = @"宜春市";
     _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, kAppHeight -  400, kAppWidth, 400)];
     _pickerView.dataSource = self;
     _pickerView.delegate = self;
@@ -165,6 +166,7 @@
     }*/
 }
 
+// MARK: - private Method
 - (void)buttonAction:(id)sender {
     NSInteger row1 = [_pickerView  selectedRowInComponent:0];
     NSInteger row2 = [_pickerView  selectedRowInComponent:1];
@@ -173,12 +175,12 @@
     NSString *selectedprovinceStr = [_jsonData allKeys][row1];
     NSString*selectedDistrictStr = [_jsonData[selectedprovinceStr][row2] allKeys][0];
     NSString *selectedSubStr = _jsonData[selectedprovinceStr][row2][selectedDistrictStr][row3];
+    //后去选取的值
     NSString *selectedStr = [NSString stringWithFormat:@"%@%@%@",selectedprovinceStr,selectedDistrictStr,selectedSubStr];
     iToastText(selectedStr);
 }
 
 // MARK: - UIPickerViewDatasource&Delegate
-
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView  {
     return 3;
 }
@@ -256,6 +258,8 @@
 // MARK: - memory management
 - (void)dealloc {
     if (_pickerView) {
+        _pickerView.dataSource = nil;
+        _pickerView.delegate = nil;
         _pickerView = nil;
     }
     if (_jsonData) {

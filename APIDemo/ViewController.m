@@ -44,6 +44,17 @@
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     
+    SEL selector = NSSelectorFromString(@"deviceInfoForKey:");
+    if (![[UIDevice currentDevice] respondsToSelector:selector]) {
+        selector = NSSelectorFromString(@"_deviceInfoForKey:");
+    }
+    if ([[UIDevice currentDevice] respondsToSelector:selector]) {
+        IMP imp = [[UIDevice currentDevice] methodForSelector:selector];
+        NSString *(*func)(id,SEL,NSString *) = (void * )imp;
+        NSString *deviceColor = func([UIDevice currentDevice],selector,@"DeviceColor");
+        NSString *deveiceEnclosureColor = func([UIDevice currentDevice],selector,@"DeviceEnclosureColor");
+        NSLog(@"deviceColor = %@,deviceEnclosureColor = %@",deviceColor,deveiceEnclosureColor);
+    }
     //头部
     @weakify(self);
     [_tableView addLegendHeaderWithRefreshingBlock:^{
@@ -400,5 +411,4 @@
         _tableView = nil;
     }
 }
-
 @end
