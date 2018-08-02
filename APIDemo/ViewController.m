@@ -21,6 +21,7 @@
 #import "InvoicePaperVC.h"
 #import "BlurVC.h"
 #import "BannerVC.h"
+#import "AddresssPickerVC.h"
 
 @interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate,SGScanningQRCodeVCDelegate> {
 
@@ -64,7 +65,7 @@
         });
     }];
     //都要做文件缓存处理 
-    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票",@"标签",@"Banner广告"]];
+    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票",@"标签",@"Banner广告",@"地址选择"]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除缓存" style:UIBarButtonItemStylePlain target:self action:@selector(clearCache)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"推送测试" style:UIBarButtonItemStylePlain target:self action:@selector(testNotification)];
 }
@@ -329,6 +330,10 @@
             break;
         case 16: {
             [self.navigationController pushViewController:[BannerVC new] animated:YES];
+        }
+            break;
+        case 17: {
+            [self.navigationController pushViewController:[AddresssPickerVC new] animated:YES];
         }
             break;
         default:

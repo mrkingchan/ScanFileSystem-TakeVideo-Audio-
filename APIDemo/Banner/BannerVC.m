@@ -18,7 +18,6 @@
     UICollectionView *_collectionView;
     SDCycleScrollView *_bannerView;
     UIView *_headerView;
-    
 }
 
 @end
@@ -30,6 +29,9 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     UICollectionSectionViewFlowLayout *layout = [[UICollectionSectionViewFlowLayout alloc] init];
     layout.itemSize = CGSizeMake((kScreenWidth - 15)/2.0, (kScreenWidth - 15)/2.0);
+    layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    layout.minimumLineSpacing = 5.0;
+    layout.minimumInteritemSpacing = 5.0;
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) collectionViewLayout:layout];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
@@ -42,6 +44,22 @@
     _bannerView.localizationImageNamesGroup = @[@"tabbar_1_s",@"tabbar_1_s",@"tabbar_1_s",@"tabbar_1_s"];
     _bannerView.autoScroll = YES;
     [_headerView addSubview:_bannerView];
+    //头部
+    @weakify(self);
+    [_collectionView addLegendHeaderWithRefreshingBlock:^{
+        @strongify(self);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self->_collectionView.header endRefreshing];
+        });
+    }];
+    
+    //尾部
+    [_collectionView  addLegendFooterWithRefreshingBlock:^{
+        @strongify(self);
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self->_collectionView.footer  endRefreshing];
+        });
+    }];
 }
 
 

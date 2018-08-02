@@ -20,6 +20,7 @@
 		8F208FC221100C1D00F50EF0 /* HeadeReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FC121100C1D00F50EF0 /* HeadeReusableView.m */; };
 		8F208FC521100CAF00F50EF0 /* BannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FC421100CAF00F50EF0 /* BannerVC.m */; };
 		8F208FC82110328500F50EF0 /* UICollectionSectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FC72110328500F50EF0 /* UICollectionSectionViewFlowLayout.m */; };
+		8F208FCC21129DE600F50EF0 /* AddresssPickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F208FCB21129DE600F50EF0 /* AddresssPickerVC.m */; };
 		8F23C8DD20E48D6F0026A392 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */; };
 		8F23C8E020E4AD540026A392 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8DF20E4AD540026A392 /* libc++.tbd */; };
 		8F23C8E220E4AD5A0026A392 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F23C8E120E4AD5A0026A392 /* libz.tbd */; };
@@ -176,6 +177,8 @@
 		8F208FC421100CAF00F50EF0 /* BannerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerVC.m; sourceTree = "<group>"; };
 		8F208FC62110328500F50EF0 /* UICollectionSectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UICollectionSectionViewFlowLayout.h; sourceTree = "<group>"; };
 		8F208FC72110328500F50EF0 /* UICollectionSectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICollectionSectionViewFlowLayout.m; sourceTree = "<group>"; };
+		8F208FCA21129DE600F50EF0 /* AddresssPickerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddresssPickerVC.h; sourceTree = "<group>"; };
+		8F208FCB21129DE600F50EF0 /* AddresssPickerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddresssPickerVC.m; sourceTree = "<group>"; };
 		8F23C8DB20E48D6F0026A392 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
 		8F23C8DC20E48D6F0026A392 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		8F23C8DF20E4AD540026A392 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -514,6 +517,15 @@
 			path = Banner;
 			sourceTree = "<group>";
 		};
+		8F208FC921129DCD00F50EF0 /* AddressPicker */ = {
+			isa = PBXGroup;
+			children = (
+				8F208FCA21129DE600F50EF0 /* AddresssPickerVC.h */,
+				8F208FCB21129DE600F50EF0 /* AddresssPickerVC.m */,
+			);
+			path = AddressPicker;
+			sourceTree = "<group>";
+		};
 		8F23C8DA20E48D6F0026A392 /* AliPay */ = {
 			isa = PBXGroup;
 			children = (
@@ -751,8 +763,9 @@
 		8F9B0FE020D10943005DAF9E /* APIDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
+				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
+				8F208FC921129DCD00F50EF0 /* AddressPicker */,
 				8F208FBB210AACF000F50EF0 /* Photo */,
 				8F208FA12108531800F50EF0 /* BlurEffect */,
 				8F208F972106D45400F50EF0 /* iToast */,
@@ -1217,6 +1230,7 @@
 				8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */,
 				8F45B4A420F627BF005F811F /* SeperateLine.m in Sources */,
 				8FCAAF9820E1CDC700EF9CAA /* ScanVC.m in Sources */,
+				8F208FCC21129DE600F50EF0 /* AddresssPickerVC.m in Sources */,
 				8F208FBA21099E8000F50EF0 /* Tool.m in Sources */,
 				8F469DFA20DB3F4D007F1166 /* KSTakeVideoViewController.m in Sources */,
 				8F208FC221100C1D00F50EF0 /* HeadeReusableView.m in Sources */,
