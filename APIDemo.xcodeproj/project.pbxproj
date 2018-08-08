@@ -85,6 +85,7 @@
 		8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */; };
 		8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1D20E07FE9007F1166 /* AVTool.m */; };
 		8F77D3D2211A90690061D4F0 /* UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D1211A90690061D4F0 /* UIVC.m */; };
+		8F77D3D5211ADF340061D4F0 /* LoopLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D4211ADF340061D4F0 /* LoopLabel.m */; };
 		8F8479422114414E00A63508 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8479412114414E00A63508 /* CustomScrollView.m */; };
 		8F8479452114473E00A63508 /* CardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8479442114473E00A63508 /* CardVC.m */; };
 		8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FE220D10943005DAF9E /* AppDelegate.m */; };
@@ -283,6 +284,8 @@
 		8F469E1D20E07FE9007F1166 /* AVTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVTool.m; sourceTree = "<group>"; };
 		8F77D3D0211A90690061D4F0 /* UIVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIVC.h; sourceTree = "<group>"; };
 		8F77D3D1211A90690061D4F0 /* UIVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIVC.m; sourceTree = "<group>"; };
+		8F77D3D3211ADF340061D4F0 /* LoopLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoopLabel.h; sourceTree = "<group>"; };
+		8F77D3D4211ADF340061D4F0 /* LoopLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoopLabel.m; sourceTree = "<group>"; };
 		8F8479402114414E00A63508 /* CustomScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
 		8F8479412114414E00A63508 /* CustomScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomScrollView.m; sourceTree = "<group>"; };
 		8F8479432114473E00A63508 /* CardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardVC.h; sourceTree = "<group>"; };
@@ -776,6 +779,8 @@
 				8F208FC121100C1D00F50EF0 /* HeadeReusableView.m */,
 				8F8479402114414E00A63508 /* CustomScrollView.h */,
 				8F8479412114414E00A63508 /* CustomScrollView.m */,
+				8F77D3D3211ADF340061D4F0 /* LoopLabel.h */,
+				8F77D3D4211ADF340061D4F0 /* LoopLabel.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1272,6 +1277,7 @@
 				8F208FA72108534F00F50EF0 /* BlurCell.m in Sources */,
 				8FC717E720E9C36000B02F96 /* SGScanningQRCodeVC.m in Sources */,
 				8FC717E620E9C36000B02F96 /* SGAlertView.m in Sources */,
+				8F77D3D5211ADF340061D4F0 /* LoopLabel.m in Sources */,
 				8F469D9F20DA3E62007F1166 /* ScanPhotoVC.m in Sources */,
 				8F77D3D2211A90690061D4F0 /* UIVC.m in Sources */,
 				8F469E0520DB8A6A007F1166 /* NetTool.m in Sources */,

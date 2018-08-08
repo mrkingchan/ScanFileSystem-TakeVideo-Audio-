@@ -46,12 +46,12 @@
         NSString *varType = [NSString stringWithUTF8String:ivar_getTypeEncoding(vars[i])];
 //        NSLog(@"varName = %@ -- varType = %@,value = %@",varName,varType,value);
     }
-    
     /*
      <UIButtonLabel: 0x7f848b63e9f0; frame = (23.3333 9.33333; 53.3333 21.6667); text = 'button'; opaque = NO; userInteractionEnabled = NO; layer = <_UILabelLayer: 0x6000004844c0>>
      Printing description of $16:
      <UIImageView: 0x7f848b615240; frame = (0 0; 100 40); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x600000429e40>>
      */
+
     NSArray *items = _button.subviews;
     for (int i = 0 ; i < items.count; i ++) {
         if ([items[i]  isKindOfClass:NSClassFromString(@"UIButtonLabel")]) {
@@ -60,10 +60,12 @@
             for (int i = 0 ; i < count2; i ++) {
                 NSLog(@"name = %@",[NSString stringWithUTF8String:ivar_getName(vars[i])]);
             }
+            [items[i] setValue:@"123" forKey:@"text"];
         }
     }
 }
 
+// MARK: - 动态创建一个类
 - (void)dyamaticCreateAClass {
     //创建一个类
     Class People = objc_allocateClassPair([NSObject class], "People", 0);
@@ -105,6 +107,5 @@
      2018-08-08 11:29:08.909734+0800 APIDemo[4719:180037] varName = _age,varType = i
      2018-08-08 11:29:42.682061+0800 APIDemo[4719:180037] name = Chan,age = 24
      */
-    
 }
 @end

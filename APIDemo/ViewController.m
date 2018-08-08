@@ -23,6 +23,8 @@
 #import "BannerVC.h"
 #import "AddresssPickerVC.h"
 #import "UIVC.h"
+#import "LoopLabel.h"
+
 @interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate,SGScanningQRCodeVCDelegate> {
 
     UITableView *_tableView;
@@ -120,7 +122,12 @@
             }
         }
     }
-    _tableView.tableHeaderView = seg;
+    
+    LoopLabel *autoScrollLabel = [LoopLabel loopLabelWith:@[@"文字文字文字111",@"文字文字文字222",@"文字文字文字333",@"文字文字文字444"] loopInterval:5.0
+                                            initWithFrame:CGRectMake(0, 0, kAppWidth, 40) selectBlock:^(NSString *selectString, NSInteger index) {
+                                                iToastText(selectString);
+                                            }];
+    _tableView.tableHeaderView = autoScrollLabel;
 }
 
 // MARK: - 推送
