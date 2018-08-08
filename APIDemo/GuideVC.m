@@ -60,7 +60,9 @@
     [kHttpClient GET:kBaseURL
           parameters:@{}
             progress:^(NSProgress * _Nonnull downloadProgress) {
-                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSLog(@"下载进度 = %@%.2f",@"%",downloadProgress.completedUnitCount / downloadProgress.totalUnitCount * 100.0);
+                });
             }
              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                  //转json

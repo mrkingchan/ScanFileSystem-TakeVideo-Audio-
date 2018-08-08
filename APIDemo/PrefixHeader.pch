@@ -39,6 +39,7 @@
 #import <JPUSHService.h>
 #import <CYTabBar/CYTabBar.h>
 #import <CYTabBar/CYTabBarController.h>
+#import <Masonry/Masonry.h>
 
 #import "kInitUI.h"
 #import <MJExtension/MJExtension.h>

@@ -33,6 +33,8 @@
         CGSize size = [image size];
         _imageView.image = image;
         _imageView.frame = CGRectMake(self.bounds.size.width / 2 - (size.width / 2), self.bounds.size.height / 2 - (size.height / 2), size.width, size.height);
+    } else if ([model isKindOfClass:[NSString class]]) {
+        _imageView.image = [UIImage imageNamed:model];
     }
 }
 

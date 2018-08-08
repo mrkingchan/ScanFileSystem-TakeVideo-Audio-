@@ -215,6 +215,7 @@
     }
     //初始化tableView
     _tableView = kInsertTableView(self.view, CGRectMake(0, 0, kAppWidth,self.view.height ), self, self, 0, UITableViewCellSeparatorStyleSingleLine );
+    
 }
 
 // MARK: - UITableViewDataSource&Delegate

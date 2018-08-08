@@ -10,6 +10,7 @@
 #import "HeadeReusableView.h"
 #import <SDCycleScrollView/SDCycleScrollView.h>
 #import "UICollectionSectionViewFlowLayout.h"
+#import "CardVC.h"
 
 #define kHeaderID @"header"
 #define kCellID  @"UICollectionViewCell"
@@ -95,5 +96,10 @@
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     return CGSizeMake(kAppWidth, 200);
+}
+
+// MARK: - SDCycleScrollViewDelegate
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    [self.navigationController pushViewController:[CardVC new] animated:YES];
 }
 @end

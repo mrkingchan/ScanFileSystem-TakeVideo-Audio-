@@ -56,4 +56,5 @@
         _countLabel = nil;
     }
 }
+
 @end

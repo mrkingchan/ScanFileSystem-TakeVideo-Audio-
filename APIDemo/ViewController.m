@@ -22,7 +22,7 @@
 #import "BlurVC.h"
 #import "BannerVC.h"
 #import "AddresssPickerVC.h"
-
+#import "UIVC.h"
 @interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate,SGScanningQRCodeVCDelegate> {
 
     UITableView *_tableView;
@@ -36,6 +36,15 @@
 // MARK: - viewController'view's lifeCircle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    unsigned int count = 0;
+    Ivar *vars = class_copyIvarList(NSClassFromString(@"UISegmentLabel"), &count);
+    for (int i = 0 ; i < count; i ++) {
+        NSString *varkey = [NSString stringWithUTF8String:ivar_getName(vars[i])];
+        NSString *vartype = [NSString stringWithUTF8String:ivar_getTypeEncoding(vars[i])];
+//        NSString *properyKey = [NSString stringWithUTF8String:property_getName(properties[i])];
+        NSLog(@"key = %@ -- type = %@",varkey,vartype);
+    }
     self.title = @"数据管理";
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -76,9 +85,42 @@
         });
     }];
     //都要做文件缓存处理 
-    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票",@"标签",@"Banner广告",@"地址选择"]];
+    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票",@"标签",@"Banner广告",@"地址选择",@"UI分析"]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除缓存" style:UIBarButtonItemStylePlain target:self action:@selector(clearCache)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"推送测试" style:UIBarButtonItemStylePlain target:self action:@selector(testNotification)];
+    
+    UISegmentedControl *seg = [[UISegmentedControl alloc] initWithItems:@[@"1",@"2",@"3"]];
+    seg.frame = CGRectMake(0, 0, 200, 40);
+    NSArray *items = seg.subviews;
+    for (int i = 0; i < items.count; i ++) {
+        if ([items[i] isKindOfClass:NSClassFromString(@"UISegment")]) {
+            UIView *segment = (UIView *)items[i];
+            NSArray*subViews = segment.subviews;
+            for (int j = 0; j < subViews.count; j ++) {
+                if ([subViews[j] isKindOfClass:NSClassFromString(@"UISegmentLabel")]) {
+                    UIView *Label = subViews[j];
+                    /*NSMutableAttributedString *attributeStr1 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%i",j + 1]];
+                    //添加图片
+                    NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+                    attach.image = [UIImage imageNamed:@"tabbar_1_s"];
+                    attach.bounds = CGRectMake(0, 0, 40, 40);
+                    NSAttributedString *attributeStr2 = [NSAttributedString attributedStringWithAttachment:attach];
+                    [attributeStr1 insertAttributedString:attributeStr2 atIndex:0];
+                    UILabel *customLabel = [UILabel new];
+                    [Label setValue:customLabel forKey:@"associatedLabel"];
+                    [Label setValue:@"12343" forKeyPath:@"associatedLabel.attributedText"];
+                     */
+                    unsigned int count = 0;
+                    objc_property_t * properties = class_copyPropertyList(NSClassFromString(@"UISegmentLabel"), &count);
+                    for (int i = 0; i < count; i ++) {
+                        NSString * propertyName = [NSString  stringWithUTF8String:property_getName(properties[i])];
+                        NSLog(@"propertName = %@",propertyName);
+                    }
+                }
+            }
+        }
+    }
+    _tableView.tableHeaderView = seg;
 }
 
 // MARK: - 推送
@@ -347,6 +389,9 @@
             [self.navigationController pushViewController:[AddresssPickerVC new] animated:YES];
         }
             break;
+        case 18: {
+            [self.navigationController pushViewController:[UIVC new] animated:YES];
+        }
         default:
             break;
     }

@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+
     NSDictionary *jsonDic = @{
                           @"food":
                               @[
@@ -77,6 +79,7 @@
     NSLog(@"print Path = %@",filePath);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"打印" style:UIBarButtonItemStylePlain target:self action:@selector(printAction:)];
     // 打印PDF
+    
 }
 
 // MARK: - print Method

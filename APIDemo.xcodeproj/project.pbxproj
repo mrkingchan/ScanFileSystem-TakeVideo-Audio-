@@ -84,6 +84,9 @@
 		8F469E1120DC86A8007F1166 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1020DC86A8007F1166 /* GuideVC.m */; };
 		8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */; };
 		8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1D20E07FE9007F1166 /* AVTool.m */; };
+		8F77D3D2211A90690061D4F0 /* UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D1211A90690061D4F0 /* UIVC.m */; };
+		8F8479422114414E00A63508 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8479412114414E00A63508 /* CustomScrollView.m */; };
+		8F8479452114473E00A63508 /* CardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8479442114473E00A63508 /* CardVC.m */; };
 		8F9B0FE320D10943005DAF9E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FE220D10943005DAF9E /* AppDelegate.m */; };
 		8F9B0FE620D10943005DAF9E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B0FE520D10943005DAF9E /* ViewController.m */; };
 		8F9B0FE920D10943005DAF9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9B0FE720D10943005DAF9E /* Main.storyboard */; };
@@ -278,6 +281,12 @@
 		8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Configure.m"; sourceTree = "<group>"; };
 		8F469E1C20E07FE9007F1166 /* AVTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTool.h; sourceTree = "<group>"; };
 		8F469E1D20E07FE9007F1166 /* AVTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVTool.m; sourceTree = "<group>"; };
+		8F77D3D0211A90690061D4F0 /* UIVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIVC.h; sourceTree = "<group>"; };
+		8F77D3D1211A90690061D4F0 /* UIVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIVC.m; sourceTree = "<group>"; };
+		8F8479402114414E00A63508 /* CustomScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
+		8F8479412114414E00A63508 /* CustomScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomScrollView.m; sourceTree = "<group>"; };
+		8F8479432114473E00A63508 /* CardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardVC.h; sourceTree = "<group>"; };
+		8F8479442114473E00A63508 /* CardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardVC.m; sourceTree = "<group>"; };
 		8F9B0FDE20D10943005DAF9E /* APIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F9B0FE120D10943005DAF9E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8F9B0FE220D10943005DAF9E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -507,12 +516,9 @@
 		8F208FBF21100BF400F50EF0 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				8F208FC021100C1D00F50EF0 /* HeadeReusableView.h */,
-				8F208FC121100C1D00F50EF0 /* HeadeReusableView.m */,
-				8F208FC321100CAF00F50EF0 /* BannerVC.h */,
-				8F208FC421100CAF00F50EF0 /* BannerVC.m */,
-				8F208FC62110328500F50EF0 /* UICollectionSectionViewFlowLayout.h */,
-				8F208FC72110328500F50EF0 /* UICollectionSectionViewFlowLayout.m */,
+				8F8479482114524C00A63508 /* Models */,
+				8F8479472114524300A63508 /* Views */,
+				8F8479462114523C00A63508 /* Controllers */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -736,6 +742,53 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
+		8F77D3CF211A904F0061D4F0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8F77D3D0211A90690061D4F0 /* UIVC.h */,
+				8F77D3D1211A90690061D4F0 /* UIVC.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8F84793E21143DE500A63508 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		8F8479462114523C00A63508 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8F208FC321100CAF00F50EF0 /* BannerVC.h */,
+				8F208FC421100CAF00F50EF0 /* BannerVC.m */,
+				8F8479432114473E00A63508 /* CardVC.h */,
+				8F8479442114473E00A63508 /* CardVC.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8F8479472114524300A63508 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F208FC021100C1D00F50EF0 /* HeadeReusableView.h */,
+				8F208FC121100C1D00F50EF0 /* HeadeReusableView.m */,
+				8F8479402114414E00A63508 /* CustomScrollView.h */,
+				8F8479412114414E00A63508 /* CustomScrollView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8F8479482114524C00A63508 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F208FC62110328500F50EF0 /* UICollectionSectionViewFlowLayout.h */,
+				8F208FC72110328500F50EF0 /* UICollectionSectionViewFlowLayout.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		8F9B0FD520D10943005DAF9E = {
 			isa = PBXGroup;
 			children = (
@@ -763,8 +816,10 @@
 		8F9B0FE020D10943005DAF9E /* APIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8F77D3CF211A904F0061D4F0 /* UI */,
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
+				8F84793E21143DE500A63508 /* Contacts */,
 				8F208FC921129DCD00F50EF0 /* AddressPicker */,
 				8F208FBB210AACF000F50EF0 /* Photo */,
 				8F208FA12108531800F50EF0 /* BlurEffect */,
@@ -1107,12 +1162,14 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/SCSiriWaveformView/SCSiriWaveformView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SGQRCode/SGQRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/TYCyclePagerView/TYCyclePagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1128,12 +1185,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSiriWaveformView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SGQRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYCyclePagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1182,6 +1241,7 @@
 				8F208F9C2106D45500F50EF0 /* iToast+Category.m in Sources */,
 				8FCAAF9E20E2425700EF9CAA /* Server.m in Sources */,
 				8F469DE520DB3F4D007F1166 /* KSCaptureView.m in Sources */,
+				8F8479452114473E00A63508 /* CardVC.m in Sources */,
 				8FC717F720EA051300B02F96 /* NotificationView.m in Sources */,
 				8F469DE320DB3F4D007F1166 /* KSMotionManager.m in Sources */,
 				8F469DFD20DB3F4D007F1166 /* KSVideoWriter.m in Sources */,
@@ -1213,6 +1273,7 @@
 				8FC717E720E9C36000B02F96 /* SGScanningQRCodeVC.m in Sources */,
 				8FC717E620E9C36000B02F96 /* SGAlertView.m in Sources */,
 				8F469D9F20DA3E62007F1166 /* ScanPhotoVC.m in Sources */,
+				8F77D3D2211A90690061D4F0 /* UIVC.m in Sources */,
 				8F469E0520DB8A6A007F1166 /* NetTool.m in Sources */,
 				8FA835CB20FF22260055F177 /* MainTabbarVC.m in Sources */,
 				8F45B49120F601FB005F811F /* InvoicePaperView.m in Sources */,
@@ -1224,6 +1285,7 @@
 				8F469DE420DB3F4D007F1166 /* KSAVFoundationManager.m in Sources */,
 				8F469E0120DB3F4D007F1166 /* KSTakePhotoOperateView.m in Sources */,
 				8F469D9920DA36CD007F1166 /* ScanVideoVC.m in Sources */,
+				8F8479422114414E00A63508 /* CustomScrollView.m in Sources */,
 				8FC717F120E9F8F300B02F96 /* PreViewCell.m in Sources */,
 				8F208FB02108579E00F50EF0 /* UIView+Frame.m in Sources */,
 				8F208F9D2106D45500F50EF0 /* iToast.m in Sources */,
