@@ -24,6 +24,7 @@
 #import "AddresssPickerVC.h"
 #import "UIVC.h"
 #import "LoopLabel.h"
+#import "ShareView.h"
 
 @interface ViewController () <KSTakePhotoDelegate,KSTakeVideoDelegate,UITableViewDelegate,UITableViewDataSource,IQAudioRecorderViewControllerDelegate,TZImagePickerControllerDelegate,SGScanningQRCodeVCDelegate> {
 
@@ -87,7 +88,7 @@
         });
     }];
     //都要做文件缓存处理 
-    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票",@"标签",@"Banner广告",@"地址选择",@"UI分析"]];
+    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票",@"标签",@"Banner广告",@"地址选择",@"UI分析",@"分享面板"]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除缓存" style:UIBarButtonItemStylePlain target:self action:@selector(clearCache)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"推送测试" style:UIBarButtonItemStylePlain target:self action:@selector(testNotification)];
     
@@ -399,6 +400,19 @@
         case 18: {
             [self.navigationController pushViewController:[UIVC new] animated:YES];
         }
+            break;
+        case 19: {
+            NSMutableArray *items = [NSMutableArray new];
+            for (int i = 0 ; i < 10; i ++) {
+                NSArray *subItem = @[@"share_1",@"微信分享"];
+                [items addObject:subItem];
+            }
+            [ShareView shareViewWithItemsArray:items
+                                completeHandel:^(NSInteger index) {
+                                    iToastText(items[index][1]);
+                                }];
+        }
+            break;
         default:
             break;
     }

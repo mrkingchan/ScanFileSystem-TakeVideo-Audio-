@@ -84,6 +84,8 @@
 		8F469E1120DC86A8007F1166 /* GuideVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1020DC86A8007F1166 /* GuideVC.m */; };
 		8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */; };
 		8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1D20E07FE9007F1166 /* AVTool.m */; };
+		8F51C67A21212A1100295596 /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F51C67721212A1100295596 /* ShareView.m */; };
+		8F51C67B21212A1100295596 /* ShareAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F51C67821212A1100295596 /* ShareAsset.xcassets */; };
 		8F77D3D2211A90690061D4F0 /* UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D1211A90690061D4F0 /* UIVC.m */; };
 		8F77D3D5211ADF340061D4F0 /* LoopLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D4211ADF340061D4F0 /* LoopLabel.m */; };
 		8F8479422114414E00A63508 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8479412114414E00A63508 /* CustomScrollView.m */; };
@@ -282,6 +284,9 @@
 		8F469E1A20E07BDD007F1166 /* AppDelegate+Configure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Configure.m"; sourceTree = "<group>"; };
 		8F469E1C20E07FE9007F1166 /* AVTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVTool.h; sourceTree = "<group>"; };
 		8F469E1D20E07FE9007F1166 /* AVTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVTool.m; sourceTree = "<group>"; };
+		8F51C67721212A1100295596 /* ShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
+		8F51C67821212A1100295596 /* ShareAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ShareAsset.xcassets; sourceTree = "<group>"; };
+		8F51C67921212A1100295596 /* ShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
 		8F77D3D0211A90690061D4F0 /* UIVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIVC.h; sourceTree = "<group>"; };
 		8F77D3D1211A90690061D4F0 /* UIVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIVC.m; sourceTree = "<group>"; };
 		8F77D3D3211ADF340061D4F0 /* LoopLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoopLabel.h; sourceTree = "<group>"; };
@@ -745,6 +750,16 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
+		8F51C67621212A1100295596 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				8F51C67921212A1100295596 /* ShareView.h */,
+				8F51C67721212A1100295596 /* ShareView.m */,
+				8F51C67821212A1100295596 /* ShareAsset.xcassets */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		8F77D3CF211A904F0061D4F0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -824,6 +839,7 @@
 				8F77D3CF211A904F0061D4F0 /* UI */,
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
+				8F51C67621212A1100295596 /* Share */,
 				8F84793E21143DE500A63508 /* Contacts */,
 				8F208FC921129DCD00F50EF0 /* AddressPicker */,
 				8F208FBB210AACF000F50EF0 /* Photo */,
@@ -1088,6 +1104,7 @@
 			files = (
 				8F469DF520DB3F4D007F1166 /* KSSwitchCamera_Sel@2x.png in Resources */,
 				8F469DF020DB3F4D007F1166 /* KSCapture_scan_focus@3x.png in Resources */,
+				8F51C67B21212A1100295596 /* ShareAsset.xcassets in Resources */,
 				8F469DF320DB3F4D007F1166 /* KSCaptureFlash_Off@3x.png in Resources */,
 				8F469DEF20DB3F4D007F1166 /* KSCapture_scan_focus.png in Resources */,
 				8F45B49920F60939005F811F /* Cell.xib in Resources */,
@@ -1282,6 +1299,7 @@
 				8F77D3D2211A90690061D4F0 /* UIVC.m in Sources */,
 				8F469E0520DB8A6A007F1166 /* NetTool.m in Sources */,
 				8FA835CB20FF22260055F177 /* MainTabbarVC.m in Sources */,
+				8F51C67A21212A1100295596 /* ShareView.m in Sources */,
 				8F45B49120F601FB005F811F /* InvoicePaperView.m in Sources */,
 				8F208FB6210963A700F50EF0 /* ContainerView.m in Sources */,
 				8F208F932106BA0800F50EF0 /* AppDelegate+ThirdPartConfig.m in Sources */,
