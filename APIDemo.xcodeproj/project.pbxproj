@@ -86,6 +86,8 @@
 		8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1D20E07FE9007F1166 /* AVTool.m */; };
 		8F51C67A21212A1100295596 /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F51C67721212A1100295596 /* ShareView.m */; };
 		8F51C67B21212A1100295596 /* ShareAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F51C67821212A1100295596 /* ShareAsset.xcassets */; };
+		8F630A5921254CEB00ED0CD4 /* UIViewController+Sheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A5721254CEB00ED0CD4 /* UIViewController+Sheet.m */; };
+		8F630A5A21254CEB00ED0CD4 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A5821254CEB00ED0CD4 /* UIViewController+Alert.m */; };
 		8F77D3D2211A90690061D4F0 /* UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D1211A90690061D4F0 /* UIVC.m */; };
 		8F77D3D5211ADF340061D4F0 /* LoopLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D4211ADF340061D4F0 /* LoopLabel.m */; };
 		8F8479422114414E00A63508 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8479412114414E00A63508 /* CustomScrollView.m */; };
@@ -287,6 +289,10 @@
 		8F51C67721212A1100295596 /* ShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
 		8F51C67821212A1100295596 /* ShareAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ShareAsset.xcassets; sourceTree = "<group>"; };
 		8F51C67921212A1100295596 /* ShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
+		8F630A5521254CEA00ED0CD4 /* UIViewController+Sheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Sheet.h"; sourceTree = "<group>"; };
+		8F630A5621254CEA00ED0CD4 /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
+		8F630A5721254CEB00ED0CD4 /* UIViewController+Sheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Sheet.m"; sourceTree = "<group>"; };
+		8F630A5821254CEB00ED0CD4 /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
 		8F77D3D0211A90690061D4F0 /* UIVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIVC.h; sourceTree = "<group>"; };
 		8F77D3D1211A90690061D4F0 /* UIVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIVC.m; sourceTree = "<group>"; };
 		8F77D3D3211ADF340061D4F0 /* LoopLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoopLabel.h; sourceTree = "<group>"; };
@@ -760,6 +766,17 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+		8F630A5421254CDB00ED0CD4 /* Alert &Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				8F630A5621254CEA00ED0CD4 /* UIViewController+Alert.h */,
+				8F630A5821254CEB00ED0CD4 /* UIViewController+Alert.m */,
+				8F630A5521254CEA00ED0CD4 /* UIViewController+Sheet.h */,
+				8F630A5721254CEB00ED0CD4 /* UIViewController+Sheet.m */,
+			);
+			path = "Alert &Sheet";
+			sourceTree = "<group>";
+		};
 		8F77D3CF211A904F0061D4F0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,6 +853,7 @@
 		8F9B0FE020D10943005DAF9E /* APIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8F630A5421254CDB00ED0CD4 /* Alert &Sheet */,
 				8F77D3CF211A904F0061D4F0 /* UI */,
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
 				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
@@ -1268,6 +1286,7 @@
 				8F469DE320DB3F4D007F1166 /* KSMotionManager.m in Sources */,
 				8F469DFD20DB3F4D007F1166 /* KSVideoWriter.m in Sources */,
 				8F469D9C20DA370E007F1166 /* VideoCell.m in Sources */,
+				8F630A5A21254CEB00ED0CD4 /* UIViewController+Alert.m in Sources */,
 				8F469E0220DB3F4D007F1166 /* KSTakePhotoManager.m in Sources */,
 				8FCAAFA320E2486900EF9CAA /* LocalPushCenter.m in Sources */,
 				8FC717EB20E9C36000B02F96 /* ScanSuccessJumpVC.m in Sources */,
@@ -1280,6 +1299,7 @@
 				8F208FC521100CAF00F50EF0 /* BannerVC.m in Sources */,
 				8F469E0820DB8B1C007F1166 /* HttpClient.m in Sources */,
 				8F208FA42108533C00F50EF0 /* BlurVC.m in Sources */,
+				8F630A5921254CEB00ED0CD4 /* UIViewController+Sheet.m in Sources */,
 				8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */,
 				8F469DFE20DB3F4D007F1166 /* KSTakeVideoManager.m in Sources */,
 				8FCABD4620E3640700EF9CAA /* PhotoCell.m in Sources */,
