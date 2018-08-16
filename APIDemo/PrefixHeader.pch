@@ -49,6 +49,8 @@
 #import "NotificationView.h"
 #import "UIView+Frame.h"
 #import "Tool.h"
+#import "UIViewController+Alert.h"
+#import "UIViewController+Sheet.h"
 
 #define weak(type)  __weak typeof(type) weak##type = type;
 #define strong(type)  __strong typeof(type) type = weak##type;

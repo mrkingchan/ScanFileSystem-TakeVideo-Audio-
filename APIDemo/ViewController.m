@@ -88,7 +88,7 @@
         });
     }];
     //都要做文件缓存处理 
-    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票",@"标签",@"Banner广告",@"地址选择",@"UI分析",@"分享面板"]];
+    _dataArray = [NSMutableArray arrayWithArray:@[@"拍照",@"拍视频",@"扫描文件系统视频",@"扫描手机相册",@"扫描文件系统照片",@"录音",@"扫描文件系统录音文件",@"扫描二维码",@"三方分享",@"三方登录",@"端口通信",@"JS交互测试",@"数据库文件",@"缩放",@"发票",@"标签",@"Banner广告",@"地址选择",@"UI分析",@"分享面板",@"Alert",@"ActionSheet"]];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"清除缓存" style:UIBarButtonItemStylePlain target:self action:@selector(clearCache)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"推送测试" style:UIBarButtonItemStylePlain target:self action:@selector(testNotification)];
     
@@ -411,6 +411,25 @@
                                 completeHandel:^(NSInteger index) {
                                     iToastText(items[index][1]);
                                 }];
+        }
+            break;
+        case 20: {
+            [self alertWithTitle:@"xxx" button1:@"111" completeBlock1:^{
+                
+            } button2:@"222" completeBlock2:^{
+                
+            }];
+        }
+            break;
+        case 21: {
+            [self  sheetWithMessage:@"xxx"
+                            button1:@"1111"
+                          complete1:^{
+                              
+                          } button2:@"2222"
+                          complete2:^{
+                              
+                          }];
         }
             break;
         default:

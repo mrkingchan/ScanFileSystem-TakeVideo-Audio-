@@ -2,7 +2,7 @@
 //  ShareView.h
 //  YQ
 //
-//  Created by Macx on 2018/7/9.
+//  Created by Chan on 2018/7/9.
 //  Copyright © 2018年 annkey. All rights reserved.
 //
 

@@ -88,6 +88,7 @@
 		8F51C67B21212A1100295596 /* ShareAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F51C67821212A1100295596 /* ShareAsset.xcassets */; };
 		8F630A5921254CEB00ED0CD4 /* UIViewController+Sheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A5721254CEB00ED0CD4 /* UIViewController+Sheet.m */; };
 		8F630A5A21254CEB00ED0CD4 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A5821254CEB00ED0CD4 /* UIViewController+Alert.m */; };
+		8F630A662125571C00ED0CD4 /* UIViewController+NetTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A642125571B00ED0CD4 /* UIViewController+NetTask.m */; };
 		8F77D3D2211A90690061D4F0 /* UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D1211A90690061D4F0 /* UIVC.m */; };
 		8F77D3D5211ADF340061D4F0 /* LoopLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D4211ADF340061D4F0 /* LoopLabel.m */; };
 		8F8479422114414E00A63508 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8479412114414E00A63508 /* CustomScrollView.m */; };
@@ -293,6 +294,8 @@
 		8F630A5621254CEA00ED0CD4 /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
 		8F630A5721254CEB00ED0CD4 /* UIViewController+Sheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Sheet.m"; sourceTree = "<group>"; };
 		8F630A5821254CEB00ED0CD4 /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
+		8F630A642125571B00ED0CD4 /* UIViewController+NetTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NetTask.m"; sourceTree = "<group>"; };
+		8F630A652125571B00ED0CD4 /* UIViewController+NetTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NetTask.h"; sourceTree = "<group>"; };
 		8F77D3D0211A90690061D4F0 /* UIVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIVC.h; sourceTree = "<group>"; };
 		8F77D3D1211A90690061D4F0 /* UIVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIVC.m; sourceTree = "<group>"; };
 		8F77D3D3211ADF340061D4F0 /* LoopLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoopLabel.h; sourceTree = "<group>"; };
@@ -430,6 +433,8 @@
 				8F469E0720DB8B1C007F1166 /* HttpClient.m */,
 				8F208FB821099E8000F50EF0 /* Tool.h */,
 				8F208FB921099E8000F50EF0 /* Tool.m */,
+				8F630A652125571B00ED0CD4 /* UIViewController+NetTask.h */,
+				8F630A642125571B00ED0CD4 /* UIViewController+NetTask.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1301,6 +1306,7 @@
 				8F208FA42108533C00F50EF0 /* BlurVC.m in Sources */,
 				8F630A5921254CEB00ED0CD4 /* UIViewController+Sheet.m in Sources */,
 				8F469E1B20E07BDD007F1166 /* AppDelegate+Configure.m in Sources */,
+				8F630A662125571C00ED0CD4 /* UIViewController+NetTask.m in Sources */,
 				8F469DFE20DB3F4D007F1166 /* KSTakeVideoManager.m in Sources */,
 				8FCABD4620E3640700EF9CAA /* PhotoCell.m in Sources */,
 				8F469DA220DA5192007F1166 /* WebVC.m in Sources */,
