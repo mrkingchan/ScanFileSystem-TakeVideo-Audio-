@@ -38,7 +38,6 @@
             _items[i].layer.cornerRadius = 4.0;
             _items[i].titleLabel.font = KSFont(13);
             _items[i].titleLabel.textAlignment = 1;
-            
         }
     }
     return self;
@@ -69,6 +68,7 @@
             });
     }
 }
+
 
 // MARK: - buttonAction
 -(void)buttonAction:(UITapGestureRecognizer *)tap {

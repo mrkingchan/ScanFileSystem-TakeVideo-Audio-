@@ -96,5 +96,4 @@
         _completeBlock(_model.items[index]);
     }
 }
-
 @end

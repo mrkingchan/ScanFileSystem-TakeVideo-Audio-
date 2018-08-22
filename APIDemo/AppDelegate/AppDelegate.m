@@ -26,6 +26,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     _window = [UIWindow new];
     _window.frame = [UIScreen mainScreen].bounds;
     _window.backgroundColor = [UIColor whiteColor];
@@ -92,6 +93,18 @@
                                                       iToastText([note.userInfo mj_JSONString]);
                                                   }];
      */
+    
+    unsigned int count= 0 ;
+    Ivar *vars = class_copyIvarList([self class], &count);
+    for (int i = 0 ; i < count; i ++) {
+        NSString *key = [NSString stringWithUTF8String:ivar_getName(vars[i])];
+        NSString *type = [NSString stringWithUTF8String:ivar_getTypeEncoding(vars[i])];
+        id value = [self valueForKey:[[key componentsSeparatedByString:@"_"]lastObject]];
+        NSLog(@"var = %@ --,value  = %@, type = %@",key,value,type);
+    }
+    /*
+     var = _window --,value  = <UIWindow: 0x7f924050fbb0; frame = (0 0; 375 812); gestureRecognizers = <NSArray: 0x60400025be10>; layer = <UIWindowLayer: 0x60400003d780>>, type = @"UIWindow"
+     */
     return YES;
 }
 
@@ -132,6 +145,20 @@
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge |  UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert];
 #pragma clang diagnostic pop
     }
+}
+
+// MARK: - loadData
+- (void)loadData {
+    [[[NSURLSession sharedSession] dataTaskWithURL:kURL(kBaseURL)
+                                 completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                     if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+                                         NSDictionary <NSString*,NSString*> *httpFileds = httpResponse.allHeaderFields;
+                                         [httpFileds enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
+                                             NSLog(@"key = %@,value = %@",key,obj);
+                                         }];
+                                     }
+                                 }]resume];
 }
 
 // MARK: - 检查更新

@@ -9,6 +9,7 @@
 #import "BlurVC.h"
 #import "BlurModel.h"
 #import "BlurCell.h"
+#import <WebKit/WebKit.h>
 
 @interface BlurVC ()<UITableViewDelegate,UITableViewDataSource,TagClickedDelegate> {
     UITableView *_tableView;
@@ -215,8 +216,11 @@
     }
     //初始化tableView
     _tableView = kInsertTableView(self.view, CGRectMake(0, 0, kAppWidth,self.view.height ), self, self, 0, UITableViewCellSeparatorStyleSingleLine );
-    
-    
+    unsigned int  count = 0;
+    Ivar *vars = class_copyIvarList([WKWebView class], &count);
+    for (int i = 0 ; i < count; i ++) {
+        NSLog(@"var = %@,type = %@",[NSString stringWithUTF8String:ivar_getName(vars[i])],[NSString stringWithUTF8String:ivar_getTypeEncoding(vars[i])]);
+    }
 }
 
 // MARK: - UITableViewDataSource&Delegate

@@ -89,6 +89,7 @@
 		8F630A5921254CEB00ED0CD4 /* UIViewController+Sheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A5721254CEB00ED0CD4 /* UIViewController+Sheet.m */; };
 		8F630A5A21254CEB00ED0CD4 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A5821254CEB00ED0CD4 /* UIViewController+Alert.m */; };
 		8F630A662125571C00ED0CD4 /* UIViewController+NetTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A642125571B00ED0CD4 /* UIViewController+NetTask.m */; };
+		8F630A692125751600ED0CD4 /* UIViewController+NetTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A682125751500ED0CD4 /* UIViewController+NetTask.m */; };
 		8F77D3D2211A90690061D4F0 /* UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D1211A90690061D4F0 /* UIVC.m */; };
 		8F77D3D5211ADF340061D4F0 /* LoopLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F77D3D4211ADF340061D4F0 /* LoopLabel.m */; };
 		8F8479422114414E00A63508 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8479412114414E00A63508 /* CustomScrollView.m */; };
@@ -296,6 +297,8 @@
 		8F630A5821254CEB00ED0CD4 /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
 		8F630A642125571B00ED0CD4 /* UIViewController+NetTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NetTask.m"; sourceTree = "<group>"; };
 		8F630A652125571B00ED0CD4 /* UIViewController+NetTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NetTask.h"; sourceTree = "<group>"; };
+		8F630A672125751500ED0CD4 /* UIViewController+NetTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NetTask.h"; sourceTree = "<group>"; };
+		8F630A682125751500ED0CD4 /* UIViewController+NetTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NetTask.m"; sourceTree = "<group>"; };
 		8F77D3D0211A90690061D4F0 /* UIVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIVC.h; sourceTree = "<group>"; };
 		8F77D3D1211A90690061D4F0 /* UIVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIVC.m; sourceTree = "<group>"; };
 		8F77D3D3211ADF340061D4F0 /* LoopLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoopLabel.h; sourceTree = "<group>"; };
@@ -861,6 +864,8 @@
 				8F630A5421254CDB00ED0CD4 /* Alert &Sheet */,
 				8F77D3CF211A904F0061D4F0 /* UI */,
 				8F469D9620DA261C007F1166 /* PrefixHeader.pch */,
+				8F630A672125751500ED0CD4 /* UIViewController+NetTask.h */,
+				8F630A682125751500ED0CD4 /* UIViewController+NetTask.m */,
 				8F45B47E20F5E996005F811F /* APIDemo.entitlements */,
 				8F51C67621212A1100295596 /* Share */,
 				8F84793E21143DE500A63508 /* Contacts */,
@@ -1349,6 +1354,7 @@
 				8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */,
 				8FC717E520E9C36000B02F96 /* SGGenerateQRCodeVC.m in Sources */,
 				8F45B49C20F60C84005F811F /* InvoicePaperVC.m in Sources */,
+				8F630A692125751600ED0CD4 /* UIViewController+NetTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

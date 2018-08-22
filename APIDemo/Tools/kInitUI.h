@@ -923,4 +923,8 @@ CG_INLINE UIViewController *kBuildViewControllerwithConfiguration(Class classNam
     return viewController;
 }
 
+CG_INLINE dispatch_queue_t kCreateQueueWithConfiguration(const char *queueName,dispatch_queue_attr_t attri) {
+    return dispatch_queue_create(queueName, attri);
+}
+
 #endif /* kInitUI_h */

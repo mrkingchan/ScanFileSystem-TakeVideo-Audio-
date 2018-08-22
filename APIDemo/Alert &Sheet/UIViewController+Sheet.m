@@ -10,14 +10,14 @@
 
 @implementation UIViewController (Sheet)
 
--(void)sheetWithMessage:(NSString *)messageStr
+- (void)sheetWithMessage:(NSString *)messageStr
                 button1:(NSString *)title1
               complete1:(void (^)(void))complete1
                 button2:(NSString *)title2
               complete2:(void (^)(void))complete2 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:messageStr message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     for (int i = 0 ; i < 3;i  ++) {
-        UIAlertAction *action = [UIAlertAction actionWithTitle:i == 0 ? title1:i == 1 ? title2:@"取消" style:i == 2 ? UIAlertActionStyleCancel : UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *action = [UIAlertAction actionWithTitle:i == 0 ? title1:i == 1 ? title2:@"取消" style:i == 2 ? UIAlertActionStyleDestructive : UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if ([action.title isEqualToString:title1]) {
                 if (complete1) {
                     complete1();
@@ -32,4 +32,5 @@
     }
     [self presentViewController:alertController animated:YES completion:nil];
 }
+
 @end
