@@ -86,6 +86,7 @@
 		8F469E1E20E07FE9007F1166 /* AVTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F469E1D20E07FE9007F1166 /* AVTool.m */; };
 		8F51C67A21212A1100295596 /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F51C67721212A1100295596 /* ShareView.m */; };
 		8F51C67B21212A1100295596 /* ShareAsset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F51C67821212A1100295596 /* ShareAsset.xcassets */; };
+		8F5FEB9A212FA4F300F8E636 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F5FEB9C212FA4F300F8E636 /* InfoPlist.strings */; };
 		8F630A5921254CEB00ED0CD4 /* UIViewController+Sheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A5721254CEB00ED0CD4 /* UIViewController+Sheet.m */; };
 		8F630A5A21254CEB00ED0CD4 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A5821254CEB00ED0CD4 /* UIViewController+Alert.m */; };
 		8F630A662125571C00ED0CD4 /* UIViewController+NetTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F630A642125571B00ED0CD4 /* UIViewController+NetTask.m */; };
@@ -291,6 +292,8 @@
 		8F51C67721212A1100295596 /* ShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
 		8F51C67821212A1100295596 /* ShareAsset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ShareAsset.xcassets; sourceTree = "<group>"; };
 		8F51C67921212A1100295596 /* ShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
+		8F5FEB9B212FA4F300F8E636 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8F5FEB9D212FA4F500F8E636 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8F630A5521254CEA00ED0CD4 /* UIViewController+Sheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Sheet.h"; sourceTree = "<group>"; };
 		8F630A5621254CEA00ED0CD4 /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
 		8F630A5721254CEB00ED0CD4 /* UIViewController+Sheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Sheet.m"; sourceTree = "<group>"; };
@@ -837,6 +840,7 @@
 		8F9B0FD520D10943005DAF9E = {
 			isa = PBXGroup;
 			children = (
+				8F5FEB9C212FA4F300F8E636 /* InfoPlist.strings */,
 				8F9B0FE020D10943005DAF9E /* APIDemo */,
 				8F9B0FF920D10946005DAF9E /* APIDemoTests */,
 				8F9B100420D10946005DAF9E /* APIDemoUITests */,
@@ -1103,7 +1107,6 @@
 				en,
 				Base,
 				"zh-Hans",
-				"zh-Hant",
 			);
 			mainGroup = 8F9B0FD520D10943005DAF9E;
 			productRefGroup = 8F9B0FDF20D10943005DAF9E /* Products */;
@@ -1149,6 +1152,7 @@
 				8F469DE920DB3F4D007F1166 /* KSCapture_OCR@3x.png in Resources */,
 				8F469DF620DB3F4D007F1166 /* KSSwitchCamera_Sel@3x.png in Resources */,
 				8F469DEB20DB3F4D007F1166 /* KSSwitchCamera_Nor@2x.png in Resources */,
+				8F5FEB9A212FA4F300F8E636 /* InfoPlist.strings in Resources */,
 				8F469DED20DB3F4D007F1166 /* KSTakePhoto_Nor@3x.png in Resources */,
 				8F469DE820DB3F4D007F1166 /* KSCapture_OCR@2x.png in Resources */,
 				8F469DF120DB3F4D007F1166 /* KSCaptureGuideLine_Nor@2x.png in Resources */,
@@ -1395,6 +1399,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8F5FEB9C212FA4F300F8E636 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F5FEB9B212FA4F300F8E636 /* en */,
+				8F5FEB9D212FA4F500F8E636 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		8F9B0FE720D10943005DAF9E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

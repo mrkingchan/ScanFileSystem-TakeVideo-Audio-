@@ -40,6 +40,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSLog(@"currentLanguage = %@",[self getiPhoneCurrentLanguage]);
+    
     unsigned int count = 0;
     Ivar *vars = class_copyIvarList(NSClassFromString(@"UISegmentLabel"), &count);
     for (int i = 0 ; i < count; i ++) {
@@ -488,6 +490,11 @@
     iToastText(@"清除成功!");
 }
 
+- (NSString *)getiPhoneCurrentLanguage {
+    return [[NSLocale preferredLanguages] firstObject];
+}
+
+
 // MARK: - memory management
 - (void)dealloc {
     if (_tableView) {
@@ -496,4 +503,6 @@
         _tableView = nil;
     }
 }
+
+
 @end
